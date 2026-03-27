@@ -1,0 +1,47 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/08-Verification/Lab2_1/ALSU
+T_opt
+!s110 1774367250
+VK=Gk_[k3?gn^@>4nE0zGJ1
+04 14 4 work Dynamic_arr_tb fast 0
+=2-902e16e4070c-69c2b212-11-6110
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z0 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vDynamic_arr_tb
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1774367249
+!i10b 1
+!s100 mnPe1[ZGKlM8@o11KKhkm3
+I2HhFTe_OBQ@[AnfKb8[Nm0
+S1
+dD:/Career tracks/Digial_IC/08-Verification/Lab2_1/dynamic_array
+w1774367001
+8Dynamic_arr_tb.sv
+FDynamic_arr_tb.sv
+!i122 1
+L0 1 41
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.1;73
+r1
+!s85 0
+31
+!s108 1774367249.000000
+!s107 Dynamic_arr_tb.sv|
+!s90 -reportprogress|300|Dynamic_arr_tb.sv|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+n@dynamic_arr_tb

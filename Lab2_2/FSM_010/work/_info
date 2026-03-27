@@ -1,0 +1,134 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Career tracks/Digial_IC/09-Verification/Lab2_1/ALSU
+T_opt
+!s110 1774589818
+V8NUhCP5@g3SD?[f]^BP9L1
+04 10 4 work FSM_010_tb fast 0
+=1-902e16e4070c-69c6177a-2b4-9f8
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R1
+vFSM_010
+Z3 !s110 1774589910
+!i10b 1
+!s100 WJFQ97f?RjmKVhmzY1Ln62
+I2Ai1;18]X1Rg>7Cz]8d9O1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Lab2_2/FSM_010
+w1774587900
+8FSM_010.v
+FFSM_010.v
+!i122 7
+L0 8 61
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1774589909.000000
+!s107 FSM_010_tb.sv|FSM_pkg.sv|FSM_010.v|
+Z8 !s90 -reportprogress|300|FSM_010.v|FSM_pkg.sv|FSM_010_tb.sv|+cover|
+!i113 0
+Z9 !s102 +cover
+Z10 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@f@s@m_010
+vFSM_010_tb
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z12 DXx4 work 7 FSM_pkg 0 22 P2MRNM3?7GTL7LET31h0R2
+DXx4 work 18 FSM_010_tb_sv_unit 0 22 7>TdYa?[hB?iDXmB4<T`60
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 b]=Qzd=1l^m7kKo:JWSNE0
+I0^`oXSaR?T_XVP=04E8f]3
+!s105 FSM_010_tb_sv_unit
+S1
+R4
+Z13 w1774589805
+Z14 8FSM_010_tb.sv
+Z15 FFSM_010_tb.sv
+!i122 7
+L0 3 127
+R6
+31
+R7
+Z16 !s107 FSM_010_tb.sv|FSM_pkg.sv|FSM_010.v|
+R8
+!i113 0
+R9
+R10
+R2
+n@f@s@m_010_tb
+XFSM_010_tb_sv_unit
+R11
+R12
+R3
+V7>TdYa?[hB?iDXmB4<T`60
+r1
+!s85 0
+!i10b 1
+!s100 h7=586MQ]fCLG<C?mOIZl2
+I7>TdYa?[hB?iDXmB4<T`60
+!i103 1
+S1
+R4
+R13
+R14
+R15
+!i122 7
+Z17 L0 1 0
+R6
+31
+R7
+R16
+R8
+!i113 0
+R9
+R10
+R2
+n@f@s@m_010_tb_sv_unit
+XFSM_pkg
+R11
+R3
+!i10b 1
+!s100 BzNRbn?SjZbfC61ehPbfT0
+IP2MRNM3?7GTL7LET31h0R2
+S1
+R4
+w1774588219
+8FSM_pkg.sv
+FFSM_pkg.sv
+!i122 7
+R17
+VP2MRNM3?7GTL7LET31h0R2
+R6
+r1
+!s85 0
+31
+R7
+R16
+R8
+!i113 0
+R9
+R10
+R2
+n@f@s@m_pkg

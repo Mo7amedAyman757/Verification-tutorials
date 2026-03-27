@@ -1,0 +1,133 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Career tracks/Digial_IC/09-Verification/Lab2_2/FSM_010
+T_opt
+!s110 1774586670
+VXa0OJed_=h=_g96WemP=K3
+04 6 4 work ALU_tb fast 0
+=1-902e16e4070c-69c60b2e-83-ee0
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R1
+vALU_4_bit
+Z3 !s110 1774586871
+!i10b 1
+!s100 F`Y[W>e:FM630FfaX]=9[1
+IEIT:`YZa_;bZ_<>AbdmI62
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Lab2_2/ALU
+w1772842450
+8ALU.v
+FALU.v
+!i122 14
+L0 1 38
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1774586871.000000
+!s107 ALU_tb.sv|ALU_pkg.sv|ALU.v|
+Z8 !s90 -reportprogress|300|ALU.v|ALU_pkg.sv|ALU_tb.sv|+cover|
+!i113 0
+Z9 !s102 +cover
+Z10 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@a@l@u_4_bit
+XALU_pkg
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R3
+!i10b 1
+!s100 jLNBfkBJ:ld53_QdCAaUf0
+ISbAILJn6ZMcMA4>lG^Ubl0
+S1
+R4
+w1774586104
+8ALU_pkg.sv
+FALU_pkg.sv
+!i122 14
+Z12 L0 1 0
+VSbAILJn6ZMcMA4>lG^Ubl0
+R6
+r1
+!s85 0
+31
+R7
+Z13 !s107 ALU_tb.sv|ALU_pkg.sv|ALU.v|
+R8
+!i113 0
+R9
+R10
+R2
+n@a@l@u_pkg
+vALU_tb
+R11
+Z14 DXx4 work 7 ALU_pkg 0 22 SbAILJn6ZMcMA4>lG^Ubl0
+DXx4 work 14 ALU_tb_sv_unit 0 22 N=zJ?RZhd<=W[AL8>6GDF0
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 ligHcQ[>khSgP^hENiI8>2
+IKVBz:5UiC]c1jCaa3Q<Lg3
+!s105 ALU_tb_sv_unit
+S1
+R4
+Z15 w1774586659
+Z16 8ALU_tb.sv
+Z17 FALU_tb.sv
+!i122 14
+L0 3 89
+R6
+31
+R7
+R13
+R8
+!i113 0
+R9
+R10
+R2
+n@a@l@u_tb
+XALU_tb_sv_unit
+R11
+R14
+R3
+VN=zJ?RZhd<=W[AL8>6GDF0
+r1
+!s85 0
+!i10b 1
+!s100 ^oj90MMmikgWdIiiDLM0B0
+IN=zJ?RZhd<=W[AL8>6GDF0
+!i103 1
+S1
+R4
+R15
+R16
+R17
+!i122 14
+R12
+R6
+31
+R7
+R13
+R8
+!i113 0
+R9
+R10
+R2
+n@a@l@u_tb_sv_unit

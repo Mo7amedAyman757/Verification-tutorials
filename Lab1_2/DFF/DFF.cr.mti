@@ -1,0 +1,8 @@
+{D:/Career tracks/Digial_IC/08-Verification/Lab1_2/dff.v} {1 {vlog -work work -vopt -stats=none {D:/Career tracks/Digial_IC/08-Verification/Lab1_2/dff.v}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module dff
+
+Top level modules:
+	dff
+
+} {} {}}

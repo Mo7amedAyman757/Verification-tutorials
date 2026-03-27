@@ -1,0 +1,605 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /FSM_010_tb/uut
+=== Design Unit: work.FSM_010
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20        20         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /FSM_010_tb/uut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FSM_010.v
+------------------------------------CASE Branch------------------------------------
+    22                                     11182     Count coming in to CASE
+    23              1                       2174     			IDLE: 
+    28              1                       3918     			ZERO:
+    33              1                       3292     			ONE: 
+    38              1                       1798     			STORE: 
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    24                                      2174     Count coming in to IF
+    24              1                       1080     				if (x)
+    26              1                       1094     				else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                      3918     Count coming in to IF
+    29              1                       1955     				if (x)
+    31              1                       1963     				else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    34                                      3292     Count coming in to IF
+    34              1                       1951     				if (x)
+    36              1                       1341     				else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    39                                      1798     Count coming in to IF
+    39              1                        460     				if (x)
+    41              1                       1338     				else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    48                                      8030     Count coming in to IF
+    48              1                         42     		if(rst) begin
+    51              1                       7988     		else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    57                                      6371     Count coming in to IF
+    57              1                         42     		if(rst) begin
+    60              1                       6329     		else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    61                                      6329     Count coming in to IF
+    61              1                       1335     			if (cs == STORE)
+                                            4994     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    66                                      6340     Count coming in to IF
+    66              1                       1338     	assign y = (cs == STORE)? 1:0;
+    66              2                       5002     	assign y = (cs == STORE)? 1:0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /FSM_010_tb/uut --
+
+  File FSM_010.v
+----------------Focused Condition View-------------------
+Line       61 Item    1  (cs == 3)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+   (cs == 3)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (cs == 3)_0           -                             
+  Row   2:          1  (cs == 3)_1           -                             
+
+----------------Focused Condition View-------------------
+Line       66 Item    1  (cs == 3)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+   (cs == 3)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (cs == 3)_0           -                             
+  Row   2:          1  (cs == 3)_1           -                             
+
+
+FSM Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    FSM States                       4         4         0   100.00%
+    FSM Transitions                  7         7         0   100.00%
+
+================================FSM Details================================
+
+FSM Coverage for instance /FSM_010_tb/uut --
+
+FSM_ID: cs
+    Current State Object : cs
+    ----------------------
+    State Value MapInfo :
+    ---------------------
+Line          State Name               Value
+----          ----------               -----
+  23                IDLE                   0
+  28                ZERO                   1
+  33                 ONE                   2
+  38               STORE                   3
+    Covered States :
+    ----------------
+                   State           Hit_count
+                   -----           ---------
+                    IDLE                1457          
+                    ZERO                3284          
+                     ONE                1951          
+                   STORE                1338          
+    Covered Transitions :
+    ---------------------
+Line            Trans_ID           Hit_count          Transition          
+----            --------           ---------          ----------          
+  27                   0                1088          IDLE -> ZERO                  
+  30                   1                1951          ZERO -> ONE                   
+  49                   2                  12          ZERO -> IDLE                  
+  37                   3                1338          ONE -> STORE                  
+  35                   4                 613          ONE -> IDLE                   
+  42                   5                 875          STORE -> ZERO                 
+  40                   6                 462          STORE -> IDLE                 
+
+
+    Summary                       Bins      Hits    Misses  Coverage
+    -------                       ----      ----    ------  --------
+        FSM States                   4         4         0   100.00%
+        FSM Transitions              7         7         0   100.00%
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      16        16         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /FSM_010_tb/uut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FSM_010.v
+    8                                                module FSM_010(clk, rst, x, y, users_count);
+    9                                                	parameter IDLE  = 2'b00;
+    10                                               	parameter ZERO  = 2'b01;
+    11                                               	parameter ONE   = 2'b10;
+    12                                               	parameter STORE = 2'b11; 
+    13                                               
+    14                                               	input clk, rst, x;
+    15                                               	output y;
+    16                                               	output reg [9:0] users_count;
+    17                                               
+    18                                               	// current state and next state registers
+    19                                               	reg [1:0] cs, ns;
+    20                                               
+    21              1                      11182     	always @(*) begin
+    22                                               		case (cs)
+    23                                               			IDLE: 
+    24                                               				if (x)
+    25              1                       1080     					ns = IDLE;
+    26                                               				else 
+    27              1                       1094     					ns = ZERO;
+    28                                               			ZERO:
+    29                                               				if (x)
+    30              1                       1955     					ns = ONE;
+    31                                               				else 
+    32              1                       1963     					ns = ZERO;
+    33                                               			ONE: 
+    34                                               				if (x)
+    35              1                       1951     					ns = IDLE;
+    36                                               				else 
+    37              1                       1341     					ns = STORE;
+    38                                               			STORE: 
+    39                                               				if (x)
+    40              1                        460     					ns = IDLE;
+    41                                               				else 
+    42              1                       1338     					ns = ZERO;
+    43                                               			default: 	ns = IDLE;
+    44                                               		endcase
+    45                                               	end
+    46                                               
+    47              1                       8030     	always @(posedge clk or posedge rst) begin
+    48                                               		if(rst) begin
+    49              1                         42     			cs <= IDLE;
+    50                                               		end
+    51                                               		else begin
+    52              1                       7988     			cs <= ns;
+    53                                               		end
+    54                                               	end
+    55                                               
+    56              1                       6371     	always @(posedge clk or posedge rst) begin
+    57                                               		if(rst) begin
+    58              1                         42     			users_count <= 0;
+    59                                               		end
+    60                                               		else begin
+    61                                               			if (cs == STORE)
+    62              1                       1335     				users_count <= users_count + 1;
+    63                                               		end
+    64                                               	end
+    65                                               
+    66              1                       6341     	assign y = (cs == STORE)? 1:0;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         36        36         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /FSM_010_tb/uut --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                               clk           1           1                              100.00 
+                                           cs[1-0]           1           1                              100.00 
+                                           ns[1-0]           1           1                              100.00 
+                                               rst           1           1                              100.00 
+                                  users_count[9-0]           1           1                              100.00 
+                                                 x           1           1                              100.00 
+                                                 y           1           1                              100.00 
+
+Total Node Count     =         18 
+Toggled Node Count   =         18 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (36 of 36 bins)
+
+=================================================================================
+=== Instance: /FSM_010_tb
+=== Design Unit: work.FSM_010_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       2         2         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/FSM_010_tb/#ublk#36765330#37/immed__38
+                     FSM_010_tb.sv(38)                  0          1
+/FSM_010_tb/#ublk#36765330#45/immed__46
+                     FSM_010_tb.sv(46)                  0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        23        21         2    91.30%
+
+================================Branch Details================================
+
+Branch Coverage for instance /FSM_010_tb
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FSM_010_tb.sv
+------------------------------------CASE Branch------------------------------------
+    59                                     11000     Count coming in to CASE
+    60              1                       1590     			IDLE: 
+    65              1                       6122     			ZERO:
+    70              1                       1951     			ONE: 
+    75              1                       1337     			STORE: 
+    80              1                    ***0***     			default: 	ns = IDLE;
+Branch totals: 4 hits of 5 branches = 80.00%
+
+------------------------------------IF Branch------------------------------------
+    61                                      1590     Count coming in to IF
+    61              1                        502     				if (fsm_obj.x)
+    63              1                       1088     				else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    66                                      6122     Count coming in to IF
+    66              1                       1955     				if (fsm_obj.x)
+    68              1                       4167     				else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    71                                      1951     Count coming in to IF
+    71              1                        610     				if (fsm_obj.x)
+    73              1                       1341     				else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    76                                      1337     Count coming in to IF
+    76              1                        460     				if (fsm_obj.x)
+    78              1                        877     				else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    84                                     11000     Count coming in to IF
+    84              1                         20                 if(fsm_obj.rst) begin
+    88              1                      10980                 else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    90                                     10980     Count coming in to IF
+    90              1                       1338                     fsm_obj.users_count_exp =  (cs == STORE) ? fsm_obj.users_count_exp + 1 : fsm_obj.users_count_exp;
+    90              2                       9642                     fsm_obj.users_count_exp =  (cs == STORE) ? fsm_obj.users_count_exp + 1 : fsm_obj.users_count_exp;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    103                                    11000     Count coming in to IF
+    103             1                      10980             if (!fsm_obj2.rst) begin
+    112             1                         20             end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    105                                    10980     Count coming in to IF
+    105             1                       3289                 if ((fsm_obj2.y_exp !== y) || (fsm_obj2.users_count_exp !== users_count)) begin
+    108             1                       7691                 end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    119                                       21     Count coming in to IF
+    119             1                    ***0***                 if ((y !== 0) || (users_count !== 0)) begin
+    122             1                         21                 end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       5         2         3    40.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /FSM_010_tb --
+
+  File FSM_010_tb.sv
+----------------Focused Condition View-------------------
+Line       90 Item    1  (cs == STORE)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+  (cs == STORE)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (cs == STORE)_0       -                             
+  Row   2:          1  (cs == STORE)_1       -                             
+
+----------------Focused Condition View-------------------
+Line       105 Item    1  ((fsm_obj2.y_exp !== y) || (fsm_obj2.users_count_exp !== users_count))
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+                                  Input Term   Covered  Reason for no coverage   Hint
+                                 -----------  --------  -----------------------  --------------
+                      (fsm_obj2.y_exp !== y)         Y
+  (fsm_obj2.users_count_exp !== users_count)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                                    Non-masking condition(s)      
+ ---------  ---------  --------------------                          -------------------------     
+  Row   1:          1  (fsm_obj2.y_exp !== y)_0                      ~(fsm_obj2.users_count_exp !== users_count)
+  Row   2:          1  (fsm_obj2.y_exp !== y)_1                      -                             
+  Row   3:          1  (fsm_obj2.users_count_exp !== users_count)_0  ~(fsm_obj2.y_exp !== y)       
+  Row   4:    ***0***  (fsm_obj2.users_count_exp !== users_count)_1  ~(fsm_obj2.y_exp !== y)       
+
+----------------Focused Condition View-------------------
+Line       119 Item    1  ((y !== 1'b0) || (users_count !== 0))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+           Input Term   Covered  Reason for no coverage   Hint
+          -----------  --------  -----------------------  --------------
+         (y !== 1'b0)         N  '_1' not hit             Hit '_1'
+  (users_count !== 0)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target             Non-masking condition(s)      
+ ---------  ---------  --------------------   -------------------------     
+  Row   1:          1  (y !== 1'b0)_0         ~(users_count !== 0)          
+  Row   2:    ***0***  (y !== 1'b0)_1         -                             
+  Row   3:          1  (users_count !== 0)_0  ~(y !== 1'b0)                 
+  Row   4:    ***0***  (users_count !== 0)_1  ~(y !== 1'b0)                 
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      1         1         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /FSM_010_tb --
+
+  File FSM_010_tb.sv
+----------------Focused Expression View-----------------
+Line       92 Item    1  (cs == ONE)
+Expression totals: 1 of 1 input term covered = 100.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (cs == ONE)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (cs == ONE)_0         -                             
+  Row   2:          1  (cs == ONE)_1         -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      49        46         3    93.87%
+
+================================Statement Details================================
+
+Statement Coverage for instance /FSM_010_tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FSM_010_tb.sv
+    3                                                module FSM_010_tb();
+    4                                                
+    5                                                    //1- Delcare local wir and reg
+    6                                                    logic clk, rst, x;
+    7                                                	logic y;
+    8                                                	logic [9:0] users_count;
+    9                                                
+    10              1                          1         fsm_transaction fsm_obj = new();
+    11                                               
+    12                                                   integer error_count, correct_count;
+    13                                               
+    14                                                   //2- Instantiate the module under test
+    15                                                   FSM_010 uut(
+    16                                                       clk, 
+    17                                                       rst, 
+    18                                                       x, 
+    19                                                       y, 
+    20                                                       users_count);
+    21                                               
+    22                                                   //3- Generate clock
+    23                                                   initial begin
+    24              1                          1             clk = 1'b0;
+    25              1                          1             forever #5 clk = ~clk;
+    25              2                      22003     
+    25              3                      22002     
+    26                                                   end
+    27                                               
+    28                                                   //4- Stimulus generation
+    29                                                   initial begin
+    30              1                          1             error_count = 0;
+    31              1                          1             correct_count = 0;
+    32                                               
+    33                                                       // Assert reset
+    34              1                          1             assert_reset();
+    35                                               
+    36                                                       // Generate random transactions
+    37              1                       1000             repeat (1000) begin
+    38                                                           assert(fsm_obj.randomize());
+    39              1                       1000                 rst = fsm_obj.rst;
+    40              1                       1000                 x = fsm_obj.x;
+    41              1                       1000                 check_result(fsm_obj);
+    42                                                       end
+    43                                               
+    44                                                       // Generate random transactions
+    45              1                      10000             repeat (10000) begin
+    46                                                           assert(fsm_obj.randomize());
+    47              1                      10000                 fsm_obj.rst = 0; // Ensure reset is deasserted for this part of the test
+    48              1                      10000                 rst = 0;
+    49              1                      10000                 x = fsm_obj.x;
+    50              1                      10000                 check_result(fsm_obj);
+    51                                                       end
+    52                                               
+    53              1                          1             $display("Total tests: %d, Passed: %d, Failed: %d", error_count + correct_count, correct_count, error_count);
+    54              1                          1             $stop;    
+    55                                                   end
+    56                                               
+    57                                                   task golden_model(input fsm_transaction fsm_obj1);
+    58                                                       state_e cs, ns;
+    59                                                       case (cs)
+    60                                               			IDLE: 
+    61                                               				if (fsm_obj.x)
+    62              1                        502     					ns = IDLE;
+    63                                               				else 
+    64              1                       1088     					ns = ZERO;
+    65                                               			ZERO:
+    66                                               				if (fsm_obj.x)
+    67              1                       1955     					ns = ONE;
+    68                                               				else 
+    69              1                       4167     					ns = ZERO;
+    70                                               			ONE: 
+    71                                               				if (fsm_obj.x)
+    72              1                        610     					ns = IDLE;
+    73                                               				else 
+    74              1                       1341     					ns = STORE;
+    75                                               			STORE: 
+    76                                               				if (fsm_obj.x)
+    77              1                        460     					ns = IDLE;
+    78                                               				else 
+    79              1                        877     					ns = ZERO;
+    80              1                    ***0***     			default: 	ns = IDLE;
+    81                                               		endcase
+    82                                               
+    83              1                      11000             @(posedge clk);
+    84                                                           if(fsm_obj.rst) begin
+    85              1                         20                     cs = IDLE;
+    86              1                         20                     fsm_obj.users_count_exp = 0;
+    87                                                           end
+    88                                                           else begin
+    89              1                      10980                     cs = ns;
+    90              1                      10980                     fsm_obj.users_count_exp =  (cs == STORE) ? fsm_obj.users_count_exp + 1 : fsm_obj.users_count_exp;
+    91                                                           end
+    92              1                      11000             fsm_obj.y_exp = (cs == ONE) ? 1'b1 : 1'b0;
+    93                                                   endtask
+    94                                               
+    95                                                   task assert_reset;
+    96              1                          1             rst = 1'b1;
+    97              1                          1             check_reset();
+    98              1                          1             rst = 1'b0;
+    99                                                   endtask 
+    100                                              
+    101                                                  task check_result(input fsm_transaction fsm_obj2);
+    102             1                      11000             golden_model(fsm_obj2);
+    103                                                      if (!fsm_obj2.rst) begin
+    104             1                      10980                 @(negedge clk);
+    105                                                          if ((fsm_obj2.y_exp !== y) || (fsm_obj2.users_count_exp !== users_count)) begin
+    106             1                       3289                     error_count += 1;
+    107             1                       3289                     $display("Test failed for y.Expected: %b, Y: %b", fsm_obj2.y_exp, y);
+    108                                                          end else begin
+    109             1                       7691                     correct_count += 1;
+    110             1                       7691                     $display("Test passed for y.Expected: %b, Y: %b", fsm_obj2.y_exp, y);
+    111                                                          end
+    112                                                      end else begin
+    113             1                         20                 check_reset();    
+    114                                                      end
+    115                                                  endtask;
+    116                                              
+    117                                                  task check_reset;
+    118             1                         21              @(negedge clk);
+    119                                                          if ((y !== 0) || (users_count !== 0)) begin
+    120             1                    ***0***                     error_count += 1;
+    121             1                    ***0***                     $display("Reset test failed. Expected y: 0, y: %b, Expected users_count: 0, users_count: %d", y, users_count);
+    122                                                          end else begin
+    123             1                         21                     correct_count += 1;
+    124             1                         21                     $display("Reset test passed. Expected y: 0, y: %b, Expected users_count: 0, users_count: %d", y, users_count);
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        156        76        80    48.71%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /FSM_010_tb --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                               clk           1           1                              100.00 
+                               correct_count[0-11]           1           1                              100.00 
+                                 correct_count[12]           0           1                               50.00 
+                              correct_count[13-31]           0           0                                0.00 
+                                 error_count[0-10]           1           1                              100.00 
+                                   error_count[11]           0           1                               50.00 
+                                error_count[12-31]           0           0                                0.00 
+                                               rst           1           1                              100.00 
+                                  users_count[0-9]           1           1                              100.00 
+                                                 x           1           1                              100.00 
+                                                 y           1           1                              100.00 
+
+Total Node Count     =         78 
+Toggled Node Count   =         37 
+Untoggled Node Count =         41 
+
+Toggle Coverage      =      48.71% (76 of 156 bins)
+
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/FSM_010_tb/#ublk#36765330#37/immed__38
+                     FSM_010_tb.sv(38)                  0          1
+/FSM_010_tb/#ublk#36765330#45/immed__46
+                     FSM_010_tb.sv(46)                  0          1
+
+Total Coverage By Instance (filtered view): 88.27%
+

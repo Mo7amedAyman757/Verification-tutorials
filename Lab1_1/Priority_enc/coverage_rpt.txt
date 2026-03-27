@@ -1,0 +1,270 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /priority_enc_tb/uut
+=== Design Unit: work.priority_enc
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         7         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /priority_enc_tb/uut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File priority_enc.v
+------------------------------------IF Branch------------------------------------
+    10                                         8     Count coming in to IF
+    10              1                          2       if (rst)
+    12              1                          6       else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    13                                         6     Count coming in to CASE
+    14              1                          1       		4'b1000: Y <= 0;
+    15              1                          1       		4'bX100: Y <= 1;
+    16              1                          1       		4'bXX10: Y <= 2;
+    17              1                          1       		4'bXXX1: Y <= 3;
+                                               2     All False Count
+Branch totals: 5 hits of 5 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       7         7         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /priority_enc_tb/uut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File priority_enc.v
+    1                                                module priority_enc (
+    2                                                input  clk,
+    3                                                input  rst,
+    4                                                input  [3:0] D,	
+    5                                                output  reg [1:0] Y,	
+    6                                                output reg valid
+    7                                                );
+    8                                                
+    9               1                          8     always @(posedge clk) begin
+    10                                                 if (rst)
+    11              1                          2          Y <= 2'b0;
+    12                                                 else
+    13                                                 	casex (D)
+    14              1                          1       		4'b1000: Y <= 0;
+    15              1                          1       		4'bX100: Y <= 1;
+    16              1                          1       		4'bXX10: Y <= 2;
+    17              1                          1       		4'bXXX1: Y <= 3;
+    18                                                 	endcase
+    19              1                          8       	valid <= (~|D)? 1'b0: 1'b1;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         16        16         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /priority_enc_tb/uut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                            D[0-3]           1           1      100.00 
+                                            Y[1-0]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                               rst           1           1      100.00 
+
+Total Node Count     =          8 
+Toggled Node Count   =          8 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (16 of 16 bins)
+
+=================================================================================
+=== Instance: /priority_enc_tb
+=== Design Unit: work.priority_enc_tb
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /priority_enc_tb
+NOTE: The modification timestamp for source file 'priority_enc_tb.sv' has been altered since compilation.
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File priority_enc_tb.sv
+------------------------------------IF Branch------------------------------------
+    35                                         8     Count coming in to IF
+    35              1                          2             if (expected_result !== Y_tb | expected_validation !== valid_tb) begin
+    39              1                          6             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /priority_enc_tb --
+NOTE: The modification timestamp for source file 'priority_enc_tb.sv' has been altered since compilation.
+
+  File priority_enc_tb.sv
+----------------Focused Condition View-------------------
+Line       35 Item    1  ((expected_result !== Y_tb) | (expected_validation !== valid_tb))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+                          Input Term   Covered  Reason for no coverage   Hint
+                         -----------  --------  -----------------------  --------------
+          (expected_result !== Y_tb)         Y
+  (expected_validation !== valid_tb)         Y
+
+     Rows:       Hits  FEC Target                            Non-masking condition(s)      
+ ---------  ---------  --------------------                  -------------------------     
+  Row   1:          1  (expected_result !== Y_tb)_0          ~(expected_validation !== valid_tb)
+  Row   2:          1  (expected_result !== Y_tb)_1          ~(expected_validation !== valid_tb)
+  Row   3:          1  (expected_validation !== valid_tb)_0  ~(expected_result !== Y_tb)   
+  Row   4:          1  (expected_validation !== valid_tb)_1  ~(expected_result !== Y_tb)   
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      37        37         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /priority_enc_tb --
+NOTE: The modification timestamp for source file 'priority_enc_tb.sv' has been altered since compilation.
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File priority_enc_tb.sv
+    1                                                module priority_enc_tb;
+    2                                                
+    3                                                    // Declare local wire and reg
+    4                                                    reg clk_tb;
+    5                                                    reg reset_tb;
+    6                                                    reg [3:0] D_tb;
+    7                                                    wire [1:0] Y_tb;
+    8                                                    wire valid_tb;
+    9                                                
+    10                                                   // Instantiate the module under test
+    11                                                   priority_enc uut(
+    12                                                       clk_tb,
+    13                                                       reset_tb,
+    14                                                       D_tb,
+    15                                                       Y_tb,
+    16                                                       valid_tb
+    17                                                   );
+    18                                               
+    19                                                   // define local parameter for tracking the functionality
+    20                                                   int  count_correct, count_error;
+    21                                               
+    22                                                    // define clock
+    23                                                   localparam T = 20;
+    24                                               
+    25                                                   always begin
+    26              1                          9             clk_tb = 1'b0;
+    27              1                          9             #(T/2);
+    28              1                          9             clk_tb = 1'b1;
+    29              1                          9             #(T/2);
+    30                                                   end
+    31                                               
+    32                                                    // define task for checking
+    33                                                   task checking(int expected_result,expected_validation);
+    34              1                          8             @(negedge clk_tb);
+    35                                                       if (expected_result !== Y_tb | expected_validation !== valid_tb) begin
+    36              1                          2                 count_error += 1;            
+    37              1                          2                 $display("A = %d, expected_out = %d, Actual_out = %d, expected_valid = %d, Actual_valid = %d",D_tb,expected_result,Y_tb,expected_validation,valid_tb);
+    38                                                       end
+    39                                                       else begin
+    40              1                          6                 count_correct += 1;
+    41                                                       end
+    42                                                   endtask
+    43                                               
+    44                                                   // define task for reset functionality
+    45                                                   task assert_reset;
+    46              1                          2             reset_tb = 1'b1;
+    47              1                          2             checking(2'b00,1'b0);
+    48              1                          2             reset_tb = 1'b0;
+    49                                                   endtask
+    50                                               
+    51                                                   initial begin
+    52              1                          1             clk_tb = 1'b0; 
+    53              1                          1             reset_tb = 1'b0;
+    54              1                          1             D_tb = 4'b0;
+    55              1                          1             checking(2'bxx,1'b0);
+    56                                               
+    57              1                          1             #10;
+    58              1                          1             assert_reset;   
+    59              1                          1             #10;
+    60              1                          1             assert_reset;
+    61                                               
+    62              1                          1             #10;
+    63              1                          1             D_tb = 4'b0001;
+    64              1                          1             checking(2'b11,1'b1);
+    65                                               
+    66              1                          1             #10;
+    67              1                          1             D_tb = 4'b0100;
+    68              1                          1             checking(2'b01,1'b1);
+    69                                               
+    70              1                          1             #10;
+    71              1                          1             D_tb = 4'b1000;
+    72              1                          1             checking(2'b00,1'b1);
+    73                                               
+    74              1                          1             #10;
+    75              1                          1             D_tb = 4'b0010; 
+    76              1                          1             checking(2'b10,1'b1);
+    77                                               
+    78              1                          1             #10;
+    79              1                          1             D_tb = 4'b0000; 
+    80              1                          1             checking(2'b10,1'b0);
+    81                                                       
+    82              1                          1             #10;
+    83              1                          1             $$display("Correct count = %d and Error count = %d",count_correct,count_error);
+    84              1                          1             $stop;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        146        26       120    17.80%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /priority_enc_tb --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                         D_tb[0-3]           1           1      100.00 
+                                         Y_tb[0-1]           1           1      100.00 
+                                            clk_tb           1           1      100.00 
+                                count_correct[0-1]           1           1      100.00 
+                                  count_correct[2]           0           1       50.00 
+                               count_correct[3-31]           0           0        0.00 
+                                    count_error[0]           1           1      100.00 
+                                    count_error[1]           0           1       50.00 
+                                 count_error[2-31]           0           0        0.00 
+                                          reset_tb           1           1      100.00 
+                                          valid_tb           1           1      100.00 
+
+Total Node Count     =         73 
+Toggled Node Count   =         12 
+Untoggled Node Count =         61 
+
+Toggle Coverage      =      17.80% (26 of 146 bins)
+
+
+Total Coverage By Instance (filtered view): 81.48%
+

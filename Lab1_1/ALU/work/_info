@@ -1,0 +1,78 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/questasim64_2021.1/examples
+T_opt
+!s110 1773148994
+V:ncGPShFfFAiN2Fi<j<Al3
+04 6 4 work ALU_tb fast 0
+=1-902e16e4070c-69b01b41-309-3b94
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vALU_4_bit
+Z2 !s110 1773148993
+!i10b 1
+!s100 F`Y[W>e:FM630FfaX]=9[1
+IXVfO`RA`T82@IZmbEWJ@41
+Z3 dD:/Career tracks/Digial_IC/08-Verification/Lab1_1/ALU
+w1772842450
+8ALU.v
+FALU.v
+!i122 9
+L0 1 38
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z6 !s108 1773148993.000000
+Z7 !s107 ALU_tb.sv|ALU.v|
+Z8 !s90 -reportprogress|300|ALU.v|ALU_tb.sv|+cover|-covercells|
+!i113 0
+Z9 !s102 +cover -covercells
+Z10 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@a@l@u_4_bit
+vALU_tb
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+!i10b 1
+!s100 E[bHCbSPQo>221S<8::bo3
+I?DC3IWI3[?n>@dOzoKO9d1
+S1
+R3
+w1772934135
+8ALU_tb.sv
+FALU_tb.sv
+!i122 9
+L0 1 169
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@a@l@u_tb

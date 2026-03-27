@@ -1,0 +1,84 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Career tracks/Digial_IC/08-Verification/Day2
+T_opt
+!s110 1774287234
+V_KX12AV5Xl8]XGFkf2l@Y1
+04 13 4 work Adder_4bit_tb fast 0
+=1-902e16e4070c-69c17981-3d2-62b8
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R1
+vAdder_4bit_tb
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1774287307
+!i10b 1
+!s100 LY[Li_CN_zojnIVCF5]2h0
+ITTn:ADCCXJ^cm0Db3@eAL0
+S1
+Z4 dD:/Career tracks/Digial_IC/08-Verification/Extra/Adder_4bit
+w1774287114
+8Adder_4bit_tb.sv
+FAdder_4bit_tb.sv
+!i122 25
+L0 1 71
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1774287307.000000
+!s107 Adder_4bit_tb.sv|Adder_4bit.v|
+Z8 !s90 -reportprogress|300|Adder_4bit.v|Adder_4bit_tb.sv|+cover|-covercells|
+!i113 0
+Z9 !s102 +cover -covercells
+Z10 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@adder_4bit_tb
+vfull_adder
+R3
+!i10b 1
+!s100 ec1WZ?X`hYke`9i5A28;h3
+In_59fJ_W3oPCFb]?z3OK?3
+R4
+w1774276931
+8Adder_4bit.v
+FAdder_4bit.v
+!i122 25
+L0 1 16
+R5
+R6
+r1
+!s85 0
+31
+R7
+Z11 !s107 Adder_4bit_tb.sv|Adder_4bit.v|
+R8
+!i113 0
+R9
+R10
+R2
