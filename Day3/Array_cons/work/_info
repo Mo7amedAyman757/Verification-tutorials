@@ -1,0 +1,107 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Career tracks/Digial_IC/09-Verification/Lab2_2/FSM_010
+T_opt
+!s110 1775531742
+VURCKz07b?S`oU^SOjcD7S1
+04 5 4 work Image fast 0
+=1-902e16e4070c-69d476de-264-76c8
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R1
+vImage
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 DXx4 work 6 my_pkg 0 22 HmVfH<AEn4SgijQz8MHSA0
+DXx4 work 13 Image_sv_unit 0 22 ie8BTYh^omcG3G]BdmQ953
+Z5 !s110 1775532200
+VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 EA8R=XZ7;_7^N<75@@Mlc3
+IXI;;JUa=hAfkKoTSJzm1D1
+!s105 Image_sv_unit
+S1
+Z6 dD:/Career tracks/Digial_IC/09-Verification/Day3/Array_cons
+Z7 w1775531732
+Z8 8Image.sv
+Z9 FImage.sv
+!i122 5
+L0 3 10
+Z10 OL;L;2021.1;73
+31
+Z11 !s108 1775532200.000000
+!s107 Image.sv|my_pkg.sv|
+Z12 !s90 -reportprogress|300|my_pkg.sv|Image.sv|+cover|
+!i113 0
+Z13 !s102 +cover
+Z14 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@image
+XImage_sv_unit
+R3
+R4
+R5
+Vie8BTYh^omcG3G]BdmQ953
+r1
+!s85 0
+!i10b 1
+!s100 mQ;>5Sb^I0F0doYibbk[m0
+Iie8BTYh^omcG3G]BdmQ953
+!i103 1
+S1
+R6
+R7
+R8
+R9
+!i122 5
+Z15 L0 1 0
+R10
+31
+R11
+Z16 !s107 Image.sv|my_pkg.sv|
+R12
+!i113 0
+R13
+R14
+R2
+n@image_sv_unit
+Xmy_pkg
+R3
+R5
+!i10b 1
+!s100 9d^>Z=A4Z2dU^joS7TPZ42
+IHmVfH<AEn4SgijQz8MHSA0
+S1
+R6
+w1775531692
+8my_pkg.sv
+Fmy_pkg.sv
+!i122 5
+R15
+VHmVfH<AEn4SgijQz8MHSA0
+R10
+r1
+!s85 0
+31
+R11
+R16
+R12
+!i113 0
+R13
+R14
+R2

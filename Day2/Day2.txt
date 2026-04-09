@@ -1,0 +1,42 @@
+This is detailed instructions for the lab you will be working on, and I am sharing it here in advance so that you can easily access it during the session.
+
+*Class Exercise slide 114:*
+- In a new file, create a package named pkg that has a class MemTrans with 2 data members (data_in and address)
+- Constructor with default arguments to 0 to initialize the data members
+- void function print to display in hexa the data member values
+- In a new file, import the package and create a module, inside the module create 2 objects of the above class and do as instructed in the initial block
+- Open QuestaSim, compile both file and run simulation on the module and check the printed messages in the transcript
+
+*Constraint Exercise 1 slide 128:*
+- In a new file, create a package named class_pkg that has a class Exercise2 with 2 data members (data and address)
+- Add 2 constraint blocks as in the slide
+- Add a void print function to print the data members
+- In a new file, import the package and create a module, then create an object in initial block and then randomize and print the datamembers 20 times using randomize() function
+
+*Constraint Exercise 2 slide 137:*
+### First File: Package (my_pkg)  
+1. Create a package named my_pkg.  
+2. Declare three parameters:  
+   - HEIGHT = 10  
+   - WIDTH = 10  
+   - PERCENT_WHITE = 20  
+3. Define an enumerated type colors_t with two values:  
+   - BLACK  
+   - WHITE  
+4. Create a class named screen:  
+   - Declare a 2D randomized unpacked array pixels of type colors_t, with dimensions [HEIGHT][WIDTH].  
+   - Define a constraint block (colors_c) to enforce a distribution:  
+     - WHITE should appear PERCENT_WHITE% of the time.  
+     - BLACK should appear (100 - PERCENT_WHITE)% of the time.  
+   - Implement a print_screen function (void):  
+     - Iterates over pixels.  
+     - Prints each row of the array.  
+
+---
+
+### Second File: Module (image)  
+1. Import the package (my_pkg).  
+2. Create a screen class object.  
+3. Use an initial block to:  
+   - Randomize the object.  
+   - Call print_screen() to display the 2D array.

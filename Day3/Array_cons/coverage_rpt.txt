@@ -1,0 +1,89 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /Image
+=== Design Unit: work.Image
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/Image/#ublk#5257173#6/immed__8
+                     Image.sv(8)                        0          1
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       2         2         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /Image --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Image.sv
+    3                                                module Image;
+    4                                                
+    5                                                    screen my_screen;
+    6                                                    initial begin
+    7               1                          1             my_screen = new();
+    8                                                        assert (my_screen.randomize());
+    9               1                          1             my_screen.print_screen();
+
+
+=================================================================================
+=== Instance: /my_pkg
+=== Design Unit: work.my_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       2         2         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /my_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File my_pkg.sv
+    1                                                package  my_pkg;
+    2                                                
+    3                                                    // This package contains the definition of the screen class and its associated data types and parameters.
+    4                                                    parameter HEIGHT = 10;
+    5                                                    parameter WIDTH = 10;
+    6                                                    parameter PERCENT_WHITE = 20;
+    7                                                
+    8                                                    // Define an enumeration for the color of the pixels, which can be either BLACK or WHITE.
+    9                                                    typedef enum {BLACK, WHITE} color_t;
+    10                                               
+    11                                                   class screen;
+    12                                               
+    13                                                       // Declare a 2D array of pixels, where each pixel is of type color_t. The dimensions of the array are defined by HEIGHT and WIDTH.
+    14                                                       rand color_t pixel [HEIGHT] [WIDTH];
+    15                                               
+    16                                                       // Define a constraint block named colors_c to specify the distribution of pixel colors in the array.
+    17                                                       constraint colors_c{
+    18                                                           foreach(pixel[i,j])
+    19                                                               pixel[i][j] dist{BLACK := 100-PERCENT_WHITE, WHITE := PERCENT_WHITE};
+    20                                                       }
+    21                                                       // Define a function named print_screen to display the contents of the pixel array. It iterates through each row of the array and prints the row number along with the corresponding pixel values.
+    22                                                       function void print_screen();
+    23              1                         11                 foreach(pixel[i])
+    24              1                         10                     $display("Row Number %0d = %0p",i,pixel[i]);
+
+
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/Image/#ublk#5257173#6/immed__8
+                     Image.sv(8)                        0          1
+
+Total Coverage By Instance (filtered view): 100.00%
+

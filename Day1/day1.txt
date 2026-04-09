@@ -1,0 +1,31 @@
+This is detailed instructions for the lab you will be working on, and I am sharing it here in advance so that you can easily access it during the session.
+
+*Setup:*
+•	Declare the stimulus signals and the response signal
+•	Declare error_count and correct_count as integer.
+→ These act as counters for correct vs. errored outputs.
+
+•	Declare localparams MAXPOS and MAXNEG
+•	Instantiate the design under test (adder).
+•	Write a clock generator block
+
+*Initial block sequence:*
+1.	Initialize all declared variables (A, B, counters).
+2.	Call the task assert_reset (defined below).
+3.	Apply 9 directed test cases: combinations of MAXPOS, MAXNEG, and ZERO.
+o	After each assignment of A and B, call check_result with the expected sum.
+4.	At the end of the test, display a message to print the value of the correct and error counters.
+
+*Tasks:*
+1.	check_result task (self-checking task)
+o	Takes one argument: the expected sum.
+o	Wait for negedge clk (to allow DUT output to update after posedge).
+o	Use an if condition:
+* If expected_result the same as the DUT output then increment correct_count.
+* Else: display an error message (showing A, B, expected, and actual values) and increment error_count.
+
+2.	assert_reset
+o	No arguments.
+o	Assert reset = 1.
+o	Call check_result to confirm the DUT output clears to 0 during reset.
+o	Deassert reset = 0.
