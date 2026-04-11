@@ -1,0 +1,296 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /DFF_tb1/uut
+=== Design Unit: work.dff
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         3         3         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /DFF_tb1/uut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff.v
+------------------------------------IF Branch------------------------------------
+    7                                         36     Count coming in to IF
+    7               1                          3        if (rst)
+    11              1                         29              if (en)
+                                               4     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /DFF_tb1/uut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff.v
+    1                                                module dff(clk, rst, d, q, en);
+    2                                                parameter USE_EN = 1;
+    3                                                input clk, rst, d, en;
+    4                                                output reg q;
+    5                                                
+    6               1                         36     always @(posedge clk) begin 
+    7                                                   if (rst)
+    8               1                          3           q <= 0;
+    9                                                   else
+    10                                                     if(USE_EN) begin
+    11                                                        if (en)
+    12              1                         29                 q <= d;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10        10         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /DFF_tb1/uut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+                                                 d           1           1      100.00 
+                                                en           1           1      100.00 
+                                                 q           1           1      100.00 
+                                               rst           1           1      100.00 
+
+Total Node Count     =          5 
+Toggled Node Count   =          5 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (10 of 10 bins)
+
+=================================================================================
+=== Instance: /DFF_tb1
+=== Design Unit: work.DFF_tb1
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/DFF_tb1/#ublk#145517073#39/immed__40
+                     DFF_tb1.sv(40)                     0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         5         2    71.42%
+
+================================Branch Details================================
+
+Branch Coverage for instance /DFF_tb1
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File DFF_tb1.sv
+------------------------------------IF Branch------------------------------------
+    59                                         1     Count coming in to IF
+    59              1                    ***0***             if (q !== 0) begin
+    63              1                          1             else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    72                                        50     Count coming in to IF
+    72              1                    ***0***             if (q !== q_exp)    
+    75              1                         50         else
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    81                                        50     Count coming in to IF
+    81              1                          2             if (DFF_obj.rst) begin
+    85              1                         44                     if (DFF_obj.en) begin
+    87              1                          4                     end else begin
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /DFF_tb1 --
+
+  File DFF_tb1.sv
+----------------Focused Condition View-------------------
+Line       59 Item    1  (q !== 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (q !== 1'b0)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (q !== 1'b0)_0        -                             
+  Row   2:    ***0***  (q !== 1'b0)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       72 Item    1  (q !== q_exp)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+     Input Term   Covered  Reason for no coverage   Hint
+    -----------  --------  -----------------------  --------------
+  (q !== q_exp)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (q !== q_exp)_0       -                             
+  Row   2:    ***0***  (q !== q_exp)_1       -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      35        32         3    91.42%
+
+================================Statement Details================================
+
+Statement Coverage for instance /DFF_tb1 --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File DFF_tb1.sv
+    3                                                module DFF_tb1;
+    4                                                
+    5                                                    DFF_transaction tr;
+    6                                                
+    7                                                    parameter USE_EN = 1;
+    8                                                    // declare local wire and reg
+    9                                                    logic clk, rst, d, en;
+    10                                                   wire q;
+    11                                                   bit q_exp;
+    12                                                   
+    13                                                   int correct_count, error_count;
+    14                                                   // instantiate the module under test
+    15                                                   dff  #(.USE_EN(USE_EN)) uut(
+    16                                                       clk, 
+    17                                                       rst, 
+    18                                                       d, 
+    19                                                       q, 
+    20                                                       en);
+    21                                               
+    22                                                   // general stimuli
+    23                                                   initial begin
+    24              1                          1             clk = 0;
+    25              1                          1             forever #5 clk = ~clk;
+    25              2                        122     
+    25              3                        121     
+    26                                                   end
+    27                                               
+    28                                                   initial begin
+    29              1                          1             tr = new();
+    30              1                          1             correct_count = 0;
+    31              1                          1             error_count = 0;
+    32              1                          1             clk = 0;    
+    33              1                          1             rst = 1'b0;
+    34              1                          1             d = 0;
+    35              1                          1             en = 0;
+    36                                                   
+    37              1                          1             reset_assert;
+    38                                               
+    39              1                         50             repeat(50) begin
+    40                                                           assert(tr.randomize());
+    41              1                         50                 d = tr.d;
+    42              1                         50                 en = tr.en;
+    43              1                         50                 rst = tr.rst;
+    44              1                         50                 check_result(tr);
+    45                                                       end
+    46                                                       
+    47              1                          1             $display("correct_count = %0d, error_count = %0d", correct_count, error_count);
+    48              1                          1           #100 $stop;
+    48              2                          1     
+    49                                                   end
+    50                                               
+    51                                                   task reset_assert;
+    52              1                          1             rst = 1'b1;
+    53              1                          1             check_reset;
+    54              1                          1             rst = 1'b0;
+    55                                                   endtask
+    56                                               
+    57                                                   task check_reset;
+    58              1                          1             @(negedge clk);
+    59                                                       if (q !== 0) begin
+    60              1                    ***0***                 $display("FAIL reset assertion q=%b expected=0", q);
+    61              1                    ***0***                 error_count++;
+    62                                                       end
+    63                                                       else begin
+    64              1                          1                 $display("PASS reset assertion q=%b", q);
+    65              1                          1                 correct_count++;
+    66                                                       end
+    67                                                   endtask
+    68                                               
+    69                                                   task check_result(DFF_transaction DFF_obj);  
+    70              1                         50             golden_model(DFF_obj);
+    71              1                         50             @(negedge clk);
+    72                                                       if (q !== q_exp)    
+    73              1                    ***0***                 $display("FAIL d=%b en=%b q=%b expected=%b",
+    74                                                                 d,en,q,q_exp);
+    75                                                   else
+    76              1                         50             $display("PASS d=%b en=%b q=%b",
+    77                                                                 d,en,q);
+    78                                                   endtask
+    79                                               
+    80                                                   task golden_model(DFF_transaction DFF_obj);
+    81                                                       if (DFF_obj.rst) begin
+    82              1                          2                 q_exp = 0;
+    83                                                       end else  begin 
+    84                                                           if (USE_EN) begin
+    85                                                               if (DFF_obj.en) begin
+    86              1                         44                         q_exp = DFF_obj.d;
+    87                                                               end else begin
+    88              1                          4                         q_exp = q; // hold state
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        140        13       127     9.28%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /DFF_tb1 --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+                                  correct_count[0]           0           1       50.00 
+                               correct_count[1-31]           0           0        0.00 
+                                                 d           1           1      100.00 
+                                                en           1           1      100.00 
+                                 error_count[0-31]           0           0        0.00 
+                                                 q           1           1      100.00 
+                                             q_exp           1           1      100.00 
+                                               rst           1           1      100.00 
+
+Total Node Count     =         70 
+Toggled Node Count   =          6 
+Untoggled Node Count =         64 
+
+Toggle Coverage      =       9.28% (13 of 140 bins)
+
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/DFF_tb1/#ublk#145517073#39/immed__40
+                     DFF_tb1.sv(40)                     0          1
+
+Total Coverage By Instance (filtered view): 57.48%
+
