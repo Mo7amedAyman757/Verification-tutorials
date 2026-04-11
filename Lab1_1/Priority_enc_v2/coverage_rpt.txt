@@ -1,0 +1,341 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /priority_enc_tb/uut
+=== Design Unit: work.priority_enc
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         7         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /priority_enc_tb/uut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File priority_enc.v
+------------------------------------IF Branch------------------------------------
+    10                                        98     Count coming in to IF
+    10              1                          1       if (rst)
+    12              1                         97       else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    13                                        97     Count coming in to CASE
+    14              1                         15       		4'b1000: Y <= 0;
+    15              1                         10       		4'bX100: Y <= 1;
+    16              1                         17       		4'bXX10: Y <= 2;
+    17              1                         53       		4'bXXX1: Y <= 3;
+    18              1                          2     		default: Y <= 0;
+Branch totals: 5 hits of 5 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       8         8         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /priority_enc_tb/uut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File priority_enc.v
+    1                                                module priority_enc (
+    2                                                input  clk,
+    3                                                input  rst,
+    4                                                input  [3:0] D,	
+    5                                                output  reg [1:0] Y,	
+    6                                                output reg valid
+    7                                                );
+    8                                                
+    9               1                         98     always @(posedge clk) begin
+    10                                                 if (rst)
+    11              1                          1          Y <= 2'b0;
+    12                                                 else
+    13                                                 	casex (D)
+    14              1                         15       		4'b1000: Y <= 0;
+    15              1                         10       		4'bX100: Y <= 1;
+    16              1                         17       		4'bXX10: Y <= 2;
+    17              1                         53       		4'bXXX1: Y <= 3;
+    18              1                          2     		default: Y <= 0;
+    19                                                 	endcase
+    20              1                         98       	valid <= (~|D)? 1'b0: 1'b1;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18        18         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /priority_enc_tb/uut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                            D[0-3]           1           1      100.00 
+                                            Y[1-0]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                               rst           1           1      100.00 
+                                             valid           1           1      100.00 
+
+Total Node Count     =          9 
+Toggled Node Count   =          9 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (18 of 18 bins)
+
+=================================================================================
+=== Instance: /priority_enc_tb
+=== Design Unit: work.priority_enc_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/priority_enc_tb/#ublk#99486242#41/immed__42
+                     priority_enc_tb.sv(42)             0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        13        10         3    76.92%
+
+================================Branch Details================================
+
+Branch Coverage for instance /priority_enc_tb
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File priority_enc_tb.sv
+------------------------------------IF Branch------------------------------------
+    60                                         1     Count coming in to IF
+    60              1                          1             if(Y_exp == 0 && Y == 0) begin
+    63              1                    ***0***             end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    72                                       100     Count coming in to IF
+    72              1                        100             if(!enc_obj1.rst) begin
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    73                                       100     Count coming in to IF
+    73              1                         98                if (Y_exp== Y && Valid_exp == valid) begin
+    77              1                          2                else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    85                                       100     Count coming in to IF
+    85              1                        100             if(!enc_obj2.rst) begin
+    93              1                    ***0***             end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------CASE Branch------------------------------------
+    86                                       100     Count coming in to CASE
+    87              1                         15                     4'b1000: Y_exp = 0;
+    88              1                         10                     4'bX100: Y_exp = 1;
+    89              1                         18                     4'bXX10: Y_exp = 2;
+    90              1                         55                     4'bXXX1: Y_exp = 3;
+                                               2     All False Count
+Branch totals: 5 hits of 5 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       4         1         3    25.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /priority_enc_tb --
+
+  File priority_enc_tb.sv
+----------------Focused Condition View-------------------
+Line       60 Item    1  ((Y_exp == 0) && (Y == 0))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (Y_exp == 0)         N  '_0' not hit             Hit '_0'
+      (Y == 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (Y_exp == 0)_0        -                             
+  Row   2:          1  (Y_exp == 0)_1        (Y == 0)                      
+  Row   3:    ***0***  (Y == 0)_0            (Y_exp == 0)                  
+  Row   4:          1  (Y == 0)_1            (Y_exp == 0)                  
+
+----------------Focused Condition View-------------------
+Line       73 Item    1  ((Y_exp == Y) && (Valid_exp == valid))
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+          (Y_exp == Y)         Y
+  (Valid_exp == valid)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (Y_exp == Y)_0          -                             
+  Row   2:          1  (Y_exp == Y)_1          (Valid_exp == valid)          
+  Row   3:    ***0***  (Valid_exp == valid)_0  (Y_exp == Y)                  
+  Row   4:          1  (Valid_exp == valid)_1  (Y_exp == Y)                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      35        32         3    91.42%
+
+================================Statement Details================================
+
+Statement Coverage for instance /priority_enc_tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File priority_enc_tb.sv
+    3                                                module priority_enc_tb ();
+    4                                                    
+    5                                                    enc_transaction enc_obj;
+    6                                                
+    7                                                    // declare loca inputs and outputs
+    8                                                    logic  clk;
+    9                                                    logic  rst;
+    10                                                   logic [3:0] D;	
+    11                                                   wire [1:0] Y;	
+    12                                                   wire valid;
+    13                                                   bit [1:0] Y_exp;
+    14                                                   bit Valid_exp;
+    15                                               
+    16                                                   // Instantiate the module under test
+    17                                                   priority_enc uut(
+    18                                                       clk,
+    19                                                       rst,
+    20                                                       D,
+    21                                                       Y,
+    22                                                       valid
+    23                                                   );
+    24                                               
+    25                                                   // define local parameter for tracking the functionality
+    26                                                   int  count_correct, count_error;
+    27                                               
+    28                                                   // define clock
+    29                                                   initial begin
+    30              1                          1             clk = 1'b0;
+    31              1                          1             forever #5 clk = ~clk;
+    31              2                        203     
+    31              3                        202     
+    32                                                   end
+    33                                               
+    34                                                   // General stimulus generation using randomization
+    35                                                   initial begin
+    36              1                          1             enc_obj = new;
+    37              1                          1             rst = 1'b0;
+    38              1                          1             D = 4'b0;
+    39              1                          1             #5;
+    40              1                          1             assert_reset;
+    41              1                        100             repeat(100) begin
+    42                                                           assert(enc_obj.randomize());
+    43              1                        100                 rst = enc_obj.rst;
+    44              1                        100                 D = enc_obj.D;
+    45              1                        100                 check_result(enc_obj);
+    46                                                       end
+    47              1                          1                 $display("Total Correct: %d, Total Errors: %d", count_correct, count_error);
+    48              1                          1                 $stop;
+    49                                               
+    50                                                   end
+    51                                               
+    52                                                   task assert_reset;
+    53              1                          1             rst = 1'b1;
+    54              1                          1             check_reset;
+    55              1                          1             rst = 1'b0;
+    56                                                   endtask
+    57                                               
+    58                                                   task check_reset;
+    59              1                          1             @(negedge clk)
+    60                                                       if(Y_exp == 0 && Y == 0) begin
+    61              1                          1                 count_correct += 1;
+    62              1                          1                 $display("Reset Asserted");    
+    63                                                       end else begin
+    64              1                    ***0***                 count_error += 1;
+    65              1                    ***0***                 $display("Reset Failed");        
+    66                                                       end
+    67                                                   endtask
+    68                                               
+    69                                                   task check_result(enc_transaction enc_obj1);
+    70              1                        100             golden_model(enc_obj1);
+    71              1                        100             @(negedge clk)
+    72                                                       if(!enc_obj1.rst) begin
+    73                                                          if (Y_exp== Y && Valid_exp == valid) begin
+    74              1                         98                     count_correct += 1;
+    75              1                         98                     $display("Correct: %t: Y_exp = %0d Y = %0d valid_exp = %0d valid = %0d",$time,Y_exp, Y, Valid_exp, valid);
+    76                                                          end
+    77                                                          else begin
+    78              1                          2                     count_error += 1; 
+    79              1                          2                     $display("ERROR!: %t: Y_exp = %0d Y = %0d valid_exp = %0d valid = %0d",$time,Y_exp, Y, Valid_exp, valid);
+    80                                                          end
+    81                                                       end
+    82                                                   endtask
+    83                                               
+    84                                                   task golden_model(enc_transaction enc_obj2);
+    85                                                       if(!enc_obj2.rst) begin
+    86                                                           casex (enc_obj2.D)
+    87              1                         15                     4'b1000: Y_exp = 0;
+    88              1                         10                     4'bX100: Y_exp = 1;
+    89              1                         18                     4'bXX10: Y_exp = 2;
+    90              1                         55                     4'bXXX1: Y_exp = 3;
+    91                                                           endcase
+    92              1                        100       	        Valid_exp = (~|enc_obj2.D)? 1'b0: 1'b1;
+    93                                                       end else begin
+    94              1                    ***0***                 Y_exp = 0;    
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        152        40       112    26.31%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /priority_enc_tb --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                            D[0-3]           1           1      100.00 
+                                         Valid_exp           1           1      100.00 
+                                            Y[0-1]           1           1      100.00 
+                                        Y_exp[0-1]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                count_correct[0-5]           1           1      100.00 
+                                  count_correct[6]           0           1       50.00 
+                               count_correct[7-31]           0           0        0.00 
+                                    count_error[0]           1           1      100.00 
+                                    count_error[1]           0           1       50.00 
+                                 count_error[2-31]           0           0        0.00 
+                                               rst           1           1      100.00 
+                                             valid           1           1      100.00 
+
+Total Node Count     =         76 
+Toggled Node Count   =         19 
+Untoggled Node Count =         57 
+
+Toggle Coverage      =      26.31% (40 of 152 bins)
+
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/priority_enc_tb/#ublk#99486242#41/immed__42
+                     priority_enc_tb.sv(42)             0          1
+
+Total Coverage By Instance (filtered view): 67.42%
+

@@ -1,0 +1,159 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Lab1_1/ALU_v2
+T_opt
+!s110 1775943752
+VOZh_UJ4^]DL4kF?HakIbe3
+04 6 4 work DSP_tb fast 0
+=1-902e16e4070c-69dac048-85-107c
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vDSP
+Z2 !s110 1775943736
+!i10b 1
+!s100 ;@4_HWQ9ee>6cc8hkZf]L3
+IlJ`l6liBW7fPRFT>CV;9D1
+Z3 dD:/Career tracks/Digial_IC/09-Verification/Lab1_1/DSP_v2
+w1773146865
+8DSP.v
+FDSP.v
+!i122 5
+L0 1 45
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z6 !s108 1775943735.000000
+Z7 !s107 DSP_tb.sv|DSP.v|DSP_pkg.sv|
+Z8 !s90 -reportprogress|300|DSP_pkg.sv|DSP.v|DSP_tb.sv|+cover|-covercells|
+!i113 0
+Z9 !s102 +cover -covercells
+Z10 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@d@s@p
+XDSP_pkg
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+!i10b 1
+!s100 6UM`AgLgQhfRNoSKIQRh80
+I7Ia1B]U^06<a>:cLK]?IX0
+S1
+R3
+w1775942195
+8DSP_pkg.sv
+FDSP_pkg.sv
+!i122 5
+Z12 L0 1 0
+V7Ia1B]U^06<a>:cLK]?IX0
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@d@s@p_pkg
+vDSP_tb
+R11
+Z13 DXx4 work 7 DSP_pkg 0 22 7Ia1B]U^06<a>:cLK]?IX0
+DXx4 work 14 DSP_tb_sv_unit 0 22 Ko==h^jX`lRS>4M15`c>K2
+R2
+R4
+r1
+!s85 0
+!i10b 1
+!s100 gY><IOi;1[=K1[2`@Dioh3
+IzmBoDkVHa^c65:cT[TG9b0
+Z14 !s105 DSP_tb_sv_unit
+S1
+R3
+Z15 w1775943717
+Z16 8DSP_tb.sv
+Z17 FDSP_tb.sv
+!i122 5
+L0 3 101
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@d@s@p_tb
+XDSP_tb_sv_unit
+R11
+R13
+R2
+VKo==h^jX`lRS>4M15`c>K2
+r1
+!s85 0
+!i10b 1
+!s100 e26WGE9OC9J0EnEeh>X]U0
+IKo==h^jX`lRS>4M15`c>K2
+!i103 1
+S1
+R3
+R15
+R16
+R17
+!i122 5
+R12
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@d@s@p_tb_sv_unit
+vtb
+R11
+R13
+DXx4 work 14 DSP_tb_sv_unit 0 22 7jEP99jYf7CXXTzXk;98_0
+!s110 1775942902
+R4
+r1
+!s85 0
+!i10b 1
+!s100 9mJ[@L6k`6V=DX76bDIi;3
+I:Zz]RdMXU=P0S]aZP0kI50
+R14
+S1
+R3
+w1775942858
+R16
+R17
+!i122 2
+L0 3 94
+R5
+31
+!s108 1775942902.000000
+R7
+R8
+!i113 0
+R9
+R10
+R1

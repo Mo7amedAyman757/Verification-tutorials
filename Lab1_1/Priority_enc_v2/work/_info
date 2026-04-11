@@ -1,0 +1,130 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Career tracks/Digial_IC/09-Verification/Day1/Adder_v2
+T_opt
+!s110 1775938106
+VKIlVbjK4;a07h68AfVGMI1
+04 15 4 work priority_enc_tb fast 0
+=1-902e16e4070c-69daaa3a-27c-60b4
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R1
+Xenc_pkg
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1775938152
+!i10b 1
+!s100 mN`boEX<DMP_P?IX2lfHl2
+IX2CWYXh2P7c<aUX>j3flQ2
+S1
+Z5 dD:/Career tracks/Digial_IC/09-Verification/Lab1_1/Priority_enc_v2
+w1775937934
+8enc_pkg.sv
+Fenc_pkg.sv
+!i122 11
+Z6 L0 1 0
+VX2CWYXh2P7c<aUX>j3flQ2
+Z7 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z8 !s108 1775938152.000000
+!s107 priority_enc_tb.sv|priority_enc.v|enc_pkg.sv|
+Z9 !s90 -reportprogress|300|enc_pkg.sv|priority_enc.v|priority_enc_tb.sv|+cover|-covercells|
+!i113 0
+Z10 !s102 +cover -covercells
+Z11 o+cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vpriority_enc
+R4
+!i10b 1
+!s100 H:]OYdAP>`3kkI7UO]m=93
+InXo`jg[F@JD<OCz?LC5092
+R5
+w1775938077
+8priority_enc.v
+Fpriority_enc.v
+!i122 11
+L0 1 22
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+R7
+r1
+!s85 0
+31
+R8
+Z13 !s107 priority_enc_tb.sv|priority_enc.v|enc_pkg.sv|
+R9
+!i113 0
+R10
+R11
+R2
+vpriority_enc_tb
+R3
+Z14 DXx4 work 7 enc_pkg 0 22 X2CWYXh2P7c<aUX>j3flQ2
+DXx4 work 23 priority_enc_tb_sv_unit 0 22 =5<CLWhC<kKJ@Hj593YoM1
+R4
+R12
+r1
+!s85 0
+!i10b 1
+!s100 g6BRIBNz7nTz12zi7@E9;3
+Inn>3QWhSdTl=]i<G@ha7D3
+!s105 priority_enc_tb_sv_unit
+S1
+R5
+Z15 w1775937462
+Z16 8priority_enc_tb.sv
+Z17 Fpriority_enc_tb.sv
+!i122 11
+L0 3 97
+R7
+31
+R8
+R13
+R9
+!i113 0
+R10
+R11
+R2
+Xpriority_enc_tb_sv_unit
+R3
+R14
+R4
+V=5<CLWhC<kKJ@Hj593YoM1
+r1
+!s85 0
+!i10b 1
+!s100 blMI:Q:XIF9n?UN[VUB]52
+I=5<CLWhC<kKJ@Hj593YoM1
+!i103 1
+S1
+R5
+R15
+R16
+R17
+!i122 11
+R6
+R7
+31
+R8
+R13
+R9
+!i113 0
+R10
+R11
+R2

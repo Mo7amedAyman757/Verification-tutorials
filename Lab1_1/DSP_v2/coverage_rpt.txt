@@ -1,0 +1,351 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /DSP_tb/uut
+=== Design Unit: work.DSP
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /DSP_tb/uut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File DSP.v
+------------------------------------IF Branch------------------------------------
+    14                                       390     Count coming in to IF
+    14              1                         10     	if (!rst_n) begin
+    26              1                        380     	else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      19        19         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /DSP_tb/uut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File DSP.v
+    1                                                module DSP(A, B, C, D, clk, rst_n, P);
+    2                                                parameter OPERATION = "ADD";
+    3                                                input  [17:0] A, B, D;
+    4                                                input  [47:0] C;
+    5                                                input clk, rst_n;
+    6                                                output reg  [47:0] P;
+    7                                                
+    8                                                reg [17:0] A_reg_stg1, A_reg_stg2, B_reg, D_reg;
+    9                                                reg [18:0] adder_out_stg1, adder_out_stg2;
+    10                                               reg [36:0] mult_out;
+    11                                               reg [47:0] C_reg;
+    12                                               
+    13              1                        390     always @(posedge clk or negedge rst_n) begin
+    14                                               	if (!rst_n) begin
+    15                                               		// reset
+    16              1                         10     		 A_reg_stg1 <= 0;
+    17              1                         10     		 A_reg_stg2 <= 0;
+    18              1                         10     		 B_reg <= 0;
+    19              1                         10     		 D_reg <= 0;
+    20              1                         10     		 C_reg <= 0;
+    21              1                         10     		 adder_out_stg1 <= 0; 
+    22              1                         10     		 adder_out_stg2 <= 0;
+    23              1                         10     		 mult_out <= 0;
+    24              1                         10     		 P <= 0;
+    25                                               	end
+    26                                               	else begin
+    27              1                        380     		A_reg_stg1 <= A;
+    28              1                        380     		A_reg_stg2 <= A_reg_stg1;
+    29              1                        380     		B_reg <= B;
+    30              1                        380     		C_reg <= C;
+    31              1                        380     		D_reg <= D; 
+    32              1                        380     		adder_out_stg2 <= adder_out_stg1; 
+    33                                               		if (OPERATION == "ADD") begin
+    34              1                        380     			adder_out_stg1 <= D_reg + B_reg;
+    35              1                        380     			P <= mult_out + C_reg;
+    36                                               		end
+    37                                               		else if (OPERATION == "SUBTRACT") begin
+    38                                               			adder_out_stg1 <= D_reg - B_reg;
+    39                                               			P <= mult_out - C_reg;
+    40                                               		end
+    41              1                        380     		mult_out <= A_reg_stg2 * adder_out_stg2;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        694       694         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /DSP_tb/uut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                           A[0-17]           1           1      100.00 
+                                  A_reg_stg1[17-0]           1           1      100.00 
+                                  A_reg_stg2[17-0]           1           1      100.00 
+                                           B[0-17]           1           1      100.00 
+                                       B_reg[17-0]           1           1      100.00 
+                                           C[0-47]           1           1      100.00 
+                                       C_reg[47-0]           1           1      100.00 
+                                           D[0-17]           1           1      100.00 
+                                       D_reg[17-0]           1           1      100.00 
+                                           P[47-0]           1           1      100.00 
+                              adder_out_stg1[18-0]           1           1      100.00 
+                              adder_out_stg2[18-0]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                    mult_out[36-0]           1           1      100.00 
+                                             rst_n           1           1      100.00 
+
+Total Node Count     =        347 
+Toggled Node Count   =        347 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (694 of 694 bins)
+
+=================================================================================
+=== Instance: /DSP_tb
+=== Design Unit: work.DSP_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/DSP_tb/#ublk#77096610#45/immed__46
+                     DSP_tb.sv(46)                      0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         5         1    83.33%
+
+================================Branch Details================================
+
+Branch Coverage for instance /DSP_tb
+NOTE: The modification timestamp for source file 'DSP_tb.sv' has been altered since compilation.
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File DSP_tb.sv
+------------------------------------IF Branch------------------------------------
+    67                                         1     Count coming in to IF
+    67              1                    ***0***             @(negedge clk);
+    70              1                          1                 correct_count++;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                       100     Count coming in to IF
+    79              1                         95             repeat(4) @(negedge clk);
+    82              1                          5                 $display("Test failed at time %t: A = %h, B = %h, C = %h, D = %h, Expected P = %h, Actual P = %h", $time, DSP_obj.A, DSP_obj.B, DSP_obj.C, DSP_obj.D, P_expected, P);
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    93                                       100     Count coming in to IF
+    93              1                          5             if (DSP_obj.rst_n == 1'b0) begin
+    95              1                         95             end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         1         1    50.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /DSP_tb --
+NOTE: The modification timestamp for source file 'DSP_tb.sv' has been altered since compilation.
+
+  File DSP_tb.sv
+----------------Focused Condition View-------------------
+Line       67 Item    1  (P == 'h000000000000)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+             Input Term   Covered  Reason for no coverage   Hint
+            -----------  --------  -----------------------  --------------
+  (P == 'h000000000000)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target               Non-masking condition(s)      
+ ---------  ---------  --------------------     -------------------------     
+  Row   1:    ***0***  (P == 'h000000000000)_0  -                             
+  Row   2:    ***0***  (P == 'h000000000000)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       79 Item    1  (P !== P_expected)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+          Input Term   Covered  Reason for no coverage   Hint
+         -----------  --------  -----------------------  --------------
+  (P !== P_expected)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (P !== P_expected)_0  -                             
+  Row   2:          1  (P !== P_expected)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      38        36         2    94.73%
+
+================================Statement Details================================
+
+Statement Coverage for instance /DSP_tb --
+NOTE: The modification timestamp for source file 'DSP_tb.sv' has been altered since compilation.
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File DSP_tb.sv
+    3                                                module DSP_tb();
+    4                                                
+    5                                                    DSP_transaction tr;
+    6                                                
+    7                                                    // declare local inputs and outputs 
+    8                                                    // declare local wire and reg
+    9                                                    logic clk, rst;
+    10                                                   logic [17:0] A, B, D;
+    11                                                   logic [47:0] C;
+    12                                                   wire [47:0] P;
+    13                                               
+    14                                                   bit [47:0] P_expected;
+    15                                               
+    16                                                   int correct_count = 0, error_count = 0;
+    17                                                   // Instantiate the module under test
+    18                                                   DSP uut(
+    19                                                       A,
+    20                                                       B,
+    21                                                       C,
+    22                                                       D,
+    23                                                       clk,
+    24                                                       rst,
+    25                                                       P
+    26                                                   );
+    27                                               
+    28                                                   // clock generation
+    29                                                   initial begin
+    30              1                          1             clk = 1'b0;
+    31              1                          1             forever #5 clk = ~clk;
+    31              2                        801     
+    31              3                        800     
+    32                                                   end
+    33                                               
+    34                                                   // General stimuli 
+    35                                                   initial begin
+    36              1                          1             tr = new();
+    37              1                          1             rst = 1'b0;
+    38              1                          1             A = 0;
+    39              1                          1             B = 0;
+    40              1                          1             C = 0;
+    41              1                          1             D = 0;
+    42                                               
+    43              1                          1             assert_reset;
+    44                                               
+    45              1                        100             repeat(100) begin  
+    46                                                           assert(tr.randomize());
+    47              1                        100                 rst = tr.rst_n;
+    48              1                        100                 A = tr.A;
+    49              1                        100                 B = tr.B;
+    50              1                        100                 C = tr.C;
+    51              1                        100                 D = tr.D;
+    52              1                        100                 check_result(tr);
+    53                                                       end
+    54              1                          1             $display("correct_count = %d, error_count = %d", correct_count, error_count);
+    55              1                          1             $stop;
+    56                                               
+    57                                                   end
+    58                                               
+    59                                                 
+    60                                                   task assert_reset;
+    61              1                          1             rst = 1'b0;
+    62              1                          1             check_reset();
+    63              1                          1             rst= 1'b1;
+    64                                                   endtask
+    65                                               
+    66                                                   task check_reset;
+    67                                                       @(negedge clk);
+    68              1                    ***0***             if (P == 48'b0) begin
+    69              1                    ***0***                 $display("Reset successful");
+    70                                                           correct_count++;
+    71              1                          1             end else begin
+    72              1                          1                 $display("Reset failed");
+    73                                                           error_count++;
+    74                                                       end
+    75                                                   endtask
+    76                                               
+    77              1                        100         task check_result(DSP_transaction DSP_obj);
+    78              1                        400             P_expected = golden_model(DSP_obj);
+    78              2                        400     
+    79                                                       repeat(4) @(negedge clk);
+    80              1                         95             if (P !== P_expected) begin
+    81              1                         95                 error_count++;
+    82                                                           $display("Test failed at time %t: A = %h, B = %h, C = %h, D = %h, Expected P = %h, Actual P = %h", $time, DSP_obj.A, DSP_obj.B, DSP_obj.C, DSP_obj.D, P_expected, P);
+    83              1                          5             end else begin
+    84              1                          5                 correct_count++;  
+    85                                                           $display("Test passed at time %t: A = %h, B = %h, C = %h, D = %h, Expected P = %h, Actual P = %h", $time, DSP_obj.A, DSP_obj.B, DSP_obj.C, DSP_obj.D, P_expected, P);
+    86                                                       end
+    87                                                   endtask
+    88                                               
+    89                                               
+    90                                                   function [47:0] golden_model(DSP_transaction DSP_obj);
+    91                                                       reg [17:0] add_result;
+    92                                                       reg [36:0] mult_result;
+    93                                                       if (DSP_obj.rst_n == 1'b0) begin
+    94              1                          5                 golden_model = 48'b0;
+    95                                                       end else begin
+    96              1                         95                 add_result = DSP_obj.B + DSP_obj.D;
+    97              1                         95                 mult_result = DSP_obj.A * add_result;
+    98              1                         95                 golden_model = mult_result + DSP_obj.C;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        528       418       110    79.16%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /DSP_tb --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                           A[0-17]           1           1      100.00 
+                                           B[0-17]           1           1      100.00 
+                                           C[0-47]           1           1      100.00 
+                                           D[0-17]           1           1      100.00 
+                                           P[0-47]           1           1      100.00 
+                                  P_expected[0-47]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                correct_count[0-1]           1           1      100.00 
+                                  correct_count[2]           0           1       50.00 
+                               correct_count[3-31]           0           0        0.00 
+                                  error_count[0-5]           1           1      100.00 
+                                    error_count[6]           0           1       50.00 
+                                 error_count[7-31]           0           0        0.00 
+                                               rst           1           1      100.00 
+
+Total Node Count     =        264 
+Toggled Node Count   =        208 
+Untoggled Node Count =         56 
+
+Toggle Coverage      =      79.16% (418 of 528 bins)
+
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/DSP_tb/#ublk#77096610#45/immed__46
+                     DSP_tb.sv(46)                      0          1
+
+Total Coverage By Instance (filtered view): 84.99%
+
