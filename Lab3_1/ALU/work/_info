@@ -1,0 +1,162 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Day3/ALU
+T_opt
+!s110 1776028697
+V=:flCaG870Lca4ONHfQP22
+04 6 4 work alu_tb fast 0
+=1-902e16e4070c-69dc0c19-2c8-69ac
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+valu_seq
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 DXx4 work 11 testing_pkg 0 22 k@ofaZG=B[Om5GTabf9CQ2
+DXx4 work 11 alu_sv_unit 0 22 nkD8K_`DIG>=[E^n^;WYh1
+Z4 !s110 1776028687
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 WVm_5mIYNM53YLUhdO;N^0
+Iidz[kF73Smbo?SZokN8Vj0
+!s105 alu_sv_unit
+S1
+Z6 dD:/Career tracks/Digial_IC/09-Verification/Lab3_1/ALU
+Z7 w1776027198
+Z8 8alu.sv
+Z9 Falu.sv
+!i122 3
+L0 3 19
+Z10 OL;L;2021.1;73
+31
+Z11 !s108 1776028687.000000
+Z12 !s107 alu_tb.sv|alu.sv|testing_pkg.sv|
+Z13 !s90 -reportprogress|300|testing_pkg.sv|alu.sv|alu_tb.sv|+cover|
+!i113 0
+Z14 !s102 +cover
+Z15 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Xalu_sv_unit
+R2
+R3
+R4
+VnkD8K_`DIG>=[E^n^;WYh1
+r1
+!s85 0
+!i10b 1
+!s100 FhY^gaEX6G3<JBhC1;0N?0
+InkD8K_`DIG>=[E^n^;WYh1
+!i103 1
+S1
+R6
+R7
+R8
+R9
+!i122 3
+Z16 L0 1 0
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+valu_tb
+R2
+R2
+R3
+DXx4 work 14 alu_tb_sv_unit 0 22 zBmVBZ6E`Pi;S6Ib5AH><1
+R4
+R5
+r1
+!s85 0
+!i10b 1
+!s100 2WGLi3Re@56i@h9YS]mF>1
+ImcRP2;>Z?>P5dK<OG=Vj[1
+!s105 alu_tb_sv_unit
+S1
+R6
+Z17 w1776028674
+Z18 8alu_tb.sv
+Z19 Falu_tb.sv
+!i122 3
+L0 3 101
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+Xalu_tb_sv_unit
+R2
+R2
+R3
+R4
+VzBmVBZ6E`Pi;S6Ib5AH><1
+r1
+!s85 0
+!i10b 1
+!s100 nY60Ob3n@H4I55011X8lB1
+IzBmVBZ6E`Pi;S6Ib5AH><1
+!i103 1
+S1
+R6
+R17
+R18
+R19
+!i122 3
+R16
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+Xtesting_pkg
+R2
+R4
+!i10b 1
+!s100 MD2YgKmd30k09bUcKzN<@2
+Ik@ofaZG=B[Om5GTabf9CQ2
+S1
+R6
+w1776028486
+8testing_pkg.sv
+Ftesting_pkg.sv
+!i122 3
+R16
+Vk@ofaZG=B[Om5GTabf9CQ2
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1

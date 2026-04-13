@@ -1,0 +1,130 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Lab3_2/Adder
+T_opt
+!s110 1776117581
+V1CN^G9WRd2aQ_l9BWCN;01
+04 10 4 work FSM_010_tb fast 0
+=1-902e16e4070c-69dd674d-15c-54fc
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vFSM_010
+Z2 !s110 1776117570
+!i10b 1
+!s100 WJFQ97f?RjmKVhmzY1Ln62
+I2Ai1;18]X1Rg>7Cz]8d9O1
+Z3 dD:/Career tracks/Digial_IC/09-Verification/Lab3_2/FSM_010
+w1774587900
+8FSM_010.v
+FFSM_010.v
+!i122 1
+L0 8 61
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z6 !s108 1776117570.000000
+Z7 !s107 FSM_010_tb.sv|FSM_pkg.sv|FSM_010.v|
+Z8 !s90 -reportprogress|300|FSM_010.v|FSM_pkg.sv|FSM_010_tb.sv|+cover|
+!i113 0
+Z9 !s102 +cover
+Z10 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@f@s@m_010
+vFSM_010_tb
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z12 DXx4 work 7 FSM_pkg 0 22 6:N9SDKW^V5LNQPc_@zSa0
+DXx4 work 18 FSM_010_tb_sv_unit 0 22 WP5f?AZJ5j2[kQ7cY777^3
+R2
+R4
+r1
+!s85 0
+!i10b 1
+!s100 lZjho<72A>c0cM^^VlUY31
+IHYzDg6ai3H:EQI0LDZOG^0
+!s105 FSM_010_tb_sv_unit
+S1
+R3
+Z13 w1776117561
+Z14 8FSM_010_tb.sv
+Z15 FFSM_010_tb.sv
+!i122 1
+L0 3 130
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@f@s@m_010_tb
+XFSM_010_tb_sv_unit
+R11
+R12
+R2
+VWP5f?AZJ5j2[kQ7cY777^3
+r1
+!s85 0
+!i10b 1
+!s100 `=KZS[W^2LOD`h;zLS]FK2
+IWP5f?AZJ5j2[kQ7cY777^3
+!i103 1
+S1
+R3
+R13
+R14
+R15
+!i122 1
+Z16 L0 1 0
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@f@s@m_010_tb_sv_unit
+XFSM_pkg
+R11
+R2
+!i10b 1
+!s100 ?0g;dmzG];K:>>d^FN:;^3
+I6:N9SDKW^V5LNQPc_@zSa0
+S1
+R3
+w1776117543
+8FSM_pkg.sv
+FFSM_pkg.sv
+!i122 1
+R16
+V6:N9SDKW^V5LNQPc_@zSa0
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@f@s@m_pkg

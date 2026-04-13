@@ -1,0 +1,181 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Lab3_1/Counter
+T_opt
+!s110 1776093872
+V7:^mL4V=z>J25QijV5N1W3
+04 7 4 work ALSU_tb fast 0
+=1-902e16e4070c-69dd0aaf-34e-57e0
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vALSU
+Z2 !s110 1776093862
+!i10b 1
+!s100 HSSig:QMMWSHm43HnDP_J2
+InjbjFj=^1LGTSELa6eR2V3
+Z3 dD:/Career tracks/Digial_IC/09-Verification/Lab3_1/ALSU
+w1774526685
+8ALSU.v
+FALSU.v
+!i122 65
+L0 1 123
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z6 !s108 1776093861.000000
+Z7 !s107 ALSU_tb.sv|ALSU_pkg.sv|ALSU.v|
+Z8 !s90 -reportprogress|300|ALSU.v|ALSU_pkg.sv|ALSU_tb.sv|+cover|
+!i113 0
+Z9 !s102 +cover
+Z10 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@a@l@s@u
+XALSU_pkg
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+!i10b 1
+!s100 6ba7meDME[U?J5a8QJ=c@2
+IUcFB`6ceTGjGVTN9<Mn670
+S1
+R3
+w1776093851
+8ALSU_pkg.sv
+FALSU_pkg.sv
+!i122 65
+Z12 L0 1 0
+VUcFB`6ceTGjGVTN9<Mn670
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@a@l@s@u_pkg
+vALSU_tb
+R11
+Z13 DXx4 work 8 ALSU_pkg 0 22 UcFB`6ceTGjGVTN9<Mn670
+DXx4 work 15 ALSU_tb_sv_unit 0 22 L@=G>G:i6DLcIUk6RO08k2
+R2
+R4
+r1
+!s85 0
+!i10b 1
+!s100 kbe5:l3l]QJDL::80^F[l1
+Il_L`]F6HN2NjmgTMm;JS70
+!s105 ALSU_tb_sv_unit
+S1
+R3
+Z14 w1776093569
+Z15 8ALSU_tb.sv
+Z16 FALSU_tb.sv
+!i122 65
+L0 3 260
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@a@l@s@u_tb
+XALSU_tb_sv_unit
+R11
+R13
+R2
+VL@=G>G:i6DLcIUk6RO08k2
+r1
+!s85 0
+!i10b 1
+!s100 LkdT[[Ekl4?m0aK<EJEZ_2
+IL@=G>G:i6DLcIUk6RO08k2
+!i103 1
+S1
+R3
+R14
+R15
+R16
+!i122 65
+R12
+R5
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+n@a@l@s@u_tb_sv_unit

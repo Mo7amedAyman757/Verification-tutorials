@@ -1,0 +1,328 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /mymem_tb/uut
+=== Design Unit: work.my_mem
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         3         3         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /mymem_tb/uut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File my_mem.sv
+------------------------------------IF Branch------------------------------------
+    14                                       203     Count coming in to IF
+    14              1                        101         if (write)
+    16              1                        101         else if (read)
+                                               1     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /mymem_tb/uut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File my_mem.sv
+    1                                                module my_mem(
+    2                                                input clk,
+    3                                                input write,
+    4                                                input read,
+    5                                                input [7:0] data_in,
+    6                                                input [15:0] address,
+    7                                                output reg [7:0] data_out
+    8                                                );
+    9                                                // Declare a 9-bit associative array using the logic data type & the key of int datatype
+    10                                               // <Put your declaration here>
+    11                                               logic [8:0] mem_array [int];
+    12                                               
+    13              1                        203     always @(posedge clk) begin
+    14                                                   if (write)
+    15              1                        101         mem_array[address] = {~^data_in, data_in};
+    16                                                   else if (read)
+    17              1                        101         data_out = mem_array[address];
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         70        67         3    95.71%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /mymem_tb/uut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                     address[0-14]           1           1      100.00 
+                                       address[15]           0           0        0.00 
+                                               clk           1           1      100.00 
+                                      data_in[0-7]           1           1      100.00 
+                                     data_out[7-0]           1           1      100.00 
+                                              read           0           1       50.00 
+                                             write           1           1      100.00 
+
+Total Node Count     =         35 
+Toggled Node Count   =         33 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      95.71% (67 of 70 bins)
+
+=================================================================================
+=== Instance: /mymem_tb
+=== Design Unit: work.mymem_tb
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         1         1    50.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /mymem_tb
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File mymem_tb.sv
+------------------------------------IF Branch------------------------------------
+    69                                       100     Count coming in to IF
+    69              1                        100             if (dut_data_out == expected) begin
+    73              1                    ***0***             end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         1         1    50.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /mymem_tb --
+
+  File mymem_tb.sv
+----------------Focused Condition View-------------------
+Line       69 Item    1  (dut_data_out == expected)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                  Input Term   Covered  Reason for no coverage   Hint
+                 -----------  --------  -----------------------  --------------
+  (dut_data_out == expected)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                    Non-masking condition(s)      
+ ---------  ---------  --------------------          -------------------------     
+  Row   1:    ***0***  (dut_data_out == expected)_0  -                             
+  Row   2:          1  (dut_data_out == expected)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       130 Item    1  (size(data_read_queue) > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                   Input Term   Covered  Reason for no coverage   Hint
+                  -----------  --------  -----------------------  --------------
+  (size(data_read_queue) > 0)         Y
+
+     Rows:       Hits  FEC Target                     Non-masking condition(s)      
+ ---------  ---------  --------------------           -------------------------     
+  Row   1:          1  (size(data_read_queue) > 0)_0  -                             
+  Row   2:          1  (size(data_read_queue) > 0)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      46        44         2    95.65%
+
+================================Statement Details================================
+
+Statement Coverage for instance /mymem_tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File mymem_tb.sv
+    1                                                module mymem_tb();
+    2                                                
+    3                                                    //---------------------Setup and Data Structures---------------------
+    4                                                    localparam TESTS = 100; // number of write/read operations
+    5                                                
+    6                                                    bit [15:0] address_array []; //Stores random addresses.
+    7                                                    bit [7:0] data_to_write_array[]; //Stores corresponding random data values.
+    8                                                    bit [7:0] data_read_expect_assoc [int]; //Stores expected data, indexed by address (key datatype: int)
+    9                                                    bit [7:0] data_read_queue[$]; //Stores the actual data read from the RAM
+    10                                               
+    11                                                   // DUT port signals
+    12                                                   logic clk;
+    13                                                   logic write;
+    14                                                   logic read;
+    15                                                   logic [7:0] data_in;
+    16                                                   logic [15:0] address;
+    17                                                   logic [7:0] data_out;
+    18                                               
+    19                                                   // - DUT instantiation
+    20                                                   my_mem uut(
+    21                                                       clk,
+    22                                                       write,  
+    23                                                       read,
+    24                                                       data_in,
+    25                                                       address,
+    26                                                       data_out
+    27                                                   );
+    28                                               
+    29                                                   // Clock Generation
+    30                                                   initial begin
+    31              1                          1             clk = 1'b0;
+    32              1                          1             forever #5 clk = ~clk; 
+    32              2                        406     
+    32              3                        405     
+    33                                                   end
+    34                                               
+    35                                                   // - Counters (error_count and correct_count)
+    36                                                   int error_count, correct_count;
+    37                                               
+    38                                                   //---------------------Setup and Data Structures---------------------
+    39                                                   // - Task: stimulus_gen
+    40                                                   // - Loops TESTS times to generate:
+    41                                                   // - Random addresses stored in address_array.
+    42                                                   // - Random data values stored in data_to_write_array.
+    43                                                   task stimulus_gen;
+    44              1                          1             address_array = new[TESTS];
+    45              1                          1             data_to_write_array = new[TESTS];
+    46                                                       
+    47              1                          1             for(int i = 0; i < TESTS; i++) begin
+    47              2                        100     
+    48              1                        100                 address_array[i] = $urandom_range(0,32767); // 15-bit
+    49              1                        100                 data_to_write_array[i] = $urandom_range(0,255); // 8bit 
+    50                                                       end
+    51                                                   endtask
+    52                                               
+    53                                                   // - Task: golden_model
+    54                                                   // - Loops TESTS times to populate data_read_expect_assoc using:
+    55                                                   // - address_array as the index.
+    56                                                   // - data_to_write_array as expected values.
+    57                                                   task golden_model;
+    58              1                          1             for(int i = 0; i < TESTS; i++) begin
+    58              2                        100     
+    59              1                        100                 data_read_expect_assoc[int'(address_array[i])] = data_to_write_array[i];
+    60                                                       end
+    61                                                   endtask
+    62                                               
+    63                                                   // - Task: check9Bits
+    64                                                   // - Checks if the expected data out of the RAM is correct or not
+    65                                                   task check9Bits(input logic [7:0] dut_data_out, input logic [16:0] addr);
+    66                                                       logic [7:0] expected;
+    67                                                       
+    68              1                        100             expected = data_read_expect_assoc[int'(addr)];
+    69                                                       if (dut_data_out == expected) begin
+    70              1                        100                 correct_count++;
+    71              1                        100                 $display("[CHECK PASS] addr=0x%02h | expected=0x%03h | got=0x%03h",
+    72                                                              addr, expected, dut_data_out);
+    73                                                       end else begin
+    74              1                    ***0***                 error_count++;
+    75              1                    ***0***                 $display("[CHECK FAIL] addr=0x%02h | expected=0x%03h | got=0x%03h",
+    76                                                              addr, expected, dut_data_out);
+    77                                                       end
+    78                                               
+    79                                                   endtask
+    80                                               
+    81                                                   //---------------------Initial block Implementation---------------------
+    82                                               
+    83                                                   initial begin
+    84                                               
+    85                                                       // Data preparation
+    86              1                          1             data_in = 0;
+    87              1                          1             address = 0;
+    88              1                          1             read = 0;
+    89              1                          1             write = 0;  
+    90                                               
+    91                                                       // - Call the stimulus_gen and then the golde_model tasks to prepare the data to be sent and expected
+    92                                                       // data to be read from the RAM
+    93              1                          1             stimulus_gen();
+    94              1                          1             golden_model(); 
+    95                                               
+    96                                                       // Write Operations
+    97                                                       // - Loop TESTS times to write data into the DUT:
+    98                                                       // - On each negative clock edge, drive the address and data_in ports using address_array and
+    99                                                       // data_to_write_array.
+    100             1                          1             @(negedge clk);
+    101             1                          1             write = 1;
+    102                                                      
+    103             1                          1             for(int i = 0; i < TESTS; i++) begin
+    103             2                        100     
+    104             1                        100                 @(negedge clk);    
+    105             1                        100                 address = address_array[i];
+    106             1                        100                 data_in = data_to_write_array[i];
+    107                                                      end
+    108                                              
+    109                                                      // Read and Self-Checking
+    110                                                      // - Loop TESTS times to read data from the DUT:
+    111                                                      // - Drive the address port using address_array.
+    112                                                      // - Call check9Bits task to compare:
+    113                                                      // - Data read vs. data_read_expect_assoc[address].
+    114                                                      // - Store the read data into data_read_queue.
+    115             1                          1             @(negedge clk);
+    116             1                          1             write = 0;
+    117             1                          1             read = 1;
+    118             1                          1             for(int i = 0; i < TESTS; i++) begin
+    118             2                        100     
+    119             1                        100                 @(negedge clk);    
+    120             1                        100                 address = address_array[i];
+    121             1                        100                 @(posedge clk); 
+    122             1                        100                 #1;
+    123             1                        100                 check9Bits(data_out,address);
+    124             1                        100                 data_read_queue.push_back(data_out);
+    125                                                      end
+    126                                              
+    127                                                      // Test Completion and Reporting
+    128                                                      // Print out the read data stored in data_read_queue using a while loop and pop_front method (search
+    129                                                      // online how to do it).
+    130             1                        101             while(data_read_queue.size() > 0) begin
+    131             1                        100                 $display("queue entry = 0x%0h",data_read_queue.pop_front());
+    132                                                      end
+    133                                              
+    134                                                      // Display error_count and correct_count
+    135             1                          1             $display("  Correct: %0d Error: %0d", correct_count, error_count);
+    136             1                          1             $stop;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        198        80       118    40.40%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /mymem_tb --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                     address[0-14]           1           1      100.00 
+                                       address[15]           0           0        0.00 
+                                               clk           1           1      100.00 
+                                correct_count[0-5]           1           1      100.00 
+                                  correct_count[6]           0           1       50.00 
+                               correct_count[7-31]           0           0        0.00 
+                                      data_in[0-7]           1           1      100.00 
+                                     data_out[0-7]           1           1      100.00 
+                                 error_count[0-31]           0           0        0.00 
+                                              read           0           1       50.00 
+                                             write           1           1      100.00 
+
+Total Node Count     =         99 
+Toggled Node Count   =         39 
+Untoggled Node Count =         60 
+
+Toggle Coverage      =      40.40% (80 of 198 bins)
+
+
+Total Coverage By Instance (filtered view): 70.19%
+
