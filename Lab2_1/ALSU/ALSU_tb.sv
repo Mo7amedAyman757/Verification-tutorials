@@ -94,14 +94,14 @@ module ALSU_tb;
 
     // function to check validation
     function bit is_invalid(input ALSU_cst ALSU_obj1);
-        bit valid;
-        if((ALSU_obj1.red_op_A || ALSU_obj1.red_op_B) && (ALSU_obj1.opcode[1] | ALSU_obj1.opcode[2]))
-            valid = 1'b1;
+        bit invalid;
+        if((ALSU_obj1.red_op_A || ALSU_obj1.red_op_B) && (ALSU_obj1.opcode[1] || ALSU_obj1.opcode[2]))
+            invalid = 1'b1;
         else if (ALSU_obj1.opcode[1] & ALSU_obj1.opcode[2]) 
-            valid = 1'b1;
+            invalid = 1'b1;
         else 
-            valid = 1'b0;
-        return valid;
+            invalid = 1'b0;
+        return invalid;
     endfunction
 
     // Task to implement the golden model and check results

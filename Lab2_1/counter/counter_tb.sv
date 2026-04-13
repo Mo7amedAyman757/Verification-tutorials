@@ -6,15 +6,15 @@ module counter_tb();
 
     //1 declare local wire and reg
     bit clk_tb, rst_n_tb, load_n_tb, up_down_tb, ce_tb;
-    bit [COUNTER_WIDTH-1:0] data_load_tb;
-    logic [COUNTER_WIDTH-1:0] count_out_tb, count_out_exp;
+    bit [stimulus.COUNTER_WIDTH-1:0] data_load_tb;
+    logic [stimulus.COUNTER_WIDTH-1:0] count_out_tb, count_out_exp;
     logic max_count_tb, max_count_exp;
     logic zero_tb, zero_exp;
 
     int error_count, correct_count;
 
     //2 Instantiate the module under test
-    counter #(.WIDTH(COUNTER_WIDTH)) uut(
+    counter #(.WIDTH(stimulus.COUNTER_WIDTH)) uut(
             clk_tb,
             rst_n_tb,
             load_n_tb, 
