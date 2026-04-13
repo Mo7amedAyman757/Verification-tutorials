@@ -1,11 +1,12 @@
-import my_pkg::*;
+import image_pkg::*;
 
-module Image;
+screen my_screen;
 
-    screen my_screen;
+module image();
+
     initial begin
         my_screen = new();
-        assert (my_screen.randomize());
+        assert(my_screen.randomize());
         my_screen.print_screen();
     end
 

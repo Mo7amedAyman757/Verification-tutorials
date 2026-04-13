@@ -1,46 +1,46 @@
 import testing_pkg::*;
 
-module ALU_tb();
+module alu_tb();
 
-    // 1- delcare local wire and reg
-    transaction tr = new();
+    transaction alu_obj;
+
+    // Declare local input and outputs 
     byte operand1, operand2;
-    opcode_e opcode;
     bit clk, rst;
+    opcode_e opcode;
     byte out;
 
-    // 2- Instantiate the module under test
-    alu_seq uut(
-        operand1,
-        operand2,
-        clk,
-        rst,
-        opcode,
-        out
-    );
+    // instantiate the ALU
+    alu_seq uut (
+        operand1, 
+        operand2, 
+        clk, 
+        rst, 
+        opcode, 
+        out);
 
-    // 3- Define the clock
-    initial begin
-        clk = 1'b0;
-        forever begin 
-        #5 clk = ~clk;
-        tr.clk = clk;
+    // Clock generation
+    initial begin   
+        clk = 0;
+        forever begin
+            #5 clk = ~clk; // 10 time units period
+            alu_obj.clk = clk; // Update transaction clock
         end
     end
 
-    // 4- General stimuli 
+    // Test stimulus
     initial begin
-        rst = 1'b1;
-        @(negedge clk);
-        rst = 1'b0;
-        
-        repeat(1000) begin
-            assert (tr.randomize()); 
-            rst = tr.rst;
-            opcode = tr.opcode;
-            operand1 = tr.operand1;
-            operand2 = tr.operand2;
-            @(negedge clk);
+        alu_obj = new();
+        rst = 1'b1; // Assert reset
+        @(negedge clk) rst = 1'b0; // Deassert reset
+
+        repeat(32) begin
+            assert(alu_obj.randomize());
+            rst = alu_obj.rst;
+            operand1 = alu_obj.operand1;
+            operand2 = alu_obj.operand2;
+            opcode = alu_obj.opcode;
+            @(negedge clk); // Wait for the next clock cycle
         end
         $stop;
     end

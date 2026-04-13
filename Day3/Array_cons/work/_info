@@ -11,97 +11,94 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 dD:/Career tracks/Digial_IC/09-Verification/Lab2_2/FSM_010
+dD:/Career tracks/Digial_IC/09-Verification/Day2/cst_exercise2
 T_opt
-!s110 1775531742
-VURCKz07b?S`oU^SOjcD7S1
-04 5 4 work Image fast 0
-=1-902e16e4070c-69d476de-264-76c8
+!s110 1776009605
+V?B4b2eZR<;bL6[GJDzNW50
+04 5 4 work image fast 0
+=1-902e16e4070c-69dbc184-312-4aa4
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
-Z2 tCvgOpt 0
+Z1 tCvgOpt 0
 n@_opt
 OL;O;2021.1;73
-R1
-vImage
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z4 DXx4 work 6 my_pkg 0 22 HmVfH<AEn4SgijQz8MHSA0
-DXx4 work 13 Image_sv_unit 0 22 ie8BTYh^omcG3G]BdmQ953
-Z5 !s110 1775532200
+vimage
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 DXx4 work 9 image_pkg 0 22 @@MQ=hJ8kjA=dBS9OVLEZ3
+DXx4 work 13 image_sv_unit 0 22 =`cUoeX[NGDzZMOec6Pa?0
+Z4 !s110 1776009604
 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 EA8R=XZ7;_7^N<75@@Mlc3
-IXI;;JUa=hAfkKoTSJzm1D1
-!s105 Image_sv_unit
+!s100 <W1AKkJ4@WNUc=a?jzWn^2
+IS33kaT;^LDKP[]<9L]?[=3
+!s105 image_sv_unit
 S1
-Z6 dD:/Career tracks/Digial_IC/09-Verification/Day3/Array_cons
-Z7 w1775531732
-Z8 8Image.sv
-Z9 FImage.sv
-!i122 5
-L0 3 10
-Z10 OL;L;2021.1;73
+Z5 dD:/Career tracks/Digial_IC/09-Verification/Day3/Array_cons
+Z6 w1776009539
+Z7 8image.sv
+Z8 Fimage.sv
+!i122 2
+L0 5 9
+Z9 OL;L;2021.1;73
 31
-Z11 !s108 1775532200.000000
-!s107 Image.sv|my_pkg.sv|
-Z12 !s90 -reportprogress|300|my_pkg.sv|Image.sv|+cover|
+Z10 !s108 1776009604.000000
+Z11 !s107 image.sv|image_pkg.sv|
+Z12 !s90 -reportprogress|300|image_pkg.sv|image.sv|+cover|
 !i113 0
 Z13 !s102 +cover
 Z14 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Ximage_pkg
 R2
-n@image
-XImage_sv_unit
+R4
+!i10b 1
+!s100 jGGNG?o27dl^A10P_Vn7I1
+I@@MQ=hJ8kjA=dBS9OVLEZ3
+S1
+R5
+w1776009600
+8image_pkg.sv
+Fimage_pkg.sv
+!i122 2
+Z15 L0 1 0
+V@@MQ=hJ8kjA=dBS9OVLEZ3
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R1
+Ximage_sv_unit
+R2
 R3
 R4
-R5
-Vie8BTYh^omcG3G]BdmQ953
+V=`cUoeX[NGDzZMOec6Pa?0
 r1
 !s85 0
 !i10b 1
-!s100 mQ;>5Sb^I0F0doYibbk[m0
-Iie8BTYh^omcG3G]BdmQ953
+!s100 lP[YhZ]Hgb28QL5:hK4bJ1
+I=`cUoeX[NGDzZMOec6Pa?0
 !i103 1
 S1
+R5
 R6
 R7
 R8
-R9
-!i122 5
-Z15 L0 1 0
-R10
-31
-R11
-Z16 !s107 Image.sv|my_pkg.sv|
-R12
-!i113 0
-R13
-R14
-R2
-n@image_sv_unit
-Xmy_pkg
-R3
-R5
-!i10b 1
-!s100 9d^>Z=A4Z2dU^joS7TPZ42
-IHmVfH<AEn4SgijQz8MHSA0
-S1
-R6
-w1775531692
-8my_pkg.sv
-Fmy_pkg.sv
-!i122 5
+!i122 2
 R15
-VHmVfH<AEn4SgijQz8MHSA0
-R10
-r1
-!s85 0
+R9
 31
+R10
 R11
-R16
 R12
 !i113 0
 R13
 R14
-R2
+R1
