@@ -1,0 +1,173 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/questasim64_2021.1/examples
+T_opt
+!s110 1776278800
+Vbz[_5F_IHAQd_7B2=cDUD1
+04 19 4 work vending_machine_top fast 0
+=1-902e16e4070c-69dfdd10-166-4150
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R0
+vvending_machine
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1776278878
+!i10b 1
+!s100 O<c`QX0CzabIKfcSQR:cm1
+IAka87>ThdPbz3e3D^F=d[1
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Day4/Vending_machine
+w1776277194
+8vending_machine.sv
+Fvending_machine.sv
+!i122 1
+L0 8 54
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1776278877.000000
+!s107 vending_machine_top.sv|vending_machine_tb.sv|vending_machine_sva.sv|vending_machine_monitor.sv|vending_machine_if.sv|vending_machine.sv|
+Z8 !s90 -reportprogress|300|vending_machine.sv|vending_machine_if.sv|vending_machine_monitor.sv|vending_machine_sva.sv|vending_machine_tb.sv|vending_machine_top.sv|+cover|
+!i113 0
+Z9 !s102 +cover
+Z10 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Yvending_machine_if
+R2
+R3
+!i10b 1
+!s100 IJ[`T19kW8[NQ=YR`@_Oi0
+IMDL;@0YKc5]AbClI1lNKR0
+S1
+R4
+w1776277959
+8vending_machine_if.sv
+Fvending_machine_if.sv
+!i122 1
+L0 8 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+Z11 !s107 vending_machine_top.sv|vending_machine_tb.sv|vending_machine_sva.sv|vending_machine_monitor.sv|vending_machine_if.sv|vending_machine.sv|
+R8
+!i113 0
+R9
+R10
+R1
+vvending_machine_monitor
+R2
+R3
+!i10b 1
+!s100 lLzCYPZTO5Yn=0AAD<3A12
+I1G_z[gChMKVfEhH>2TnnL0
+S1
+R4
+w1776277211
+8vending_machine_monitor.sv
+Fvending_machine_monitor.sv
+!i122 1
+L0 8 9
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R10
+R1
+vvending_machine_sva
+R2
+R3
+!i10b 1
+!s100 jWMBJkZbCB]ZX90>hZPS:0
+I`]2:Y;az_WXceziF?211k3
+S1
+R4
+w1776278176
+8vending_machine_sva.sv
+Fvending_machine_sva.sv
+!i122 1
+L0 8 26
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R10
+R1
+vvending_machine_tb
+R2
+R3
+!i10b 1
+!s100 C3QF0^;2j@I5hezMaH4@S0
+IkJIe;^kmBSY4`:`hi0EdU1
+S1
+R4
+w1776277084
+8vending_machine_tb.sv
+Fvending_machine_tb.sv
+!i122 1
+L0 8 21
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R10
+R1
+vvending_machine_top
+R2
+R3
+!i10b 1
+!s100 z9KK=`djHG>3jnC<^zlzf0
+IXC=fDZKjagI9=CmNEPg[g3
+S1
+R4
+w1776276664
+8vending_machine_top.sv
+Fvending_machine_top.sv
+!i122 1
+L0 1 23
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R10
+R1

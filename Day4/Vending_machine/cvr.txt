@@ -1,0 +1,406 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /vending_machine_top/v_if
+=== Design Unit: work.vending_machine_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         12        10         2    83.33%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /vending_machine_top/v_if --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                              D_in           1           1      100.00 
+                                              Q_in           0           1       50.00 
+                                            change           1           1      100.00 
+                                               clk           1           1      100.00 
+                                          dispense           1           1      100.00 
+                                             reset           0           1       50.00 
+
+Total Node Count     =          6 
+Toggled Node Count   =          4 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      83.33% (10 of 12 bins)
+
+=================================================================================
+=== Instance: /vending_machine_top/tb
+=== Design Unit: work.vending_machine_tb
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      16        16         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /vending_machine_top/tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File vending_machine_tb.sv
+    8                                                module vending_machine_tb(vending_machine_if.TEST v_if);
+    9                                                    // 1. Add the modport above
+    10                                               
+    11                                                   // reset initial values for inputs
+    12                                                   initial begin
+    13              1                          1             v_if.reset = 0;
+    14              1                          1             v_if.Q_in = 0;
+    15              1                          1             v_if.D_in = 0;
+    16              1                          1             #50;
+    17              1                          1             v_if.reset = 1;
+    18              1                          1             #100;
+    19                                                       // test dollars
+    20              1                          1             v_if.D_in = 1'b1;  v_if.Q_in = 1'b0;
+    20              2                          1     
+    21                                                       // test quarters
+    22              1                          1             #100 v_if.D_in = 1'b0; v_if.Q_in = 1'b1;
+    22              2                          1     
+    22              3                          1     
+    23              1                          1             #100 v_if.D_in = 1'b0; v_if.Q_in = 1'b1;
+    23              2                          1     
+    23              3                          1     
+    24              1                          1             #10;
+    25              1                          1             $stop;
+
+
+=================================================================================
+=== Instance: /vending_machine_top/dut/vending_machine_sva_inst
+=== Design Unit: work.vending_machine_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       3         3         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/vending_machine_top/dut/vending_machine_sva_inst/Dollar_assertion
+                     vending_machine_sva.sv(25)
+                                                        0          1
+/vending_machine_top/dut/vending_machine_sva_inst/quarter_dispense_assertion
+                     vending_machine_sva.sv(26)
+                                                        0          1
+/vending_machine_top/dut/vending_machine_sva_inst/quarter_change_assertion
+                     vending_machine_sva.sv(27)
+                                                        0          1
+
+Directive Coverage:
+    Directives                       3         3         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/vending_machine_top/dut/vending_machine_sva_inst/Dollar_coverage 
+                                         vending_machine_sva Verilog  SVA  vending_machine_sva.sv(29)
+                                                                                50 Covered   
+/vending_machine_top/dut/vending_machine_sva_inst/quarter_dispense_coverage 
+                                         vending_machine_sva Verilog  SVA  vending_machine_sva.sv(30)
+                                                                                 1 Covered   
+/vending_machine_top/dut/vending_machine_sva_inst/quarter_change_coverage 
+                                         vending_machine_sva Verilog  SVA  vending_machine_sva.sv(31)
+                                                                                 1 Covered   
+
+=================================================================================
+=== Instance: /vending_machine_top/dut
+=== Design Unit: work.vending_machine
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        16        14         2    87.50%
+
+================================Branch Details================================
+
+Branch Coverage for instance /vending_machine_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File vending_machine.sv
+------------------------------------IF Branch------------------------------------
+    14                                        58     Count coming in to IF
+    14              1                          2         if(~v_if.reset) begin
+    16              1                         56         end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    24                                        59     Count coming in to CASE
+    25              1                         21             v_if.WAIT: 
+    31              1                         19             v_if.Q_25:
+    37              1                         18             v_if.Q_50:
+    43              1                          1             default: ns = v_if.WAIT;
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                        21     Count coming in to IF
+    26              1                         19                 if(v_if.Q_in)
+    28              1                          2                 else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    32                                        19     Count coming in to IF
+    32              1                         19                 if(v_if.Q_in) 
+    34              1                    ***0***                 else
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                        18     Count coming in to IF
+    38              1                         18                 if(v_if.Q_in)
+    40              1                    ***0***                 else
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                        59     Count coming in to IF
+    49              1                         19         if((cs == v_if.WAIT && v_if.D_in == 1'b1) || (cs == v_if.Q_50 && v_if.Q_in == 1'b1))
+    51              1                         40         else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    54                                        59     Count coming in to IF
+    54              1                          1         if(cs == v_if.WAIT && v_if.D_in == 1'b1)
+    56              1                         58         else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       6         5         1    83.33%
+
+================================Condition Details================================
+
+Condition Coverage for instance /vending_machine_top/dut --
+
+  File vending_machine.sv
+----------------Focused Condition View-------------------
+Line       49 Item    1  (((cs == 0) && v_if.D_in) || ((cs == 3) && v_if.Q_in))
+Condition totals: 3 of 4 input terms covered = 75.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+   (cs == 0)         Y
+   v_if.D_in         Y
+   (cs == 3)         Y
+   v_if.Q_in         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (cs == 0)_0           ~((cs == 3) && v_if.Q_in)     
+  Row   2:          1  (cs == 0)_1           v_if.D_in                     
+  Row   3:          1  v_if.D_in_0           (~((cs == 3) && v_if.Q_in) && (cs == 0))
+  Row   4:          1  v_if.D_in_1           (cs == 0)                     
+  Row   5:          1  (cs == 3)_0           ~((cs == 0) && v_if.D_in)     
+  Row   6:          1  (cs == 3)_1           (~((cs == 0) && v_if.D_in) && v_if.Q_in)
+  Row   7:    ***0***  v_if.Q_in_0           (~((cs == 0) && v_if.D_in) && (cs == 3))
+  Row   8:          1  v_if.Q_in_1           (~((cs == 0) && v_if.D_in) && (cs == 3))
+
+----------------Focused Condition View-------------------
+Line       54 Item    1  ((cs == 0) && v_if.D_in)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+   (cs == 0)         Y
+   v_if.D_in         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (cs == 0)_0           -                             
+  Row   2:          1  (cs == 0)_1           v_if.D_in                     
+  Row   3:          1  v_if.D_in_0           (cs == 0)                     
+  Row   4:          1  v_if.D_in_1           (cs == 0)                     
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      16        14         2    87.50%
+
+================================Statement Details================================
+
+Statement Coverage for instance /vending_machine_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File vending_machine.sv
+    8                                                module vending_machine(vending_machine_if.DUT v_if);
+    9                                                
+    10                                               reg [1:0] cs, ns;
+    11                                               
+    12                                               // state memory
+    13              1                         58     always @(posedge v_if.clk or negedge v_if.reset) begin
+    14                                                   if(~v_if.reset) begin
+    15              1                          2             cs <= v_if.WAIT;
+    16                                                   end else begin
+    17              1                         56             cs <= ns;
+    18                                                   end
+    19                                               end
+    20                                               
+    21                                               // next state logic
+    22                                               
+    23              1                         59     always @(cs, v_if.Q_in, v_if.D_in) begin
+    24                                                   case (cs)
+    25                                                       v_if.WAIT: 
+    26                                                           if(v_if.Q_in)
+    27              1                         19                     ns = v_if.Q_25;
+    28                                                           else
+    29              1                          2                     ns = v_if.WAIT;
+    30                                               
+    31                                                       v_if.Q_25:
+    32                                                           if(v_if.Q_in) 
+    33              1                         19                     ns = v_if.Q_50;
+    34                                                           else
+    35              1                    ***0***                     ns = v_if.Q_25;
+    36                                               
+    37                                                       v_if.Q_50:
+    38                                                           if(v_if.Q_in)
+    39              1                         18                     ns = v_if.WAIT;
+    40                                                           else
+    41              1                    ***0***                     ns = v_if.Q_50; 
+    42                                               
+    43              1                          1             default: ns = v_if.WAIT;
+    44                                                   endcase
+    45                                               end
+    46                                               
+    47                                               // output logic
+    48              1                         59     always @(cs, v_if.Q_in, v_if.D_in) begin
+    49                                                   if((cs == v_if.WAIT && v_if.D_in == 1'b1) || (cs == v_if.Q_50 && v_if.Q_in == 1'b1))
+    50              1                         19             v_if.dispense = 1'b1;
+    51                                                   else
+    52              1                         40             v_if.dispense = 1'b0;
+    53                                               
+    54                                                   if(cs == v_if.WAIT && v_if.D_in == 1'b1)
+    55              1                          1             v_if.change = 1'b1;
+    56                                                   else
+    57              1                         58             v_if.change = 1'b0;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          8         8         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /vending_machine_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                           cs[1-0]           1           1      100.00 
+                                           ns[1-0]           1           1      100.00 
+
+Total Node Count     =          4 
+Toggled Node Count   =          4 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (8 of 8 bins)
+
+=================================================================================
+=== Instance: /vending_machine_top/monitor
+=== Design Unit: work.vending_machine_monitor
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         0         1     0.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /vending_machine_top/monitor --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File vending_machine_monitor.sv
+    8                                                module vending_machine_monitor(vending_machine_if.MONITOR v_if);
+    9                                                // 1. Add the modport above
+    10                                               // 2. Add the monitor statement in an initial block
+    11                                                   initial begin
+    12              1                    ***0***         $monitor("reset = %b, clk = %b, Q_in = %b, D_in = %b, dispense = %b, change = %b",
+
+
+=================================================================================
+=== Instance: /vending_machine_top
+=== Design Unit: work.vending_machine_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /vending_machine_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File vending_machine_top.sv
+    1                                                module vending_machine_top();
+    2                                                
+    3                                                    // 1. Generate the clock
+    4                                                    bit clk;
+    5                                                    initial begin
+    6               1                          1         clk = 0;
+    7               1                          1         forever #1 clk = ~clk;
+    7               2                        360     
+    7               3                        359     
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /vending_machine_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/vending_machine_top/dut/vending_machine_sva_inst/Dollar_coverage 
+                                         vending_machine_sva Verilog  SVA  vending_machine_sva.sv(29)
+                                                                                50 Covered   
+/vending_machine_top/dut/vending_machine_sva_inst/quarter_dispense_coverage 
+                                         vending_machine_sva Verilog  SVA  vending_machine_sva.sv(30)
+                                                                                 1 Covered   
+/vending_machine_top/dut/vending_machine_sva_inst/quarter_change_coverage 
+                                         vending_machine_sva Verilog  SVA  vending_machine_sva.sv(31)
+                                                                                 1 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 3
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/vending_machine_top/dut/vending_machine_sva_inst/Dollar_assertion
+                     vending_machine_sva.sv(25)
+                                                        0          1
+/vending_machine_top/dut/vending_machine_sva_inst/quarter_dispense_assertion
+                     vending_machine_sva.sv(26)
+                                                        0          1
+/vending_machine_top/dut/vending_machine_sva_inst/quarter_change_assertion
+                     vending_machine_sva.sv(27)
+                                                        0          1
+
+Total Coverage By Instance (filtered view): 92.27%
+
