@@ -1,0 +1,342 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /ALU_top/alu_inst
+=== Design Unit: work.ALU_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         34        34         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /ALU_top/alu_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                            A[3-0]           1           1      100.00 
+                                            B[3-0]           1           1      100.00 
+                                            C[4-0]           1           1      100.00 
+                                       Opcode[1-0]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                             reset           1           1      100.00 
+
+Total Node Count     =         17 
+Toggled Node Count   =         17 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (34 of 34 bins)
+
+=================================================================================
+=== Instance: /ALU_top/tb
+=== Design Unit: work.ALU_tb
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      44        44         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_top/tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_tb.sv
+    10                                               module ALU_tb(ALU_if.TEST alu_inst);
+    11                                                   
+    12                                                   // reset initial values for inputs
+    13                                                   initial begin
+    14                                               
+    15              1                          1             alu_inst.reset = 0; 
+    16              1                          1             #2;
+    17              1                          1             alu_inst.reset = 1;
+    18              1                          2             repeat(2) @(posedge alu_inst.clk);
+    18              2                          2     
+    19              1                          1             alu_inst.reset = 0;
+    20                                               
+    21              1                          1             alu_inst.Opcode = 0;
+    22              1                          1             alu_inst.A = 0;
+    23              1                          1             alu_inst.B = 0;
+    24                                               
+    25                                                       // Add operation
+    26              1                          1             alu_inst.Opcode = alu_inst.Add;
+    27              1                          1             for(int i = 0; i < 4; i++) begin
+    27              2                          4     
+    28              1                          4                 @(posedge alu_inst.clk);
+    29              1                          4                 alu_inst.A = $random;
+    30              1                          4                 alu_inst.B = $random;
+    31                                                       end
+    32                                               
+    33              1                          2             repeat(2) @(posedge alu_inst.clk);
+    33              2                          2     
+    34                                               
+    35                                                       // Sub operation
+    36              1                          1             alu_inst.Opcode = alu_inst.Sub;
+    37              1                          1             for(int i = 0; i < 4; i++) begin
+    37              2                          4     
+    38              1                          4                 @(posedge alu_inst.clk);
+    39              1                          4                 alu_inst.A = $random;
+    40              1                          4                 alu_inst.B = $random;
+    41                                                       end
+    42                                               
+    43              1                          2             repeat(2) @(posedge alu_inst.clk);
+    43              2                          2     
+    44                                                       
+    45                                                       // Not_A operation
+    46              1                          1             alu_inst.Opcode = alu_inst.Not_A;
+    47              1                          1             for(int i = 0; i < 4; i++) begin
+    47              2                          4     
+    48              1                          4                 @(posedge alu_inst.clk);
+    49              1                          4                 alu_inst.A = $random;
+    50              1                          4                 alu_inst.B = $random;
+    51                                                       end
+    52                                               
+    53              1                          2             repeat(2) @(posedge alu_inst.clk);
+    53              2                          2     
+    54                                               
+    55                                                       // ReductionOR_B operation
+    56              1                          1             alu_inst.Opcode = alu_inst.ReductionOR_B;
+    57              1                          1             for(int i = 0; i < 4; i++) begin
+    57              2                          4     
+    58              1                          4                 @(posedge alu_inst.clk);
+    59              1                          4                 alu_inst.A = $random;
+    60              1                          4                 alu_inst.B = $random;
+    61                                                       end
+    62                                               
+    63              1                          1             alu_inst.Opcode = alu_inst.Add;
+    64              1                          2             repeat(2) @(posedge alu_inst.clk);
+    64              2                          2     
+    65                                               
+    66              1                          1             #100; $stop;
+    66              2                          1     
+
+
+=================================================================================
+=== Instance: /ALU_top/dut/ALU_if_inst
+=== Design Unit: work.ALU_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       5         5         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/ALU_top/dut/ALU_if_inst/reset_assertion
+                     ALU_sva.sv(19)                     0          1
+/ALU_top/dut/ALU_if_inst/alu_add_assertion
+                     ALU_sva.sv(26)                     0          1
+/ALU_top/dut/ALU_if_inst/alu_Sub_assertion
+                     ALU_sva.sv(33)                     0          1
+/ALU_top/dut/ALU_if_inst/alu_Not_A_assertion
+                     ALU_sva.sv(40)                     0          1
+/ALU_top/dut/ALU_if_inst/alu_ReductionOR_B_assertion
+                     ALU_sva.sv(47)                     0          1
+
+Directive Coverage:
+    Directives                       5         5         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/ALU_top/dut/ALU_if_inst/reset_coverage  ALU_sva Verilog  SVA  ALU_sva.sv(20)     2 Covered   
+/ALU_top/dut/ALU_if_inst/alu_add_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(27)    16 Covered   
+/ALU_top/dut/ALU_if_inst/alu_Sub_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(34)     6 Covered   
+/ALU_top/dut/ALU_if_inst/alu_Not_A_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(41)     6 Covered   
+/ALU_top/dut/ALU_if_inst/alu_ReductionOR_B_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(48)     4 Covered   
+
+=================================================================================
+=== Instance: /ALU_top/dut
+=== Design Unit: work.ALU_4_bit
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         6         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /ALU_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU.sv
+------------------------------------CASE Branch------------------------------------
+    15                                        20     Count coming in to CASE
+    16              1                          6           	alu_inst.Add:            Alu_out = alu_inst.A + alu_inst.B;
+    17              1                          5           	alu_inst.Sub:            Alu_out = alu_inst.A - alu_inst.B;
+    18              1                          5           	alu_inst.Not_A:          Alu_out = ~alu_inst.A;
+    19              1                          4           	alu_inst.ReductionOR_B:  Alu_out = |alu_inst.B;
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                        36     Count coming in to IF
+    26              1                          3           if (alu_inst.reset)
+    28              1                         33           else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       8         8         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU.sv
+    9                                                module ALU_4_bit(ALU_if.DUT alu_inst);
+    10                                               
+    11                                                  logic signed [4:0] Alu_out; // ALU output in 2's complement
+    12                                               
+    13                                                  // Do the operation
+    14              1                          1        always @* begin
+    15                                                     case (alu_inst.Opcode)
+    16              1                          6           	alu_inst.Add:            Alu_out = alu_inst.A + alu_inst.B;
+    17              1                          5           	alu_inst.Sub:            Alu_out = alu_inst.A - alu_inst.B;
+    18              1                          5           	alu_inst.Not_A:          Alu_out = ~alu_inst.A;
+    19              1                          4           	alu_inst.ReductionOR_B:  Alu_out = |alu_inst.B;
+    20                                                       default:  Alu_out = 5'b0;
+    21                                                     endcase
+    22                                                  end // always @ *
+    23                                               
+    24                                                  // Register output C
+    25              1                         36        always @(posedge alu_inst.clk or posedge alu_inst.reset) begin
+    26                                                     if (alu_inst.reset)
+    27              1                          3     	     alu_inst.C <= 5'b0;
+    28                                                     else
+    29              1                         33     	     alu_inst.C<= Alu_out;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10        10         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /ALU_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                      Alu_out[4-0]           1           1      100.00 
+
+Total Node Count     =          5 
+Toggled Node Count   =          5 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (10 of 10 bins)
+
+=================================================================================
+=== Instance: /ALU_top/monitor
+=== Design Unit: work.ALU_monitor
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         0         1     0.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_top/monitor --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_monitor.sv
+    8                                                module ALU_monitor(ALU_if.MONITOR alu_inst);
+    9                                                
+    10                                                   initial begin
+    11              1                    ***0***             $monitor("reset = %b opcode = %b A = %b B = %b C = %b",alu_inst.reset, alu_inst.Opcode, alu_inst.A, alu_inst.B, alu_inst.C);
+
+
+=================================================================================
+=== Instance: /ALU_top
+=== Design Unit: work.ALU_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_top.sv
+    8                                                module ALU_top ();
+    9                                                    
+    10                                                   // 1. Generate the clock
+    11                                                   bit clk;
+    12                                                   initial begin
+    13              1                          1         clk = 0;
+    14              1                          1         forever #5 clk = ~clk;
+    14              2                         71     
+    14              3                         70     
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /ALU_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/ALU_top/dut/ALU_if_inst/reset_coverage  ALU_sva Verilog  SVA  ALU_sva.sv(20)     2 Covered   
+/ALU_top/dut/ALU_if_inst/alu_add_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(27)    16 Covered   
+/ALU_top/dut/ALU_if_inst/alu_Sub_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(34)     6 Covered   
+/ALU_top/dut/ALU_if_inst/alu_Not_A_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(41)     6 Covered   
+/ALU_top/dut/ALU_if_inst/alu_ReductionOR_B_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(48)     4 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 5
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/ALU_top/dut/ALU_if_inst/reset_assertion
+                     ALU_sva.sv(19)                     0          1
+/ALU_top/dut/ALU_if_inst/alu_add_assertion
+                     ALU_sva.sv(26)                     0          1
+/ALU_top/dut/ALU_if_inst/alu_Sub_assertion
+                     ALU_sva.sv(33)                     0          1
+/ALU_top/dut/ALU_if_inst/alu_Not_A_assertion
+                     ALU_sva.sv(40)                     0          1
+/ALU_top/dut/ALU_if_inst/alu_ReductionOR_B_assertion
+                     ALU_sva.sv(47)                     0          1
+
+Total Coverage By Instance (filtered view): 99.64%
+

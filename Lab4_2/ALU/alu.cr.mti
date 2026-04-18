@@ -1,0 +1,36 @@
+{D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU_sva.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU_sva.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALU_sva
+
+Top level modules:
+	ALU_sva
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU_if.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling interface ALU_if
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU_top.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU_top.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALU_top
+
+Top level modules:
+	ALU_top
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU_monitor.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU_monitor.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALU_monitor
+
+Top level modules:
+	ALU_monitor
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab4_2/ALU/ALU.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALU_4_bit
+
+Top level modules:
+	ALU_4_bit
+
+} {} {}}
