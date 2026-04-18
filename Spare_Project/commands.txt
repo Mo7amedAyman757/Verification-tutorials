@@ -1,0 +1,5 @@
+
+vcover merge dff_merged.ucdb dff_tb1.ucdb dff_tb2.ucdb -du dff
+
+vcover report dff_merged.ucdb -details -annotate -all -output coverage_rpt.txt
+

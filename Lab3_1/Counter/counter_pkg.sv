@@ -47,7 +47,7 @@ package counter_pkg;
                     bins all_vals[] = {[0:(2**COUNTER_WIDTH) -1]};
                 }
 
-            // 3) Underflow transition
+            // 5) Underflow transition
             underflow_cfg: coverpoint count_out
                 iff (rst_n && ce && !up_down){
                     bins underflow = (0 => (2**COUNTER_WIDTH)-1);

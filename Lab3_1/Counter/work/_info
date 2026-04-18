@@ -9,6 +9,7 @@ R0
 R0
 R0
 R0
+R0
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -18,17 +19,17 @@ R0
 cModel Technology
 dD:/Career tracks/Digial_IC/09-Verification/Lab3_1/ALU
 T_opt
-!s110 1776034032
-VL7BZaG1^kK:3J:Ljn[X>c3
+!s110 1776488940
+V=?1<8d?oOmk_Rl>GB0??]3
 04 10 4 work counter_tb fast 0
-=1-902e16e4070c-69dc20f0-27f-5180
+=1-902e16e4070c-69e311ec-154-32a8
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
 n@_opt
 OL;O;2021.1;73
 vcounter
-Z2 !s110 1776034021
+Z2 !s110 1776488939
 !i10b 1
 !s100 ;fh5WT@`3b6<QB3a4eFW`2
 I]dX7S6^<dfTPSDNjUlQ`41
@@ -36,14 +37,14 @@ Z3 dD:/Career tracks/Digial_IC/09-Verification/Lab3_1/Counter
 w1773515140
 8counter.v
 Fcounter.v
-!i122 16
+!i122 17
 L0 8 28
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z6 !s108 1776034021.000000
+Z6 !s108 1776488939.000000
 Z7 !s107 counter_tb.sv|counter.v|counter_pkg.sv|
 Z8 !s90 -reportprogress|300|counter_pkg.sv|counter.v|counter_tb.sv|+cover|
 !i113 0
@@ -58,10 +59,10 @@ R2
 I][G<?3G48Y;eh1=6;n=<P2
 S1
 R3
-w1776033856
+w1776291378
 8counter_pkg.sv
 Fcounter_pkg.sv
-!i122 16
+!i122 17
 Z12 L0 1 0
 V][G<?3G48Y;eh1=6;n=<P2
 R5
@@ -84,15 +85,15 @@ R4
 r1
 !s85 0
 !i10b 1
-!s100 FE2mz]P`R5DQKZ3KZZbn:2
-IZ2DN3;5b2YCFnMMb0>YXj2
+!s100 n`DbkJS5X<ecl<ZfKdXF@0
+I6cHD?S2]b]4RN;XOc[Nhg0
 !s105 counter_tb_sv_unit
 S1
 R3
-Z14 w1776034006
+Z14 w1776034182
 Z15 8counter_tb.sv
 Z16 Fcounter_tb.sv
-!i122 16
+!i122 17
 L0 3 129
 R5
 31
@@ -119,7 +120,7 @@ R3
 R14
 R15
 R16
-!i122 16
+!i122 17
 R12
 R5
 31
