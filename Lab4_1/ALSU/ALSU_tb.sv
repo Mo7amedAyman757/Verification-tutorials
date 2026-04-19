@@ -48,23 +48,20 @@ module ALSU_tb;
     // ─── 3. Clock generation ─────────────────────────────────────────────────
     initial begin
         clk = 1'b0;
-        forever begin 
-            #5 clk = ~clk;
-            ALSU_obj.clk = clk;
-        end
+        forever #5 clk = ~clk;
     end
 
     // ─── 4. Stimulus generation ───────────────────────────────────────────────
     initial begin
-        #5;
+
         // assert reset 
         assert_reset;
 
         // ── First Loop: constraints 1–7 active, constraint 8 disabled ─────────
         $display("__________________First Loop______________________");
-        ALSU_obj.opcode_arr_cst.constraint_mode(0);
+        ALSU_obj.opcode_seq_con.constraint_mode(0);
 
-        repeat(1000) begin
+        repeat(10000) begin
             assert(ALSU_obj.randomize());
             cin = ALSU_obj.cin;
             rst = ALSU_obj.rst;
@@ -80,24 +77,24 @@ module ALSU_tb;
             if(ALSU_obj.rst) begin
                 check_reset();
             end else begin
-                ALSU_obj.sample_coverage();
                 golden_model();
                 check_result();
+                if(!ALSU_obj.bypass_B || !ALSU_obj.bypass_A)
+                    ALSU_obj.cvr_gp.sample();    
             end
         end
 
         // ── Between loops: disable all constraints, force signals to 0 ────────
         ALSU_obj.constraint_mode(0); // disable constraints 1–7
-        ALSU_obj.rst.rand_mode(0);    
-        ALSU_obj.red_op_A.rand_mode(0);
-        ALSU_obj.red_op_B.rand_mode(0);  
-        ALSU_obj.bypass_A.rand_mode(0);
-        ALSU_obj.bypass_B.rand_mode(0);
-        ALSU_obj.opcode_arr_cst.constraint_mode(1); // enable constraint 8
-            
+        ALSU_obj.opcode_seq_con.constraint_mode(1); // enable constraint 8
+        rst = 0; 
+        red_op_A = 0;
+        red_op_B = 0;  
+        bypass_A = 0;
+        bypass_B = 0;  
         // ── Second Loop: unique opcode sequence, randomise other inputs ────────
         $display("__________________Second Loop______________________");
-        repeat(10) begin
+        repeat(10000) begin
             assert(ALSU_obj.randomize());
 
             // Apply inputs that stay constant across the 6 inner iterations
@@ -109,11 +106,11 @@ module ALSU_tb;
 
             // Iterate over the 6 unique valid opcodes
             for (int i = 0; i < 6; i++) begin
-                opcode = ALSU_obj.opcode;
-                ALSU_obj.opcode = ALSU_obj.opcode_arr[i];
+                opcode = ALSU_obj.opcode_valid[i];
+                ALSU_obj.opcode = ALSU_obj.opcode_valid[i];
                 golden_model();
                 check_result();
-                ALSU_obj.sample_coverage();
+                ALSU_obj.cvr_gp.sample(); 
             end    
         end
         
@@ -253,7 +250,7 @@ module ALSU_tb;
         else begin
             correct_count += 1;   
              $display("%t: SUCCESS--> A = %0d B = %0d opcode = %0d opcode_arr = %0p red_op_A = %0d, red_op_B = %0d bypass_A_reg = %0d, bypass_B_reg = %0d direction_reg = %0d serial_in_reg = %0d",
-                     $time, A, B, opcode,ALSU_obj.opcode_arr, red_op_A, red_op_B, bypass_A, bypass_B,
+                     $time, A, B, opcode,ALSU_obj.opcode_valid, red_op_A, red_op_B, bypass_A, bypass_B,
                      direction, serial_in);
             $display("out = %0d,out_exp = %0d, leds = %0d, leds_exp = %0d",
                      out, out_exp, leds, leds_exp); 

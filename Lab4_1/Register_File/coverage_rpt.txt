@@ -1,0 +1,263 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /RegisterFile_tb/DUT
+=== Design Unit: work.config_reg
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         76        72         4    94.73%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /RegisterFile_tb/DUT --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                      address[0-2]           1           1                              100.00 
+                                               clk           1           1                              100.00 
+                                      data_in[0-1]           1           1                              100.00 
+                                        data_in[2]           1           0                               50.00 
+                                      data_in[3-4]           1           1                              100.00 
+                                        data_in[5]           1           0                               50.00 
+                                     data_in[6-14]           1           1                              100.00 
+                                       data_in[15]           0           1                               50.00 
+                                    data_out[15-0]           1           1                              100.00 
+                                             reset           1           0                               50.00 
+                                             write           1           1                              100.00 
+
+Total Node Count     =         38 
+Toggled Node Count   =         34 
+Untoggled Node Count =          4 
+
+Toggle Coverage      =      94.73% (72 of 76 bins)
+
+=================================================================================
+=== Instance: /RegisterFile_tb
+=== Design Unit: work.RegisterFile_tb
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RegisterFile_tb
+NOTE: The modification timestamp for source file 'RegisterFile_tb.sv' has been altered since compilation.
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RegisterFile_tb.sv
+------------------------------------IF Branch------------------------------------
+    46                                        33     Count coming in to IF
+    46              1                         11             if(data_out !== expected_res) begin
+    48              1                         22             end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       1         1         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /RegisterFile_tb --
+NOTE: The modification timestamp for source file 'RegisterFile_tb.sv' has been altered since compilation.
+
+  File RegisterFile_tb.sv
+----------------Focused Condition View-------------------
+Line       46 Item    1  (data_out !== expected_res)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                   Input Term   Covered  Reason for no coverage   Hint
+                  -----------  --------  -----------------------  --------------
+  (data_out !== expected_res)         Y
+
+     Rows:       Hits  FEC Target                     Non-masking condition(s)      
+ ---------  ---------  --------------------           -------------------------     
+  Row   1:          1  (data_out !== expected_res)_0  -                             
+  Row   2:          1  (data_out !== expected_res)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      59        59         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RegisterFile_tb --
+NOTE: The modification timestamp for source file 'RegisterFile_tb.sv' has been altered since compilation.
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RegisterFile_tb.sv
+    11                                               module RegisterFile_tb();
+    12                                               
+    13                                                   // inputs and outputs
+    14                                                   logic clk, write ,reset;
+    15                                                   logic [2:0] address;
+    16                                                   logic [15:0] data_in;
+    17                                                   logic [15:0] data_out;
+    18                                               
+    19                                                   // DUT
+    20                                                   config_reg DUT(
+    21                                                       clk,
+    22                                                       reset,
+    23                                                       write,
+    24                                                       data_in,
+    25                                                       address,
+    26                                                       data_out    
+    27                                                   );
+    28                                               
+    29                                                   reg_file reg_selection;
+    30                                               
+    31                                                   logic [15:0] reset_assoc[string];
+    32                                               
+    33                                                   // Clock
+    34              1                        112         always #5 clk = ~clk;
+    34              2                        111     
+    35                                               
+    36                                                   // task for reset
+    37                                                   task reset_assert;
+    38              1                          1             reset = 1'b1;
+    39              1                          1             write = 1'b0;
+    40              1                          1             #10; 
+    41              1                          1             reset = 1'b0;   
+    42                                                   endtask
+    43                                               
+    44                                                   // task for check 
+    45                                                   task check_result(string name, input [15:0] expected_res);
+    46                                                       if(data_out !== expected_res) begin
+    47              1                         11                 $display("ERROR in %s: Expected = %h, Got = %h", name, expected_res, data_out);    
+    48                                                       end else begin
+    49              1                         22                 $display("PASS in %s: Value = %h", name, data_out);
+    50                                                       end
+    51                                                   endtask
+    52                                               
+    53                                                   // task for write
+    54                                                   task write_reg(reg_file reg_r, logic [15:0] val);
+    55              1                         24             @(posedge clk);
+    56              1                         24             address = reg_r;
+    57              1                         24             data_in = val;
+    58              1                         24             write = 1'b1;
+    59              1                         24             @(posedge clk);
+    60              1                         24             write = 1'b0;
+    61                                                   endtask
+    62                                               
+    63                                                   // general stimuli
+    64                                                   initial begin
+    65              1                          1             clk = 0;
+    66                                               
+    67              1                          1             reset_assoc["adc0_reg"] = 16'hFFFF;
+    68              1                          1             reset_assoc["adc1_reg"] = 16'h0;
+    69              1                          1             reset_assoc["temp_sensor0_reg"] = 16'h0;
+    70              1                          1             reset_assoc["temp_sensor1_reg"] = 16'h0;              
+    71              1                          1             reset_assoc["analog_test"] = 16'hABCD;                   
+    72              1                          1             reset_assoc["digital_test"] = 16'h0;        
+    73              1                          1             reset_assoc["amp_gain"] = 16'h0;                  
+    74              1                          1             reset_assoc["digital_config"] = 16'h1;
+    75                                               
+    76                                                       // assert reset
+    77              1                          1             reset_assert();
+    78                                               
+    79                                                       $display("-----------------------Check Reset assertion-----------------------");
+    80              1                          1             // check reset
+    81              1                          8             reg_selection = reg_selection.first();
+    82              1                          8             repeat(reg_selection.num()) begin
+    83              1                          8                 address = reg_selection;
+    84              1                          8                 #1;
+    85              1                          8                 check_result(reg_selection.name(), reset_assoc[reg_selection.name()]);
+    86                                                           reg_selection = reg_selection.next();
+    87                                                       end
+    88                                               
+    89              1                          1             $display("-----------------------Check write disable-----------------------");
+    90              1                          1             // write disable Test
+    91              1                          1             reg_selection = reg_selection.first();
+    92              1                          1                 address = adc0_reg;
+    93              1                          1                 data_in = 16'h1234;
+    94              1                          1                 write = 0;
+    95                                                           #10;
+    96                                                           check_result("adc0_reg", 16'hFFFF);
+    97              1                          1     
+    98              1                          8             $display("-----------------------Check write 1-----------------------");
+    99              1                          8             // write and read
+    100                                                      reg_selection = reg_selection.first();
+    101             1                          8             repeat(reg_selection.num()) begin
+    102             1                          8                 write_reg(reg_selection, 16'hA5A5);
+    103                                              
+    104             1                          8                 address = reg_selection;
+    105             1                          8                 #1;
+    106                                              
+    107                                                          check_result(reg_selection.name(), 16'hA5A5);
+    108                                                          reg_selection = reg_selection.next();
+    109             1                          1             end
+    110             1                          8     
+    111             1                          8             $display("-----------------------Check write 2-----------------------");
+    112                                                      // write and read
+    113             1                          8             reg_selection = reg_selection.first();
+    114             1                          8             repeat(reg_selection.num()) begin
+    115                                                          write_reg(reg_selection, 16'hFFFF);
+    116             1                          8     
+    117             1                          8                 address = reg_selection;
+    118                                                          #1;
+    119                                              
+    120                                                          check_result(reg_selection.name(), 16'hFFFF);
+    121             1                          1                 reg_selection = reg_selection.next();
+    122             1                          8             end
+    123             1                          8     
+    124                                                      $display("-----------------------Check write 3-----------------------");
+    125             1                          8             // write and read
+    126             1                          8             reg_selection = reg_selection.first();
+    127                                                      repeat(reg_selection.num()) begin
+    128             1                          8                 write_reg(reg_selection, 16'h8000);
+    129             1                          8     
+    130                                                          address = reg_selection;
+    131                                                          #1;
+    132             1                          1     
+    132             2                          1     
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         84        80         4    95.23%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /RegisterFile_tb --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                      address[0-2]           1           1                              100.00 
+                                               clk           1           1                              100.00 
+                                      data_in[0-1]           1           1                              100.00 
+                                        data_in[2]           1           0                               50.00 
+                                      data_in[3-4]           1           1                              100.00 
+                                        data_in[5]           1           0                               50.00 
+                                     data_in[6-14]           1           1                              100.00 
+                                       data_in[15]           0           1                               50.00 
+                                    data_out[0-15]           1           1                              100.00 
+                                     reg_selection               ENUM type       Value       Count 
+                                                                  adc0_reg           1      100.00 
+                                                                  adc1_reg           1      100.00 
+                                                          temp_sensor0_reg           1      100.00 
+                                                          temp_sensor1_reg           1      100.00 
+                                                               analog_test           1      100.00 
+                                                              digital_test           1      100.00 
+                                                                  amp_gain           1      100.00 
+                                                            digital_config           1      100.00 
+                                             reset           1           0                               50.00 
+                                             write           1           1                              100.00 
+
+Total Node Count     =         46 
+Toggled Node Count   =         42 
+Untoggled Node Count =          4 
+
+Toggle Coverage      =      95.23% (80 of 84 bins)
+
+
+Total Coverage By Instance (filtered view): 98.75%
+

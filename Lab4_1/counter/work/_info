@@ -1,0 +1,280 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/questasim64_2021.1/examples
+T_opt
+!s110 1776546971
+VIjQ[:0OAgZiiL5C7:XPMM0
+04 11 4 work counter_top fast 0
+=1-902e16e4070c-69e3f49b-196-607c
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R1
+vcounter
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1776547452
+!i10b 1
+!s100 IjK?NIzdjlONdPR6E3al90
+I]H3?8fjU5@8:?[icTX0c21
+S1
+Z5 dD:/Career tracks/Digial_IC/09-Verification/Lab4_1/counter
+w1776296631
+8counter.sv
+Fcounter.sv
+!i122 237
+L0 8 18
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z8 !s108 1776547452.000000
+!s107 counter_top.sv|counter_tb.sv|counter_sva.sv|counter_monitor.sv|counter_if.sv|counter.sv|
+Z9 !s90 -reportprogress|300|counter.sv|counter_if.sv|counter_monitor.sv|counter_sva.sv|counter_tb.sv|counter_top.sv|+cover|
+!i113 0
+Z10 !s102 +cover
+Z11 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+Ycounter_if
+R3
+R4
+!i10b 1
+!s100 X`>kLFH:j@]Bz^WJ]A2PB0
+IM<4DQjHeNcc;o_A?HVX?z2
+S1
+R5
+w1776297953
+8counter_if.sv
+Fcounter_if.sv
+!i122 237
+Z12 L0 8 0
+R6
+R7
+r1
+!s85 0
+31
+R8
+Z13 !s107 counter_top.sv|counter_tb.sv|counter_sva.sv|counter_monitor.sv|counter_if.sv|counter.sv|
+R9
+!i113 0
+R10
+R11
+R2
+vcounter_monitor
+R3
+R4
+!i10b 1
+!s100 0320NCe7WLUUU13:KU[Fk1
+IH[TmFK`bSRzLI`;2LE?G13
+S1
+R5
+w1776299340
+8counter_monitor.sv
+Fcounter_monitor.sv
+!i122 237
+L0 8 8
+R6
+R7
+r1
+!s85 0
+31
+R8
+R13
+R9
+!i113 0
+R10
+R11
+R2
+Xcounter_pkg
+R3
+Z14 !s110 1776303790
+!i10b 1
+!s100 CC9i^F[KUnE`m13bD7Pgb0
+Ic4G_hDca17AeU58SmE7J`1
+S1
+R5
+w1776302713
+8counter_pkg.sv
+Fcounter_pkg.sv
+!i122 14
+L0 1 0
+Vc4G_hDca17AeU58SmE7J`1
+R7
+r1
+!s85 0
+31
+Z15 !s108 1776303790.000000
+Z16 !s107 counter_tb.sv|counter_sva.sv|counter_pkg.sv|counter_monitor.sv|counter_if.sv|counter.sv|
+Z17 !s90 -reportprogress|300|counter.sv|counter_if.sv|counter_monitor.sv|counter_pkg.sv|counter_sva.sv|counter_tb.sv|+cover|
+!i113 0
+R10
+R11
+R2
+vcounter_sva
+R3
+R4
+!i10b 1
+!s100 Nn`zZBhh6oKe4>KeokMZ@1
+IjGWo9lOaLJ`T`<RkGF5]m3
+S1
+R5
+w1776546962
+8counter_sva.sv
+Fcounter_sva.sv
+!i122 237
+L0 8 66
+R6
+R7
+r1
+!s85 0
+31
+R8
+R13
+R9
+!i113 0
+R10
+R11
+R2
+vcounter_tb
+R3
+R4
+!i10b 1
+!s100 B[ok@GfoUX;1LK>?Vh3=31
+I8KNd8O^WF;K]CHFaR56QB2
+S1
+R5
+w1776546589
+Z18 8counter_tb.sv
+Z19 Fcounter_tb.sv
+!i122 237
+L0 10 64
+R6
+R7
+r1
+!s85 0
+31
+R8
+R13
+R9
+!i113 0
+R10
+R11
+R2
+Xcounter_tb_sv_unit
+R3
+DXx4 work 11 counter_pkg 0 22 c4G_hDca17AeU58SmE7J`1
+R14
+VgOJh^Y5mRNDoZB;Fzg_]:1
+r1
+!s85 0
+!i10b 1
+!s100 o_:O=`h`hkmP0@zgSO;R^0
+IgOJh^Y5mRNDoZB;Fzg_]:1
+!i103 1
+S1
+R5
+w1776303786
+R18
+R19
+!i122 14
+R12
+R7
+31
+R15
+R16
+R17
+!i113 0
+R10
+R11
+R2
+vcounter_top
+R3
+R4
+!i10b 1
+!s100 ZIbBiEI`[1JNaa8<RX<]52
+I00ozn7b?VaRPRf5imUzZ53
+S1
+R5
+w1776369093
+8counter_top.sv
+Fcounter_top.sv
+!i122 237
+L0 8 23
+R6
+R7
+r1
+!s85 0
+31
+R8
+R13
+R9
+!i113 0
+R10
+R11
+R2

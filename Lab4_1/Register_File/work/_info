@@ -1,0 +1,105 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Lab4_1/counter
+T_opt
+!s110 1776557056
+V1XR7[R4Xb0JJR2aEZDPJl3
+04 15 4 work RegisterFile_tb fast 0
+=1-902e16e4070c-69e41bff-353-d34
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vconfig_reg
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1776557049
+!i10b 1
+!s100 6bfXA:jazf2nZa;mROfhQ1
+I]ajj]Tnn0VT5MN0oOfXB20
+!i119 1
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Lab4_1/Register_File
+w1776554635
+8config_reg_buggy_questa.svp
+Fconfig_reg_buggy_questa.svp
+!i122 7
+L0 1 15
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1776557049.000000
+Z8 !s107 RegisterFile_tb.sv|config_reg_buggy_questa.svp|
+Z9 !s90 -reportprogress|300|config_reg_buggy_questa.svp|RegisterFile_tb.sv|+cover|
+!i113 0
+Z10 !s102 +cover
+Z11 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vRegisterFile_tb
+R2
+DXx4 work 23 RegisterFile_tb_sv_unit 0 22 :`SOBKejgzzaJjVbMMH?>1
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 [ERLnabV[mJM?UHIZA0hJ2
+In8Y?nWj?QkE3V;WR28N6g1
+!s105 RegisterFile_tb_sv_unit
+S1
+R4
+Z12 w1776557046
+Z13 8RegisterFile_tb.sv
+Z14 FRegisterFile_tb.sv
+!i122 7
+L0 11 131
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+n@register@file_tb
+XRegisterFile_tb_sv_unit
+R2
+R3
+V:`SOBKejgzzaJjVbMMH?>1
+r1
+!s85 0
+!i10b 1
+!s100 9[QRlG^14H7:Xc5gO[AfK1
+I:`SOBKejgzzaJjVbMMH?>1
+!i103 1
+S1
+R4
+R12
+R13
+R14
+!i122 7
+L0 1 0
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+n@register@file_tb_sv_unit

@@ -1,0 +1,409 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /counter_top/c_if
+=== Design Unit: work.counter_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         30        30         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /counter_top/c_if --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                                ce           1           1      100.00 
+                                               clk           1           1      100.00 
+                                    count_out[3-0]           1           1      100.00 
+                                    data_load[3-0]           1           1      100.00 
+                                            load_n           1           1      100.00 
+                                         max_count           1           1      100.00 
+                                             rst_n           1           1      100.00 
+                                           up_down           1           1      100.00 
+                                              zero           1           1      100.00 
+
+Total Node Count     =         15 
+Toggled Node Count   =         15 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (30 of 30 bins)
+
+=================================================================================
+=== Instance: /counter_top/tb
+=== Design Unit: work.counter_tb
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      45        45         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_top/tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_tb.sv
+    10                                               module counter_tb (counter_if.TEST c_if);
+    11                                                   
+    12                                                   //counter_class counter_transaction;
+    13                                               
+    14                                                   // reset initial values for inputs
+    15                                                   initial begin
+    16                                                       //counter_transaction = new();
+    17              1                          1             c_if.rst_n = 1;
+    18              1                          1             c_if.load_n = 1;
+    19              1                          1             c_if.up_down = 0;
+    20              1                          1             c_if.ce = 0;
+    21              1                          1             c_if.data_load = 0;
+    22                                                       
+    23                                                       // Reset
+    24              1                          2             repeat(2) @(posedge c_if.clk);
+    24              2                          2     
+    25              1                          1             c_if.rst_n = 0;
+    26                                               
+    27              1                          2             repeat(2) @(posedge c_if.clk);
+    27              2                          2     
+    28              1                          1             c_if.rst_n = 1;
+    29                                               
+    30                                                       // load test
+    31              1                          1             @(posedge c_if.clk);
+    32              1                          1             c_if.load_n = 0; c_if.data_load = 4'b0001;
+    32              2                          1     
+    33                                               
+    34              1                          1             @(posedge c_if.clk);
+    35              1                          1             c_if.data_load = 4'b0010;
+    36                                               
+    37              1                          1             @(posedge c_if.clk);
+    38              1                          1             c_if.data_load = 4'b0100;
+    39                                               
+    40              1                          1             @(posedge c_if.clk);
+    41              1                          1             c_if.data_load = 4'b1111;
+    42                                               
+    43                                                       // Hold test
+    44              1                          1             @(posedge c_if.clk);
+    45              1                          1             c_if.load_n = 1;
+    46              1                          3             repeat(3) @(posedge c_if.clk);
+    46              2                          3     
+    47                                               
+    48                                                       //Up count
+    49              1                          1             @(posedge c_if.clk);
+    50              1                          1             c_if.load_n = 1; c_if.ce = 1; c_if.up_down = 1;
+    50              2                          1     
+    50              3                          1     
+    51                                               
+    52              1                         15             repeat(15) @(posedge c_if.clk);
+    52              2                         15     
+    53                                               
+    54              1                          1             @(posedge c_if.clk);
+    55              1                          1             c_if.ce = 0;
+    56                                               
+    57                                                       // load test
+    58              1                          1             @(posedge c_if.clk);
+    59              1                          1             c_if.load_n = 1; c_if.data_load = 4'b0000;
+    59              2                          1     
+    60              1                          2             repeat(2) @(posedge c_if.clk);
+    60              2                          2     
+    61                                                       
+    62                                                       // // Down count
+    63              1                          1             @(posedge c_if.clk);
+    64              1                          1             c_if.ce = 1; c_if.up_down = 0;
+    64              2                          1     
+    65                                               
+    66              1                         15             repeat(15) @(posedge c_if.clk);
+    66              2                         15     
+    67                                               
+    68              1                          1             @(posedge c_if.clk);
+    69              1                          1             c_if.ce = 0;
+    70                                               
+    71              1                          1             $stop;
+
+
+=================================================================================
+=== Instance: /counter_top/dut/counter_sva_inst
+=== Design Unit: work.counter_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       7         7         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/counter_top/dut/counter_sva_inst/a_load_active_assertion
+                     counter_sva.sv(15)                 0          1
+/counter_top/dut/counter_sva_inst/a_hold_assertion
+                     counter_sva.sv(24)                 0          1
+/counter_top/dut/counter_sva_inst/a_increment_assertion
+                     counter_sva.sv(34)                 0          1
+/counter_top/dut/counter_sva_inst/a_decrement_assertion
+                     counter_sva.sv(44)                 0          1
+/counter_top/dut/counter_sva_inst/a_reset_assertion
+                     counter_sva.sv(52)                 0          1
+/counter_top/dut/counter_sva_inst/a_max_count_assertion
+                     counter_sva.sv(60)                 0          1
+/counter_top/dut/counter_sva_inst/a_zero_assertion
+                     counter_sva.sv(68)                 0          1
+
+Directive Coverage:
+    Directives                       7         7         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/counter_top/dut/counter_sva_inst/a_load_active_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(17)
+                                                                                 4 Covered   
+/counter_top/dut/counter_sva_inst/a_hold_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(26)
+                                                                                10 Covered   
+/counter_top/dut/counter_sva_inst/a_increment_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(36)
+                                                                                16 Covered   
+/counter_top/dut/counter_sva_inst/a_decrement_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(46)
+                                                                                14 Covered   
+/counter_top/dut/counter_sva_inst/a_reset_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(54)
+                                                                                 2 Covered   
+/counter_top/dut/counter_sva_inst/a_max_count_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(62)
+                                                                                10 Covered   
+/counter_top/dut/counter_sva_inst/a_zero_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(70)
+                                                                                 5 Covered   
+
+=================================================================================
+=== Instance: /counter_top/dut
+=== Design Unit: work.counter
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10        10         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /counter_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter.sv
+------------------------------------IF Branch------------------------------------
+    11                                        50     Count coming in to IF
+    11              1                          3         if (!c_if.rst_n)
+    13              1                          4         else if (!c_if.load_n)
+    15              1                         32         else if (c_if.ce)
+                                              11     All False Count
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    16                                        32     Count coming in to IF
+    16              1                         16             if (c_if.up_down)
+    18              1                         16             else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    22                                        36     Count coming in to IF
+    22              1                          2     assign c_if.max_count = (c_if.count_out == {c_if.WIDTH{1'b1}})? 1:0;
+    22              2                         34     assign c_if.max_count = (c_if.count_out == {c_if.WIDTH{1'b1}})? 1:0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                        36     Count coming in to IF
+    23              1                          3     assign c_if.zero = (c_if.count_out == 0)? 1:0;
+    23              2                         33     assign c_if.zero = (c_if.count_out == 0)? 1:0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /counter_top/dut --
+
+  File counter.sv
+----------------Focused Condition View-------------------
+Line       22 Item    1  (c_if.count_out == {c_if.WIDTH{1}})
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                           Input Term   Covered  Reason for no coverage   Hint
+                          -----------  --------  -----------------------  --------------
+  (c_if.count_out == {c_if.WIDTH{1}})         Y
+
+     Rows:       Hits  FEC Target                             Non-masking condition(s)      
+ ---------  ---------  --------------------                   -------------------------     
+  Row   1:          1  (c_if.count_out == {c_if.WIDTH{1}})_0  -                             
+  Row   2:          1  (c_if.count_out == {c_if.WIDTH{1}})_1  -                             
+
+----------------Focused Condition View-------------------
+Line       23 Item    1  (c_if.count_out == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+             Input Term   Covered  Reason for no coverage   Hint
+            -----------  --------  -----------------------  --------------
+  (c_if.count_out == 0)         Y
+
+     Rows:       Hits  FEC Target               Non-masking condition(s)      
+ ---------  ---------  --------------------     -------------------------     
+  Row   1:          1  (c_if.count_out == 0)_0  -                             
+  Row   2:          1  (c_if.count_out == 0)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       7         7         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter.sv
+    8                                                module counter (counter_if.DUT c_if);
+    9                                                
+    10              1                         50     always @(posedge c_if.clk or negedge c_if.rst_n) begin
+    11                                                   if (!c_if.rst_n)
+    12              1                          3             c_if.count_out <= 0;
+    13                                                   else if (!c_if.load_n)
+    14              1                          4             c_if.count_out <= c_if.data_load;
+    15                                                   else if (c_if.ce)
+    16                                                       if (c_if.up_down)
+    17              1                         16                 c_if.count_out <= c_if.count_out + 1;
+    18                                                       else 
+    19              1                         16                 c_if.count_out <= c_if.count_out - 1;
+    20                                               end
+    21                                               
+    22              1                         37     assign c_if.max_count = (c_if.count_out == {c_if.WIDTH{1'b1}})? 1:0;
+    23              1                         37     assign c_if.zero = (c_if.count_out == 0)? 1:0;
+
+
+=================================================================================
+=== Instance: /counter_top/monitor
+=== Design Unit: work.counter_monitor
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         0         1     0.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_top/monitor --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_monitor.sv
+    8                                                module counter_monitor(counter_if.MONITOR c_if);
+    9                                                
+    10                                                   initial begin
+    11              1                    ***0***             $monitor("rst_n = %b, load_n = %b, up_down = %b, ce = %b, data_load = %b, count_out = %b, max_count = %b, zero = %b",
+
+
+=================================================================================
+=== Instance: /counter_top
+=== Design Unit: work.counter_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_top.sv
+    8                                                module counter_top();
+    9                                                
+    10                                                   // 1. Generate the clock
+    11                                                   bit clk;
+    12                                                   initial begin
+    13              1                          1         clk = 0;
+    14              1                          1         forever #5 clk = ~clk;
+    14              2                         98     
+    14              3                         97     
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /counter_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/counter_top/dut/counter_sva_inst/a_load_active_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(17)
+                                                                                 4 Covered   
+/counter_top/dut/counter_sva_inst/a_hold_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(26)
+                                                                                10 Covered   
+/counter_top/dut/counter_sva_inst/a_increment_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(36)
+                                                                                16 Covered   
+/counter_top/dut/counter_sva_inst/a_decrement_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(46)
+                                                                                14 Covered   
+/counter_top/dut/counter_sva_inst/a_reset_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(54)
+                                                                                 2 Covered   
+/counter_top/dut/counter_sva_inst/a_max_count_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(62)
+                                                                                10 Covered   
+/counter_top/dut/counter_sva_inst/a_zero_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(70)
+                                                                                 5 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 7
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/counter_top/dut/counter_sva_inst/a_load_active_assertion
+                     counter_sva.sv(15)                 0          1
+/counter_top/dut/counter_sva_inst/a_hold_assertion
+                     counter_sva.sv(24)                 0          1
+/counter_top/dut/counter_sva_inst/a_increment_assertion
+                     counter_sva.sv(34)                 0          1
+/counter_top/dut/counter_sva_inst/a_decrement_assertion
+                     counter_sva.sv(44)                 0          1
+/counter_top/dut/counter_sva_inst/a_reset_assertion
+                     counter_sva.sv(52)                 0          1
+/counter_top/dut/counter_sva_inst/a_max_count_assertion
+                     counter_sva.sv(60)                 0          1
+/counter_top/dut/counter_sva_inst/a_zero_assertion
+                     counter_sva.sv(68)                 0          1
+
+Total Coverage By Instance (filtered view): 99.70%
+

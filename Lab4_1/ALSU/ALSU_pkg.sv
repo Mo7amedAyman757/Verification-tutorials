@@ -2,6 +2,7 @@ package ALSU_pkg;
 
     typedef enum bit [2:0] { OR, XOR, ADD, MULT, SHIFT, ROTATE, INVALID6, INVALID7 } opcode_e;
     typedef enum bit [2:0] { MAXPOS = 3'b011, ZERO = 3'b000, MAXNEG = 3'b100 } reg_e;
+    parameter VALID_OP = 6;
 
     class ALSU_cst;
         // Declare the random variables
@@ -10,7 +11,7 @@ package ALSU_pkg;
         
         // Declare the random variable for opcode and an array of opcodes
         rand opcode_e opcode;
-        rand opcode_e opcode_arr [0:5];
+        rand opcode_e opcode_valid [VALID_OP];
 
         // Declare the random variables for inputs A and B, and their corner cases and walking ones patterns
         rand logic [2:0] A, B;
@@ -19,9 +20,6 @@ package ALSU_pkg;
 
         bit [2:0] walking_ones[] = '{3'b100, 3'b010, 3'b001};
         rand bit [2:0] walking_ones_t, walking_ones_f;
-
-        // Declare the clock signal for the covergroup
-        bit clk;
 
         //1. Reset to be asserted with a low probability that you decide.
         constraint rst_cst{
@@ -76,18 +74,17 @@ package ALSU_pkg;
         // Create a fixed array of 6 elements of type opcode_e. constraint the elements of the array using
         // foreach to have a unique valid value each time randomization occurs.
         // will be used in the covergroup to cover all the operations and the transitions between them while turning off opcode_cst to allow the array to be randomized with values from OR to ROTATE.
-        constraint opcode_arr_cst{
-            foreach(opcode_arr[i]){
-                foreach(opcode_arr[j]){
+        constraint opcode_seq_con{
+            foreach(opcode_valid[i])
+                foreach(opcode_valid[j]){
                     if(i != j){
-                        opcode_arr[i] != opcode_arr[j];
-                        opcode_arr[i] inside {[OR:ROTATE]};
+                    opcode_valid[i] != opcode_valid[j];
+                    opcode_valid[i] inside {[OR:ROTATE]};
                     }
-                }
-            }
+                }         
         }
 
-        covergroup cvr_gp @(posedge clk);
+        covergroup cvr_gp;
 
             // Cover A values (corner cases + misc)
             A_cp1: coverpoint A {
@@ -121,25 +118,88 @@ package ALSU_pkg;
                 bins bins_arith[] = {ADD, MULT};
                 bins bins_bitwise[] = {OR, XOR};
                 bins bins_invalid[] = {INVALID6, INVALID7};
-                bins bins_trans1 = (OR => XOR );
-                bins bins_trans2 = (OR => XOR => ADD );
-                bins bins_trans3 = (OR => XOR => ADD => MULT );
-                bins bins_trans4 = (OR => XOR => ADD => MULT => SHIFT);
-                bins bins_trans5 = (OR => XOR => ADD => MULT => SHIFT => ROTATE);
+                bins bins_trans = (OR => XOR => ADD => MULT => SHIFT => ROTATE);
             }
+
+            opcode_cp: coverpoint opcode;
+
+            cin_cp: coverpoint cin {
+                bins cin_zero = {0};
+                bins cin_one = {1};
+            }
+
+            dir_cp: coverpoint direction{
+                bins dir_zero = {0};
+                bins cin_one = {1};
+            }
+
+            shift_cp: coverpoint serial_in{
+                bins shift_zero = {0};
+                bins shift_one = {1};
+            }
+
+            redA_cp: coverpoint red_op_A{
+                bins redA_on = {1};
+                bins redA_off = {0};
+            }
+
+            redB_cp: coverpoint red_op_B{
+                bins redB_on = {1};
+                bins redB_off = {0};
+            }
+
+            add_mult_AB_cs : cross opcode_cp, A_cp1, B_cp1{
+                option.cross_auto_bin_max = 0;
+                bins add_mult_A_B = binsof(opcode_cp) intersect{ADD,MULT} &&
+                                    binsof(A_cp1) intersect{MAXPOS, MAXNEG, ZERO} &&
+                                    binsof(B_cp1) intersect{MAXPOS, MAXNEG, ZERO};
+            }
+
+            opcode_cin_cs : cross opcode_cp, cin_cp{
+                option.cross_auto_bin_max = 0;
+                bins opcode_cin = binsof(opcode_cp) intersect{ADD} &&
+                                  binsof(cin_cp);
+            }
+
+            opcode_dir_cs : cross opcode_cp, dir_cp{
+                option.cross_auto_bin_max = 0;
+                bins opcode_dir = binsof(opcode_cp) intersect{SHIFT, ROTATE} &&
+                                  binsof(dir_cp);
+            }
+
+            opcode_shift_cs : cross opcode_cp, shift_cp{
+                option.cross_auto_bin_max = 0;
+                bins opcode_shift = binsof(opcode_cp) intersect{SHIFT} &&
+                                  binsof(shift_cp);
+            }
+
+            opcode_redA_walkA_cs : cross opcode_cp, redA_cp, A_cp2, B_cp1{
+                option.cross_auto_bin_max = 0;
+                bins opcode_redA_walkA = binsof(opcode_cp) intersect{OR,XOR} &&
+                                         binsof(redA_cp.redA_on) &&
+                                         binsof(A_cp2) &&
+                                         binsof(B_cp1.B_data_0);
+            }
+
+            opcode_redB_walkB_cs : cross opcode_cp, redB_cp, B_cp2, A_cp1{
+                option.cross_auto_bin_max = 0;
+                bins opcode_redB_walkB = binsof(opcode_cp) intersect{OR,XOR} &&
+                                         binsof(redB_cp.redB_on) &&
+                                         binsof(B_cp2) &&
+                                         binsof(A_cp1.A_data_0);
+            }
+
+            invalid_case_cs : cross opcode_cp, redA_cp, redB_cp{
+                option.cross_auto_bin_max = 0;
+                bins invalid_case = !binsof (opcode_cp) intersect{OR,XOR} &&
+                                     (binsof(redB_cp.redB_on) || binsof(redA_cp.redA_on));
+            } 
 
         endgroup
 
         function new();
             cvr_gp = new();    
         endfunction
-
-        // Sample task: only sample when not in reset or bypass mode
-        task sample_coverage();
-            if (!rst && !bypass_A && !bypass_B)
-                cvr_gp.sample();
-        endtask
-
 
     endclass
     

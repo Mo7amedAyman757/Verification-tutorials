@@ -1,7 +1,7 @@
 module queue();
 
     int j = 1;
-    int queue[$] = {0,2,5};
+    int queue[$] = '{0,2,5};
 
     initial begin
         $display ("size=%0d queue=%p", queue.size(), queue);

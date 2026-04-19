@@ -1,0 +1,46 @@
+# ---------------Bug1---------------
+a) Design Input for Bug to Appear:
+	1- reset register "analog_test"
+b) Expected Behavior:
+	 expected value = 16'habcd
+c) Observed Behavior
+	 Bit 0 of register analog_test cannot be written to a 1
+
+# ---------------Bug2---------------
+a) Design Input for Bug to Appear:
+	1- reset register "temp_sensor0_reg"
+b) Expected Behavior:
+	 Write 16'hA5A5
+	 Write 16'hFFFF
+	 Write 16'h8000
+c) Observed Behavior
+	 A5A5 → 4B4A
+         FFFF → FFFE
+         8000 → 0000
+# ---------------Bug3---------------
+a) Design Input for Bug to Appear:
+	1- reset register "digital_config"
+b) Expected Behavior:
+	 expected value = 16'ha5a5
+c) Observed Behavior
+	 Bit 15 of register digital_config cannot be written to a 1
+
+# ---------------Bug4---------------
+a) Design Input for Bug to Appear:
+	1- reset register "digital_test"
+b) Expected Behavior:
+	 expected value = 16'hffff
+c) Observed Behavior
+	 output is registered for one more clock cycle
+
+# ---------------Bug5---------------
+a) Design Input for Bug to Appear:
+	1- reset register "adc1_reg"
+b) Expected Behavior:
+	 expected value = 16'h8000
+c) Observed Behavior
+	 s are shifted / wrong bit mapping (output -> 16'h0080)
+
+
+
+
