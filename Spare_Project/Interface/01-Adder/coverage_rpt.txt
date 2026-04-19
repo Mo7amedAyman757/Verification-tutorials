@@ -1,0 +1,466 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /adder_top/A_if
+=== Design Unit: work.adder_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         30        30         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /adder_top/A_if --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                            A[3-0]           1           1      100.00 
+                                            B[3-0]           1           1      100.00 
+                                            C[4-0]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                             reset           1           1      100.00 
+
+Total Node Count     =         15 
+Toggled Node Count   =         15 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (30 of 30 bins)
+
+=================================================================================
+=== Instance: /adder_top/dut/adder_sva_inst
+=== Design Unit: work.adder_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       2         2         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/adder_top/dut/adder_sva_inst/a_reset_assertion
+                     adder_sva.sv(8)                    0          1
+/adder_top/dut/adder_sva_inst/a_addition_assertion
+                     adder_sva.sv(16)                   0          1
+
+Directive Coverage:
+    Directives                       2         2         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/adder_top/dut/adder_sva_inst/a_reset_cover 
+                                         adder_sva Verilog  SVA  adder_sva.sv(10)  50 Covered   
+/adder_top/dut/adder_sva_inst/a_addition_cover 
+                                         adder_sva Verilog  SVA  adder_sva.sv(18) 907 Covered   
+
+=================================================================================
+=== Instance: /adder_top/dut
+=== Design Unit: work.adder
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         2         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /adder_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File adder.sv
+------------------------------------IF Branch------------------------------------
+    5                                       1045     Count coming in to IF
+    5               1                         94           if (A_if.reset)
+    7               1                        951           else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /adder_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File adder.sv
+    1                                                module adder (adder_if.DUT A_if);
+    2                                                
+    3                                                   // Register output C
+    4               1                       1045        always @(posedge A_if.clk or posedge A_if.reset) begin
+    5                                                      if (A_if.reset)
+    6               1                         94     	     A_if.C <= 5'b0;
+    7                                                      else
+    8               1                        951     	     A_if.C <= A_if.A + A_if.B;
+
+
+=================================================================================
+=== Instance: /adder_top/monitor
+=== Design Unit: work.adder_monitor
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         0         1     0.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /adder_top/monitor --
+NOTE: The modification timestamp for source file 'adder_monitor.sv' has been altered since compilation.
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File adder_monitor.sv
+    1                                                module adder_monitor(adder_if.MONITOR A_if);
+    2                                                
+    3                                                    always @(posedge A_if.clk) begin
+    4               1                    ***0***             $display("Time=%0t | reset=%b A=%0d B=%0d C=%0d",
+
+
+=================================================================================
+=== Instance: /adder_top/tb
+=== Design Unit: work.adder_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/adder_top/tb/#ublk#179077330#10/immed__11
+                     adder_tb.sv(11)                    0          1
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        14         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /adder_top/tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File adder_tb.sv
+    3                                                module adder_tb(adder_if.TEST A_if);
+    4                                                
+    5               1                          1         adder_transaction adder_txn = new;
+    6                                                
+    7                                                    initial begin
+    8               1                          1             assert_reset;
+    9                                                
+    10              1                       1000             repeat(1000) begin
+    11                                                           assert(adder_txn.randomize());
+    12              1                       1000                 A_if.reset = adder_txn.reset;
+    13              1                       1000                 A_if.A = adder_txn.A;
+    14              1                       1000                 A_if.B = adder_txn.B;
+    15              1                       1000                 @(negedge A_if.clk);
+    16              1                       1000                 adder_txn.Covergrp_A.sample();
+    17              1                       1000                 adder_txn.Covergrp_B.sample();
+    18                                                       end    
+    19              1                          1             $stop;
+    20                                                   end
+    21                                               
+    22                                                   task assert_reset;
+    23              1                          1             A_if.reset = 1;
+    24              1                          2             repeat(2) @(negedge A_if.clk);
+    24              2                          2     
+    25              1                          1             A_if.reset = 0;    
+
+
+=================================================================================
+=== Instance: /adder_top
+=== Design Unit: work.adder_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /adder_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File adder_top.sv
+    1                                                module adder_top();
+    2                                                
+    3                                                    // 1. Generate the clock
+    4                                                    bit clk;
+    5                                                
+    6                                                    initial begin
+    7               1                          1             clk = 0;
+    8               1                          1             forever #5 clk = ~clk;
+    8               2                       2003     
+    8               3                       2002     
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /adder_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /adder_pkg
+=== Design Unit: work.adder_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      2        na        na   100.00%
+        Coverpoints/Crosses          4        na        na        na
+            Covergroup Bins         12        12         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /adder_pkg/adder_transaction/Covergrp_A         100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint A_cvp_values                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint A_cvp_transitions                      100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/adder_pkg::adder_transaction::Covergrp_A  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint A_cvp_values                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin A_data_0                                      141          1          -    Covered              
+        bin A_data_max                                    150          1          -    Covered              
+        bin A_data_min                                    117          1          -    Covered              
+        default bin misc                                  592                     -    Occurred             
+    Coverpoint A_cvp_transitions                      100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin A_data_0max                                    23          1          -    Covered              
+        bin A_data_maxmin                                  22          1          -    Covered              
+        bin A_data_minmax                                  23          1          -    Covered              
+ TYPE /adder_pkg/adder_transaction/Covergrp_B         100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint B_cvp_values                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint B_cvp_transitions                      100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/adder_pkg::adder_transaction::Covergrp_B  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint B_cvp_values                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin B_data_0                                      135          1          -    Covered              
+        bin B_data_max                                    143          1          -    Covered              
+        bin B_data_min                                    122          1          -    Covered              
+        default bin misc                                  600                     -    Occurred             
+    Coverpoint B_cvp_transitions                      100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin B_data_0max                                    21          1          -    Covered              
+        bin B_data_maxmin                                  19          1          -    Covered              
+        bin B_data_minmax                                  16          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       2         2         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /adder_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File adder_pkg.sv
+    1                                                package adder_pkg;
+    2                                                
+    3                                                    typedef enum  {MAXNEG = -8, ZERO = 0, MAXPOS= 7} val_t;
+    4                                                
+    5                                                    class adder_transaction;
+    6                                                
+    7                                                        rand bit reset;
+    8                                                        rand bit signed [3:0] A, B;
+    9                                                        rand val_t AB_val;
+    10                                               
+    11                                                       constraint reset_cst{
+    12                                                           reset dist{ 1 := 5, 0:= 95};
+    13                                                       }
+    14                                               
+    15                                                       constraint AB_cst{
+    16                                                           A dist{AB_val := 90, [-7:-1] := 10, [1:6]:= 10};    
+    17                                                           B dist{AB_val := 90, [-7:-1] := 10, [1:6]:= 10};    
+    18                                                       }
+    19                                               
+    20                                                       covergroup Covergrp_A;
+    21                                                           A_cvp_values : coverpoint A{
+    22                                                               bins A_data_0 = {ZERO};
+    23                                                               bins A_data_max = {MAXPOS};
+    24                                                               bins A_data_min = {MAXNEG};
+    25                                                               bins misc = default;
+    26                                                           }
+    27                                               
+    28                                                           A_cvp_transitions: coverpoint A{
+    29                                                               bins A_data_0max = (ZERO => MAXPOS);
+    30                                                               bins A_data_maxmin = (MAXPOS => MAXNEG);
+    31                                                               bins A_data_minmax = (MAXNEG => MAXPOS);
+    32                                                           }
+    33                                               
+    34                                                       endgroup
+    35                                               
+    36                                                       covergroup Covergrp_B;
+    37                                                           B_cvp_values : coverpoint B{
+    38                                                               bins B_data_0 = {ZERO};
+    39                                                               bins B_data_max = {MAXPOS};
+    40                                                               bins B_data_min = {MAXNEG};
+    41                                                               bins misc = default;
+    42                                                           }
+    43                                               
+    44                                                           B_cvp_transitions: coverpoint B{
+    45                                                               bins B_data_0max = (ZERO => MAXPOS);
+    46                                                               bins B_data_maxmin = (MAXPOS => MAXNEG);
+    47                                                               bins B_data_minmax = (MAXNEG => MAXPOS);
+    48                                                           }
+    49                                                       endgroup
+    50                                               
+    51                                               
+    52                                                       function new();
+    53              1                          1                 Covergrp_A = new();
+    54              1                          1                 Covergrp_B = new();
+
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /adder_pkg/adder_transaction/Covergrp_A         100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint A_cvp_values                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint A_cvp_transitions                      100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/adder_pkg::adder_transaction::Covergrp_A  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint A_cvp_values                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin A_data_0                                      141          1          -    Covered              
+        bin A_data_max                                    150          1          -    Covered              
+        bin A_data_min                                    117          1          -    Covered              
+        default bin misc                                  592                     -    Occurred             
+    Coverpoint A_cvp_transitions                      100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin A_data_0max                                    23          1          -    Covered              
+        bin A_data_maxmin                                  22          1          -    Covered              
+        bin A_data_minmax                                  23          1          -    Covered              
+ TYPE /adder_pkg/adder_transaction/Covergrp_B         100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint B_cvp_values                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint B_cvp_transitions                      100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/adder_pkg::adder_transaction::Covergrp_B  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                     6          6          -                      
+    missing/total bins:                                     0          6          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint B_cvp_values                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin B_data_0                                      135          1          -    Covered              
+        bin B_data_max                                    143          1          -    Covered              
+        bin B_data_min                                    122          1          -    Covered              
+        default bin misc                                  600                     -    Occurred             
+    Coverpoint B_cvp_transitions                      100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin B_data_0max                                    21          1          -    Covered              
+        bin B_data_maxmin                                  19          1          -    Covered              
+        bin B_data_minmax                                  16          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 2
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/adder_top/dut/adder_sva_inst/a_reset_cover 
+                                         adder_sva Verilog  SVA  adder_sva.sv(10)  50 Covered   
+/adder_top/dut/adder_sva_inst/a_addition_cover 
+                                         adder_sva Verilog  SVA  adder_sva.sv(18) 907 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 2
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/adder_top/dut/adder_sva_inst/a_reset_assertion
+                     adder_sva.sv(8)                    0          1
+/adder_top/dut/adder_sva_inst/a_addition_assertion
+                     adder_sva.sv(16)                   0          1
+/adder_top/tb/#ublk#179077330#10/immed__11
+                     adder_tb.sv(11)                    0          1
+
+Total Coverage By Instance (filtered view): 99.30%
+
