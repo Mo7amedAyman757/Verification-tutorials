@@ -1,0 +1,228 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Lab4_1/Register_File
+T_opt
+!s110 1776640734
+V6JaZhom5CP54hU2]FXBbR2
+04 9 4 work adder_top fast 0
+=4-902e16e4070c-69e562dd-32c-6904
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vadder
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1776640730
+!i10b 1
+!s100 K[09goh`Xz^1H]6[WOa`g2
+I=9YO;l]:GEQ[N6?T]D8JO2
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder
+w1776636326
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder.sv
+!i122 44
+L0 1 11
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1776640730.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Yadder_if
+R2
+R3
+!i10b 1
+!s100 L4OA`NBS26o@`DLQ2D0`>3
+IOE78QE@[KUmab0[?BUAEe2
+S1
+R4
+w1776639281
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_if.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_if.sv
+!i122 45
+Z9 L0 1 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_if.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_if.sv|
+!i113 0
+R8
+R1
+vadder_monitor
+R2
+R3
+!i10b 1
+!s100 ff87L8;B4EcHoSm9=LchX3
+I[AW7bIcN2b[4oNUaT9Q]g3
+S1
+R4
+w1776640432
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_monitor.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_monitor.sv
+!i122 46
+L0 1 8
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_monitor.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_monitor.sv|
+!i113 0
+R8
+R1
+Xadder_pkg
+R2
+R3
+!i10b 1
+!s100 g<FCAF6N^VmadIzV[6l?f2
+IojbJb<NKV0@_F:4Xn0AlZ0
+S1
+R4
+w1776637899
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_pkg.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_pkg.sv
+!i122 47
+R9
+VojbJb<NKV0@_F:4Xn0AlZ0
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_pkg.sv|
+!i113 0
+R8
+R1
+vadder_sva
+R2
+R3
+!i10b 1
+!s100 Lol;X8D^?m3MGRhN8HGOd1
+ID27b<B6Ld2@L@D_<T[K^X1
+S1
+R4
+w1776640727
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_sva.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_sva.sv
+!i122 48
+L0 1 21
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_sva.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_sva.sv|
+!i113 0
+R8
+R1
+vadder_tb
+R2
+Z10 DXx4 work 9 adder_pkg 0 22 ojbJb<NKV0@_F:4Xn0AlZ0
+DXx4 work 16 adder_tb_sv_unit 0 22 :DzlX`mOS571lM1lFe=8S2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 [234]UEeLGAzabMI4=>QB3
+ICD^oP1Y1NZ5fV>^jfQ>Ck1
+!s105 adder_tb_sv_unit
+S1
+R4
+Z11 w1776640682
+Z12 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_tb.sv
+Z13 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_tb.sv
+!i122 49
+L0 3 26
+R6
+31
+R7
+Z14 !s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_tb.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_tb.sv|
+!i113 0
+R8
+R1
+Xadder_tb_sv_unit
+R2
+R10
+R3
+V:DzlX`mOS571lM1lFe=8S2
+r1
+!s85 0
+!i10b 1
+!s100 TBCJ8=L^C0_bOKNGQGAdZ0
+I:DzlX`mOS571lM1lFe=8S2
+!i103 1
+S1
+R4
+R11
+R12
+R13
+!i122 49
+R9
+R6
+31
+R7
+R14
+R15
+!i113 0
+R8
+R1
+vadder_top
+R2
+!s110 1776640731
+!i10b 1
+!s100 ckU8eJ9>Fh`Q6AbGbXP7X2
+Ia:7TdEJlmnGR]TP104_:Z1
+S1
+R4
+w1776638682
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_top.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_top.sv
+!i122 50
+L0 1 23
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_top.sv|
+!i113 0
+R8
+R1
