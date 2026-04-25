@@ -1,0 +1,22 @@
+It contains detailed instructions for the lab you will be working on, and I am sharing it here in advance
+ so that you can easily access it during the session.
+
+*1- Create config object class inside a package*
+> import UVM package and include UVM macros file
+> Add uvm_object_utils macro
+> Constructor
+> Declare the virtual interface
+
+*2- Create uvm driver class inside a package*
+> import UVM package and include UVM macros file
+> Add uvm_component_utils macro
+> Declare virtual interface and configuration object handle
+> Constructor
+> Build phase: get the configuration object from configuration database
+> Connect phase: connect the virtual interface to the virtual interface of the configuration object
+> run phase: Drive the interface, start by reseting the design then applying random data using $random with each clock edge
+
+Notes:
+1- Import the above packages in the appropriate files shared with you.
+2- Add the above files created in the correct order in the src_files.list
+3- The remaining files shared with you have the steps to be done inside of them.

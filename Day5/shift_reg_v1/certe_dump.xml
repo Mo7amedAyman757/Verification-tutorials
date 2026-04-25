@@ -1,0 +1,11 @@
+<certe_dump>
+  <instance type=" shift_reg_test "> 
+     uvm_test_top 
+  
+     <instance type=" shift_reg_env "> 
+        env 
+     </instance> 
+  
+  </instance> 
+  
+  </certe_dump>
