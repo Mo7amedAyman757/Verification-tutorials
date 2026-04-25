@@ -1,0 +1,36 @@
+{D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module priority_enc
+
+Top level modules:
+	priority_enc
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc_sva.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc_sva.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module priority_enc_sva
+
+Top level modules:
+	priority_enc_sva
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc_top.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc_top.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module priority_enc_top
+
+Top level modules:
+	priority_enc_top
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc_if.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling interface priority_enc_if
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc_monitor.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc/priority_enc_monitor.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module priority_enc_monitor
+
+Top level modules:
+	priority_enc_monitor
+
+} {} {}}

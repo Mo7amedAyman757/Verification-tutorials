@@ -1,16 +1,23 @@
-{D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_top.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_top.sv}
+{D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_if.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling interface adder_if
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_top.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_top.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 -- Compiling module adder_top
 
 Top level modules:
 	adder_top
 
-} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_if.sv}
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_monitor.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_monitor.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
--- Compiling interface adder_if
+-- Compiling module adder_monitor
 
 Top level modules:
-	--none--
+	adder_monitor
 
 } {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
@@ -25,5 +32,21 @@ QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 
 Top level modules:
 	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_sva.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_sva.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module adder_sva
+
+Top level modules:
+	adder_sva
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/01-Adder/adder_tb.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package adder_tb_sv_unit
+-- Importing package adder_pkg
+-- Compiling module adder_tb
+
+Top level modules:
+	adder_tb
 
 } {} {}}
