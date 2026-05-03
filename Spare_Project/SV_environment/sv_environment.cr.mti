@@ -1,0 +1,41 @@
+{D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/alu.v} {1 {vlog -work work -vopt -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/alu.v}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/top.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/top.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling interface alu_if
+-- Compiling package top_sv_unit
+-- Importing package pkg
+-- Compiling package pkg
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/alu_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/alu_if.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling interface alu_if
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/env.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/env.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package env_sv_unit
+-- Importing package pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/pkg.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/pkg.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package pkg
+
+Top level modules:
+	--none--
+
+} {} {}}

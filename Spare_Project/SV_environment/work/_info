@@ -1,0 +1,247 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU
+T_opt
+Z2 !s11d D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/work 0 
+Z3 !s11d alu_if 1 0 
+Z4 !s11d tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/work 1 0 
+Z5 !s11d top_sv_unit D:/Career 0 
+R2
+R3
+R4
+Z6 !s11d pkg D:/Career 0 
+!s110 1777649456
+VdLSEU56Ta<`mG6kLM>CF63
+Z7 04 3 4 work top fast 0
+=1-902e16e4070c-69f4c730-167-36e8
+Z8 !s124 OEM100
+Z9 o-quiet -auto_acc_if_foreign -work work
+Z10 tCvgOpt 0
+n@_opt
+Z11 OL;O;2021.1;73
+R1
+T_opt1
+R2
+R3
+R4
+R5
+R2
+R3
+R4
+R6
+!s110 1777650179
+VNci3MGDzPCGDI9JR55FhX0
+R7
+=10-902e16e4070c-69f4ca02-3ca-77c4
+R8
+R9
+R10
+n@_opt1
+R11
+R1
+T_opt2
+R2
+R3
+R4
+R5
+R2
+R3
+R4
+R6
+!s110 1777656660
+VK[Y:kR=`RzU<@EIR55KCS1
+R7
+=9-902e16e4070c-69f4e354-23-8ac
+R8
+R9
+R10
+n@_opt2
+R11
+valu
+Z12 !s110 1777656654
+!i10b 1
+!s100 jJNPUzJ6ib?a:XU9gi?;V2
+I^=:W63V1VC8X31DJCdmc>3
+Z13 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment
+w1777641260
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/alu.v
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/alu.v
+!i122 155
+L0 3 95
+Z14 VDg1SIo80bB@j0V0VzS_@n1
+Z15 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z16 !s108 1777656654.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/alu.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/alu.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R10
+Yalu_if
+Z17 !s105 top_sv_unit
+Z18 DXx4 work 11 top_sv_unit 0 22 =Kb[`H61NZ]hP7b9WM<eM0
+Z19 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R12
+!i10b 1
+!s100 TFXd>W:feNQ_YXloCm]A70
+I4G]]`J@9V6oKD8WPNO>_j3
+S1
+R13
+w1777648449
+8alu_if.sv
+Z20 Falu_if.sv
+!i122 158
+Z21 L0 1 0
+R14
+R15
+r1
+!s85 0
+31
+R16
+Z22 !s107 subscriber.sv|scoreboard.sv|monitor.sv|driver.sv|sequencer.sv|transaction.sv|pkg.sv|env.sv|alu_if.sv|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/top.sv|
+Z23 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/top.sv|
+!i113 0
+Z24 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R10
+Xenv_sv_unit
+Z25 !s115 alu_if
+R19
+DXx4 work 3 pkg 0 22 LkW^:;QT?a07mMaV:YO;c0
+R12
+V1jM8I<Xl7m@VM]j^nhkmV3
+r1
+!s85 0
+!i10b 1
+!s100 iWTRMbY=AZalDRO;<?XLC1
+I1jM8I<Xl7m@VM]j^nhkmV3
+!i103 1
+S1
+R13
+Z26 w1777656553
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/env.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/env.sv
+!i122 157
+R21
+R15
+31
+R16
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/env.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/env.sv|
+!i113 0
+R24
+R10
+Xpkg
+R25
+R19
+R12
+!i10b 1
+!s100 R1U@^C;_n:@0KaMQYRUAY2
+I<iBRi:IeFY60zl_2AOW643
+S1
+R13
+w1777656648
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/pkg.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/pkg.sv
+Ftransaction.sv
+Fsequencer.sv
+Fdriver.sv
+Fmonitor.sv
+Fscoreboard.sv
+Fsubscriber.sv
+!i122 159
+R21
+V<iBRi:IeFY60zl_2AOW643
+R15
+r1
+!s85 0
+31
+R16
+!s107 subscriber.sv|scoreboard.sv|monitor.sv|driver.sv|sequencer.sv|transaction.sv|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/pkg.sv|
+!i113 0
+R24
+R10
+vtop
+R19
+Z27 DXx4 work 3 pkg 0 22 CQR1I>M6KXX;Hhf1jn9WG2
+R18
+R12
+R14
+r1
+!s85 0
+!i10b 1
+!s100 0ThQX1bm844@eGRc:kOP92
+InL^_gegJN;6Hl5Y`_@klZ2
+R17
+S1
+R13
+w1777649557
+Z28 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/top.sv
+Z29 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/SV_environment/top.sv
+!i122 158
+L0 5 53
+R15
+31
+R16
+R22
+R23
+!i113 0
+R24
+R10
+Xtop_sv_unit
+R25
+R19
+R27
+R12
+V=Kb[`H61NZ]hP7b9WM<eM0
+r1
+!s85 0
+!i10b 1
+!s100 i2[TafbZn?9AZgOLO]I9O0
+I=Kb[`H61NZ]hP7b9WM<eM0
+!i103 1
+S1
+R13
+R26
+R28
+R29
+R20
+Fenv.sv
+Fpkg.sv
+!i122 158
+R21
+R15
+31
+R16
+R22
+R23
+!i113 0
+R24
+R10
