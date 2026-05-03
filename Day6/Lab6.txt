@@ -1,0 +1,56 @@
+ It contains detailed instructions for the lab you will be working on, and I am sharing it here in advance so that you can easily access it during the session.
+
+1- Create a shared package that has 2 typedef enums
+typedef enum {SHIFT, ROTATE} mode_e;
+typedef enum {RIGHT, LEFT} direction_e;
+
+2- Create a sequence item 
+> Do the essentials
+> Add rand modifier to the class variables (use above enums)
+> Add constraint to disable the reset most of the time using dist operator
+> add convert2string and convert2string_stimulus functions
+
+3- Create a reset and main sequences
+> Do the essentials
+> Add body task in the sequences
+> add the seq item as parameter to the parent class
+
+4- Create a sequencer 
+> Do the essentials
+> add the seq item as parameter to the parent class
+
+5- Adjust the driver class
+> add the seq item as parameter to the parent class
+> Remove the config object, build phase and connect phase
+> Add get_next_item and item_done in the run_phase
+
+6- Create the monitor
+> Do the essentials
+> Create vif, analysis port, and seq item
+> In the run phase broadcast the seq_item
+
+7- Create an agent
+> Do the essentials
+> create the driver, sequencer and monitor
+> connect the vif of the driver and monitor
+> connect the ports for the sqr and driver
+> connect the analysis port of the monitor and agent
+
+8- Create the scoreboard
+> create the analysis export, analysis fifo
+> connect the analysis exports
+> In the run phase, get the seq item and check for the output value
+
+9- Create the coverage collector
+> create the analysis export, analysis fifo
+> connect the analysis exports
+> create a covergroup with coverpoints on all inputs without specific bins defined
+> create the covergroup in the constructor
+> In the run phase, get the seq item and sample the covergroup
+
+10- Adjust the env class
+> Remove the driver and create the agent, scoreboard and coverage collector
+> Connect agent analysis ports with the scoreboard and coverage collector analysis exports
+
+11- Adjust the test class
+> open the sequences on the sequencers in the run phase

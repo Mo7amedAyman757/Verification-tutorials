@@ -1,0 +1,157 @@
+{D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_config.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_config.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_config_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_config.sv(3): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence_item.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence_item.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_seq_item_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence_item.sv(4): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_test.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_test.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_test_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_env_pkg
+-- Importing package ALSU_agent_pkg
+-- Importing package ALSU_monitor_pkg
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+-- Importing package ALSU_driver_pkg
+-- Importing package ALSU_config_pkg
+-- Importing package ALSU_sequencer_pkg
+-- Importing package ALSU_scoreboard_pkg
+-- Importing package ALSU_coverage_pkg
+-- Importing package ALSU_sequence_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_test.sv(6): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sva.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sva.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALSU_sva
+
+Top level modules:
+	ALSU_sva
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequencer.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequencer.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_sequencer_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequencer.sv(4): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv} {2 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_coverage_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv(5): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv(81): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv(88): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv(94): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv(100): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv(106): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv(114): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_coverage.sv(122): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_driver.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_driver.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_driver_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_config_pkg
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_driver.sv(5): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.v} {1 {vlog -work work -vopt -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.v}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALSU
+
+Top level modules:
+	ALSU
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_if.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling interface ALSU_if
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_agent.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_agent.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_agent_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_monitor_pkg
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+-- Importing package ALSU_driver_pkg
+-- Importing package ALSU_config_pkg
+-- Importing package ALSU_sequencer_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_agent.sv(8): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_monitor.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_monitor.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_monitor_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_monitor.sv(5): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_sequence_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv(5): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_env.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_env.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_env_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_agent_pkg
+-- Importing package ALSU_monitor_pkg
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+-- Importing package ALSU_driver_pkg
+-- Importing package ALSU_config_pkg
+-- Importing package ALSU_sequencer_pkg
+-- Importing package ALSU_scoreboard_pkg
+-- Importing package ALSU_coverage_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_env.sv(6): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}}
