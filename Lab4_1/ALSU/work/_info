@@ -13,7 +13,7 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-dD:/Career tracks/Digial_IC/09-Verification/Day4/Vending_machine
+Z1 dD:/Career tracks/Digial_IC/09-Verification/Day4/Vending_machine
 T_opt
 !s110 1776292975
 VZ5>=fYI_l]z0[QD7Jn^W^2
@@ -21,65 +21,66 @@ VZ5>=fYI_l]z0[QD7Jn^W^2
 =1-902e16e4070c-69e0146f-247-6968
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
-Z1 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
 OL;O;2021.1;73
+R1
 vALSU
-Z2 !s110 1776292968
+Z3 !s110 1777574879
 !i10b 1
 !s100 HSSig:QMMWSHm43HnDP_J2
 InjbjFj=^1LGTSELa6eR2V3
-Z3 dD:/Career tracks/Digial_IC/09-Verification/Lab4_1/ALSU
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Lab4_1/ALSU
 w1774526685
 8ALSU.v
 FALSU.v
-!i122 12
+!i122 14
 L0 1 123
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2021.1;73
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
 r1
 !s85 0
 31
-Z6 !s108 1776292968.000000
-Z7 !s107 ALSU_tb.sv|ALSU_pkg.sv|ALSU.v|
+Z7 !s108 1777574879.000000
+!s107 ALSU_tb.sv|ALSU_pkg.sv|ALSU.v|
 Z8 !s90 -reportprogress|300|ALSU.v|ALSU_pkg.sv|ALSU_tb.sv|+cover|
 !i113 0
 Z9 !s102 +cover
 Z10 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+R2
 n@a@l@s@u
 XALSU_pkg
 Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R2
+R3
 !i10b 1
 !s100 Ck;``EaRHHDKkmFV`Mej13
 IXMk0g7hT?bgn85=iV;cec0
 S1
-R3
+R4
 w1776292967
 8ALSU_pkg.sv
 FALSU_pkg.sv
-!i122 12
+!i122 14
 Z12 L0 1 0
 VXMk0g7hT?bgn85=iV;cec0
-R5
+R6
 r1
 !s85 0
 31
-R6
 R7
+Z13 !s107 ALSU_tb.sv|ALSU_pkg.sv|ALSU.v|
 R8
 !i113 0
 R9
 R10
-R1
+R2
 n@a@l@s@u_pkg
 vALSU_tb
 R11
-Z13 DXx4 work 8 ALSU_pkg 0 22 XMk0g7hT?bgn85=iV;cec0
+Z14 DXx4 work 8 ALSU_pkg 0 22 XMk0g7hT?bgn85=iV;cec0
 DXx4 work 15 ALSU_tb_sv_unit 0 22 ]CNa9T;NL<]bK[mkc8hTH1
-R2
-R4
+R3
+R5
 r1
 !s85 0
 !i10b 1
@@ -87,26 +88,26 @@ r1
 I38LbLij9ko9;h2`cR;Ljk3
 !s105 ALSU_tb_sv_unit
 S1
-R3
-Z14 w1776291312
-Z15 8ALSU_tb.sv
-Z16 FALSU_tb.sv
-!i122 12
+R4
+Z15 w1776291312
+Z16 8ALSU_tb.sv
+Z17 FALSU_tb.sv
+!i122 14
 L0 3 258
-R5
-31
 R6
+31
 R7
+R13
 R8
 !i113 0
 R9
 R10
-R1
+R2
 n@a@l@s@u_tb
 XALSU_tb_sv_unit
 R11
-R13
-R2
+R14
+R3
 V]CNa9T;NL<]bK[mkc8hTH1
 r1
 !s85 0
@@ -115,19 +116,19 @@ r1
 I]CNa9T;NL<]bK[mkc8hTH1
 !i103 1
 S1
-R3
-R14
+R4
 R15
 R16
-!i122 12
+R17
+!i122 14
 R12
-R5
-31
 R6
+31
 R7
+R13
 R8
 !i113 0
 R9
 R10
-R1
+R2
 n@a@l@s@u_tb_sv_unit
