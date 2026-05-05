@@ -1,4 +1,37 @@
-{D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_config.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_config.sv}
+{D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_top.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_top.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_top.sv(3): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling package ALSU_top_sv_unit
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_test_pkg
+-- Importing package ALSU_env_pkg
+-- Importing package ALSU_agent_pkg
+-- Importing package ALSU_monitor_pkg
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+-- Importing package ALSU_driver_pkg
+-- Importing package ALSU_config_pkg
+-- Importing package ALSU_sequencer_pkg
+-- Importing package ALSU_scoreboard_pkg
+-- Importing package ALSU_coverage_pkg
+-- Importing package ALSU_sequence_pkg
+-- Compiling module ALSU_top
+
+Top level modules:
+	ALSU_top
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_scoreboard.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_scoreboard.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_scoreboard_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_scoreboard.sv(5): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_config.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_config.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 -- Compiling package ALSU_config_pkg
 -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -39,6 +72,8 @@ Top level modules:
 
 } {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sva.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sva.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_sva_sv_unit
+-- Importing package ALSU_pkg
 -- Compiling module ALSU_sva
 
 Top level modules:
@@ -84,13 +119,6 @@ QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 
 Top level modules:
 	--none--
-
-} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.v} {1 {vlog -work work -vopt -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.v}
-QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
--- Compiling module ALSU
-
-Top level modules:
-	ALSU
 
 } {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_if.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
@@ -153,5 +181,12 @@ QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 
 Top level modules:
 	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALSU
+
+Top level modules:
+	ALSU
 
 } {} {}}

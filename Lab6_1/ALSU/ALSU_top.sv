@@ -11,9 +11,7 @@ module ALSU_top();
 
     ALSU_if ALSUif(clk);
 
-    ALSU  #(.INPUT_PRIORITY(ALSUif.INPUT_PRIORITY),
-               .FULL_ADDER(ALSUif.FULL_ADDER))
-            DUT(ALSUif.A, 
+    ALSU    DUT(ALSUif.A, 
                 ALSUif.B,
                 ALSUif.cin,
                 ALSUif.serial_in,

@@ -11,10 +11,9 @@ import ALSU_pkg::*;
         rand bit rst, cin, red_op_A, red_op_B, bypass_A, bypass_B, direction, serial_in; 
         rand opcode_e opcode; 
         rand opcode_e opcode_valid[VALID_OP];
-        rand bit signed [2:0] A; 
-        rand bit signed [2:0] B;
-        bit [5:0] out;
-        bit [15:0] leds; 
+        rand bit signed [2:0] A, B; 
+        logic [5:0] out;
+        logic [15:0] leds; 
 
         // Declare the random variables for inputs A and B, and their corner cases and walking ones patterns
         rand reg_e enum_ext_A, enum_ext_B;
@@ -82,7 +81,7 @@ import ALSU_pkg::*;
         // 3. The opcode to be mostly OR, XOR, ADD, MULT, ROTATE, SHIFT, with some random values for the other operations.
         // will be used while turning off opcode_arr_cst to allow random values in the opcode_arr which will be used in the covergroup to cover the transitions between all the operations.
         constraint opcode_cst{
-            opcode dist{[OR:ROTATE] := 90, [INVALID6:INVALID7] := 10};
+            opcode dist{[OR:ROTATE] := 90, [INVALID6:INVALID7] := 20};
         }
 
         // 4. The bypass signals to be mostly disabled, with some random values.

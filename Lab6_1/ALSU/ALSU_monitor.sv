@@ -22,8 +22,8 @@ import ALSU_pkg::*;
 
        task run_phase(uvm_phase phase);
             super.run_phase(phase);
-            rsp_seq_item = ALSU_seq_item::type_id::create("rsp_seq_item",this);
             forever begin
+               rsp_seq_item = ALSU_seq_item::type_id::create("rsp_seq_item",this);
                 @(negedge ALSU_vif.clk);
                 rsp_seq_item.rst = ALSU_vif.rst; 
                 rsp_seq_item.cin = ALSU_vif.cin; 
@@ -36,6 +36,8 @@ import ALSU_pkg::*;
                 rsp_seq_item.opcode = opcode_e'(ALSU_vif.opcode); 
                 rsp_seq_item.A = ALSU_vif.A;
                 rsp_seq_item.B = ALSU_vif.B;
+                rsp_seq_item.out = ALSU_vif.out;
+                rsp_seq_item.leds = ALSU_vif.leds;
                 mon_ap.write(rsp_seq_item); //broadcast 
                 `uvm_info("run_phase",rsp_seq_item.convert2string_stimulus(),UVM_HIGH);
             end

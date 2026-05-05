@@ -15,8 +15,8 @@ import ALSU_seq_item_pkg::*;
 
        task run_phase(uvm_phase phase);
             super.run_phase(phase);
-            stim_seq_item = ALSU_seq_item::type_id::create("stim_seq_item",this);
             forever begin
+                stim_seq_item = ALSU_seq_item::type_id::create("stim_seq_item",this);
                 seq_item_port.get_next_item(stim_seq_item);
                 ALSU_vif.rst = stim_seq_item.rst; 
                 ALSU_vif.cin = stim_seq_item.cin;
@@ -31,6 +31,7 @@ import ALSU_seq_item_pkg::*;
                 ALSU_vif.B = stim_seq_item.B; 
                 @(negedge ALSU_vif.clk);
                 seq_item_port.item_done();
+                `uvm_info("run_phase",stim_seq_item.convert2string_stimulus(),UVM_HIGH)
             end
        endtask
     endclass

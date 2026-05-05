@@ -12,5 +12,5 @@ ALSU_sequencer.sv
 ALSU_agent.sv
 ALSU_env.sv
 ALSU_test.sv
-ALSU.v
+ALSU.sv
 ALSU_top.sv
