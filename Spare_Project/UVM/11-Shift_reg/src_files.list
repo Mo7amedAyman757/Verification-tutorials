@@ -1,0 +1,16 @@
+shiftreg_pkg.sv
+shiftreg_seq_item.sv
+shiftreg_sequence.sv
+shiftreg_config.sv
+shiftreg_if.sv
+shiftreg_sva.sv
+shiftreg_driver.sv
+shiftreg_scoreboard.sv
+shiftreg_coverage.sv
+shiftreg_monitor.sv
+shiftreg_sequencer.sv
+shiftreg_agent.sv
+shiftreg_env.sv
+shiftreg_test.sv
+shift_reg.v
+shiftreg_top.sv

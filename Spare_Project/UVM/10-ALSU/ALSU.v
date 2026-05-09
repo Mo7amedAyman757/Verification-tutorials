@@ -8,7 +8,7 @@ output reg [15:0] leds;
 output reg signed [5:0] out;
 
 reg red_op_A_reg, red_op_B_reg, bypass_A_reg, bypass_B_reg, direction_reg, serial_in_reg;
-reg signed [2:0] cin_reg;
+reg cin_reg;
 reg [2:0] opcode_reg;
 reg signed [2:0] A_reg, B_reg;
 
@@ -94,12 +94,12 @@ always @(posedge clk or posedge rst) begin
             else 
               out <= A_reg ^ B_reg;
           end
-          3'h2: begin
+          3'h2: begin 
             if (FULL_ADDER == "ON") begin
-              out <= A_reg + B_reg + cin_reg;
-            end else begin
-              out <= A_reg + B_reg;
-            end
+                out <= A_reg + B_reg + cin_reg;
+              end else begin
+                out <= A_reg + B_reg;
+              end
           end
           3'h3: out <= A_reg * B_reg;
           3'h4: begin
@@ -114,7 +114,6 @@ always @(posedge clk or posedge rst) begin
             else
               out <= {out[0], out[5:1]};
           end
-          default: out <= 0;
         endcase
     end 
   end
