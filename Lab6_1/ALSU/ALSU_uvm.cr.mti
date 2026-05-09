@@ -153,16 +153,12 @@ QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 Top level modules:
 	--none--
 
-} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv}
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
--- Compiling package ALSU_sequence_pkg
--- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
--- Importing package ALSU_seq_item_pkg
--- Importing package ALSU_pkg
-** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv(5): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling module ALSU
 
 Top level modules:
-	--none--
+	ALSU
 
 } {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_env.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_env.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
@@ -182,11 +178,15 @@ QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
 Top level modules:
 	--none--
 
-} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU.sv}
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv}
 QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
--- Compiling module ALSU
+-- Compiling package ALSU_sequence_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package ALSU_seq_item_pkg
+-- Importing package ALSU_pkg
+** Note: (vlog-2286) D:/Career tracks/Digial_IC/09-Verification/Lab6_1/ALSU/ALSU_sequence.sv(5): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
 
 Top level modules:
-	ALSU
+	--none--
 
 } {} {}}
