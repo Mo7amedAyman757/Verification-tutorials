@@ -26,7 +26,7 @@ import shared_pkg::*;
             rsp_seq_item = shift_reg_seq_item::type_id::create("rsp_seq_item");
             forever begin
                 #2;
-                rsp_seq_item.reset = shift_reg_vif.reset;     
+                // rsp_seq_item.reset = shift_reg_vif.reset;     
                 rsp_seq_item.serial_in = shift_reg_vif.serial_in;
                 rsp_seq_item.direction = direction_e'(shift_reg_vif.direction);
                 rsp_seq_item.mode = mode_e'(shift_reg_vif.mode);
