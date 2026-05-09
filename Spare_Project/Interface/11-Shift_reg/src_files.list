@@ -1,0 +1,7 @@
+shiftreg_pkg.sv
+shiftreg_if.sv
+shiftreg_monitor.sv
+shiftreg_sva.sv
+shiftreg_tb.sv
+shift_reg.v
+shiftreg_top.sv

@@ -1,0 +1,347 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/UVM/11-Shift_reg
+T_opt
+!s110 1778211064
+VeJ=8e9QKCa`T:Veh2Bi8g1
+04 8 4 work ALSU_top fast 0
+=1-902e16e4070c-69fd58f8-ef-38e4
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R1
+vALSU
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1778276761
+!i10b 1
+!s100 DW_oTWFaoi]ODJ1PnMAmS3
+I4KG3gg21;lgJ782zXj2mh1
+S1
+Z5 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU
+w1778158206
+8ALSU.v
+FALSU.v
+!i122 599
+L0 1 116
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z8 !s108 1778276761.000000
+!s107 ALSU.v|
+!s90 -reportprogress|300|-sv|+cover|ALSU.v|
+!i113 0
+Z9 !s102 +cover
+Z10 o-sv +cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@a@l@s@u
+XALSU_enum
+R3
+R4
+!i10b 1
+!s100 a]8UYnkI0nJ3:YhIjF]Sg0
+I4gY5L2>;n3OKR59j;;KFn2
+S1
+R5
+w1778152899
+8ALSU_enum.sv
+FALSU_enum.sv
+!i122 598
+Z11 L0 1 0
+V4gY5L2>;n3OKR59j;;KFn2
+R7
+r1
+!s85 0
+31
+R8
+!s107 ALSU_enum.sv|
+!s90 -reportprogress|300|-sv|+cover|ALSU_enum.sv|
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_enum
+YALSU_if
+R3
+Z12 !s110 1778276762
+!i10b 1
+!s100 k>28gfT`OdH[m:UZCeD`]0
+I:I3knPJbZF6?<DFOj@;[Q1
+S1
+R5
+w1778115771
+8ALSU_if.sv
+FALSU_if.sv
+!i122 601
+R11
+R6
+R7
+r1
+!s85 0
+31
+Z13 !s108 1778276762.000000
+!s107 ALSU_if.sv|
+!s90 -reportprogress|300|-sv|+cover|ALSU_if.sv|
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_if
+vALSU_monitor
+R3
+R12
+!i10b 1
+!s100 3fLjM3[0OO803?OA2:Bl^1
+I@kTijQN9Q?Laa]9]KKEe71
+S1
+R5
+w1778158493
+8ALSU_monitor.sv
+FALSU_monitor.sv
+!i122 603
+L0 1 11
+R6
+R7
+r1
+!s85 0
+31
+R13
+!s107 ALSU_monitor.sv|
+!s90 -reportprogress|300|-sv|+cover|ALSU_monitor.sv|
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_monitor
+XALSU_pkg
+R3
+Z14 DXx4 work 9 ALSU_enum 0 22 4gY5L2>;n3OKR59j;;KFn2
+R12
+!i10b 1
+!s100 QBoZ[4BaYQ^5aml:IK;ET2
+I`AY^1j4ZB9m=WI@9KkH[[3
+S1
+R5
+w1778158874
+8ALSU_pkg.sv
+FALSU_pkg.sv
+!i122 600
+R11
+V`AY^1j4ZB9m=WI@9KkH[[3
+R7
+r1
+!s85 0
+31
+R8
+!s107 ALSU_pkg.sv|
+!s90 -reportprogress|300|-sv|+cover|ALSU_pkg.sv|
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_pkg
+vALSU_sva
+R3
+R14
+Z15 DXx4 work 8 ALSU_pkg 0 22 `AY^1j4ZB9m=WI@9KkH[[3
+DXx4 work 16 ALSU_sva_sv_unit 0 22 ?]cmNT@nE>Pj5J:Ha5e[?0
+R12
+R6
+r1
+!s85 0
+!i10b 1
+!s100 T6><O>AJc4ZMj6_l:oTC`2
+I`Vfd2CD3i1AjZ@>EJTZcd2
+!s105 ALSU_sva_sv_unit
+S1
+R5
+Z16 w1778211053
+Z17 8ALSU_sva.sv
+Z18 FALSU_sva.sv
+!i122 602
+L0 4 188
+R7
+31
+R13
+Z19 !s107 ALSU_sva.sv|
+Z20 !s90 -reportprogress|300|-sv|+cover|ALSU_sva.sv|
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_sva
+XALSU_sva_sv_unit
+R3
+R14
+R15
+R12
+V?]cmNT@nE>Pj5J:Ha5e[?0
+r1
+!s85 0
+!i10b 1
+!s100 Tak7_394j=AY6Ve6DQ]^i1
+I?]cmNT@nE>Pj5J:Ha5e[?0
+!i103 1
+S1
+R5
+R16
+R17
+R18
+!i122 602
+R11
+R7
+31
+R13
+R19
+R20
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_sva_sv_unit
+vALSU_tb
+R3
+R14
+R15
+DXx4 work 15 ALSU_tb_sv_unit 0 22 _2fCH3Uh0h<W=>I<d9<Pz2
+R12
+R6
+r1
+!s85 0
+!i10b 1
+!s100 OWV27zVUXRHQO_463ZWgY1
+I@;D^Nh2jIeLCK=KIRmS?L1
+!s105 ALSU_tb_sv_unit
+S1
+R5
+Z21 w1778162168
+Z22 8ALSU_tb.sv
+Z23 FALSU_tb.sv
+!i122 604
+L0 4 198
+R7
+31
+R13
+Z24 !s107 ALSU_tb.sv|
+Z25 !s90 -reportprogress|300|-sv|+cover|ALSU_tb.sv|
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_tb
+XALSU_tb_sv_unit
+R3
+R14
+R15
+R12
+V_2fCH3Uh0h<W=>I<d9<Pz2
+r1
+!s85 0
+!i10b 1
+!s100 I0TJJhk;ZC2g_mVPj;C@Q3
+I_2fCH3Uh0h<W=>I<d9<Pz2
+!i103 1
+S1
+R5
+R21
+R22
+R23
+!i122 604
+R11
+R7
+31
+R13
+R24
+R25
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_tb_sv_unit
+vALSU_top
+R3
+R12
+!i10b 1
+!s100 6@c5EUVzzMZS:7fI2X[z;3
+I:j0lFMK7[<[hANUndVKFD1
+S1
+R5
+w1778116098
+8ALSU_top.sv
+FALSU_top.sv
+!i122 605
+L0 1 20
+R6
+R7
+r1
+!s85 0
+31
+R13
+!s107 ALSU_top.sv|
+!s90 -reportprogress|300|-sv|+cover|ALSU_top.sv|
+!i113 0
+R9
+R10
+R2
+n@a@l@s@u_top

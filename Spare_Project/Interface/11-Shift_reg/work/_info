@@ -1,0 +1,258 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/questasim64_2021.1/examples
+T_opt
+!s110 1778083157
+VHN4>KX9cH6m;BkYj^gR:H0
+04 11 4 work shiftreg_tb fast 0
+=4-902e16e4070c-69fb6555-109-f84
+Z2 !s124 OEM100
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1778103079
+VdDmCkXzkU4b4iYY]GE2Ol3
+04 12 4 work shiftreg_top fast 0
+=1-902e16e4070c-69fbb327-1f2-45f8
+R2
+R3
+R4
+n@_opt1
+R5
+vshift_reg
+Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z7 !s110 1778103070
+!i10b 1
+!s100 BDA12:>K>CE?B?KkZYI8H2
+IWR`aYPKQ1VlIhLB<2_?_P2
+S1
+Z8 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/11-Shift_reg
+w1778080436
+8shift_reg.v
+Fshift_reg.v
+!i122 265
+L0 8 19
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z11 !s108 1778103070.000000
+!s107 shift_reg.v|
+!s90 -reportprogress|300|-sv|+cover|shift_reg.v|
+!i113 0
+Z12 !s102 +cover
+Z13 o-sv +cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+Yshiftreg_if
+R6
+R7
+!i10b 1
+!s100 i>Fe_lV[TeKVaVHP1K8h30
+IPb@knK;`fa3WHTO`elj]n3
+S1
+R8
+w1778080235
+8shiftreg_if.sv
+Fshiftreg_if.sv
+!i122 267
+Z14 L0 1 0
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 shiftreg_if.sv|
+!s90 -reportprogress|300|-sv|+cover|shiftreg_if.sv|
+!i113 0
+R12
+R13
+R4
+vshiftreg_monitor
+R6
+R7
+!i10b 1
+!s100 kkklb=^S2P]Se9Z`=:zN61
+Ib?LT_Mn3i?O4MIePj48oW3
+S1
+R8
+w1778083689
+8shiftreg_monitor.sv
+Fshiftreg_monitor.sv
+!i122 269
+L0 1 8
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 shiftreg_monitor.sv|
+!s90 -reportprogress|300|-sv|+cover|shiftreg_monitor.sv|
+!i113 0
+R12
+R13
+R4
+Xshiftreg_pkg
+R6
+R7
+!i10b 1
+!s100 UG@[A=@Md<f1@52Am1Z`51
+IP7lk3Ao4gkMe>8WPS0XDY1
+S1
+R8
+w1778082901
+8shiftreg_pkg.sv
+Fshiftreg_pkg.sv
+!i122 266
+R14
+VP7lk3Ao4gkMe>8WPS0XDY1
+R10
+r1
+!s85 0
+31
+R11
+!s107 shiftreg_pkg.sv|
+!s90 -reportprogress|300|-sv|+cover|shiftreg_pkg.sv|
+!i113 0
+R12
+R13
+R4
+vshiftreg_sva
+R6
+R7
+!i10b 1
+!s100 BJ5?0JX987Ke9Haf[RzK63
+Id<2E>GTe;0S@O7IedF2B80
+S1
+R8
+w1778103064
+8shiftreg_sva.sv
+Fshiftreg_sva.sv
+!i122 268
+L0 1 48
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 shiftreg_sva.sv|
+!s90 -reportprogress|300|-sv|+cover|shiftreg_sva.sv|
+!i113 0
+R12
+R13
+R4
+vshiftreg_tb
+R6
+Z15 DXx4 work 12 shiftreg_pkg 0 22 P7lk3Ao4gkMe>8WPS0XDY1
+DXx4 work 19 shiftreg_tb_sv_unit 0 22 >kKk95IEzSlL=HUfRHXaO0
+R7
+R9
+r1
+!s85 0
+!i10b 1
+!s100 M>=G^D`n]oe<NKZzWPHb=3
+Iko:5@=57gAYGN0aF:eXB:1
+!s105 shiftreg_tb_sv_unit
+S1
+R8
+Z16 w1778102716
+Z17 8shiftreg_tb.sv
+Z18 Fshiftreg_tb.sv
+!i122 270
+L0 3 80
+R10
+31
+R11
+Z19 !s107 shiftreg_tb.sv|
+Z20 !s90 -reportprogress|300|-sv|+cover|shiftreg_tb.sv|
+!i113 0
+R12
+R13
+R4
+Xshiftreg_tb_sv_unit
+R6
+R15
+R7
+V>kKk95IEzSlL=HUfRHXaO0
+r1
+!s85 0
+!i10b 1
+!s100 Gl:Y;Tzez6>FNhC2=FXjn0
+I>kKk95IEzSlL=HUfRHXaO0
+!i103 1
+S1
+R8
+R16
+R17
+R18
+!i122 270
+R14
+R10
+31
+R11
+R19
+R20
+!i113 0
+R12
+R13
+R4
+vshiftreg_top
+R6
+R7
+!i10b 1
+!s100 [O:mmiY>[<KD06WHYafeJ1
+IQ5<42mQFi`G`:kZVG5B793
+S1
+R8
+w1778083421
+8shiftreg_top.sv
+Fshiftreg_top.sv
+!i122 271
+L0 1 21
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 shiftreg_top.sv|
+!s90 -reportprogress|300|-sv|+cover|shiftreg_top.sv|
+!i113 0
+R12
+R13
+R4

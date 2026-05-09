@@ -1,0 +1,55 @@
+{D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_enum.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_enum.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_enum
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU.v} {0 {vlog -work work -vopt -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU.v}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALSU
+** Error: D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU.v(1): (vlog-2110) Illegal reference to interface "ALSU_vif".
+
+} {4.0 5.0} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_pkg.sv} {2 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_pkg.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package ALSU_pkg
+-- Importing package ALSU_enum
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_pkg.sv(135): (vlog-13203) option.cross_auto_bin_max = 0 setting is non-LRM compliant. No auto cross bins will be generated.
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_tb.sv} {2 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_tb.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_tb.sv(1): (vlog-13233) Design unit "ALSU_tb_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
+-- Compiling package ALSU_tb_sv_unit
+-- Importing package ALSU_enum
+-- Importing package ALSU_pkg
+-- Compiling module ALSU_tb
+
+Top level modules:
+	ALSU_tb
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_if.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling interface ALSU_if
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_top.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_top.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALSU_top
+
+Top level modules:
+	ALSU_top
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_monitor.sv} {2 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_monitor.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module ALSU_monitor
+** Warning: D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/10-ALSU/ALSU_monitor.sv(5): (vlog-2643) Unterminated string literal continues onto next line.
+
+Top level modules:
+	ALSU_monitor
+
+} {} {}}

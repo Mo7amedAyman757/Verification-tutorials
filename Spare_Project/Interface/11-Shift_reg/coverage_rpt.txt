@@ -1,0 +1,575 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /shiftreg_top/shiftreg_vif
+=== Design Unit: work.shiftreg_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         34        32         2    94.11%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /shiftreg_top/shiftreg_vif --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+                                         datain[5]           0           0        0.00 
+                                       datain[4-0]           1           1      100.00 
+                                      dataout[5-0]           1           1      100.00 
+                                         direction           1           1      100.00 
+                                              mode           1           1      100.00 
+                                             reset           1           1      100.00 
+                                         serial_in           1           1      100.00 
+
+Total Node Count     =         17 
+Toggled Node Count   =         16 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      94.11% (32 of 34 bins)
+
+=================================================================================
+=== Instance: /shiftreg_top/dut/shift_sva_inst
+=== Design Unit: work.shiftreg_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       5         5         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/shiftreg_top/dut/shift_sva_inst/assert__shift_right_check
+                     shiftreg_sva.sv(44)                0          1
+/shiftreg_top/dut/shift_sva_inst/assert__shift_left_check
+                     shiftreg_sva.sv(35)                0          1
+/shiftreg_top/dut/shift_sva_inst/assert__rotate_right_check
+                     shiftreg_sva.sv(26)                0          1
+/shiftreg_top/dut/shift_sva_inst/assert__rotate_left_check
+                     shiftreg_sva.sv(17)                0          1
+/shiftreg_top/dut/shift_sva_inst/assert__reset_check
+                     shiftreg_sva.sv(8)                 0          1
+
+Directive Coverage:
+    Directives                       5         5         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/shiftreg_top/dut/shift_sva_inst/cover__shift_right_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(46)
+                                                                               219 Covered   
+/shiftreg_top/dut/shift_sva_inst/cover__shift_left_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(37)
+                                                                               254 Covered   
+/shiftreg_top/dut/shift_sva_inst/cover__rotate_right_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(28)
+                                                                               253 Covered   
+/shiftreg_top/dut/shift_sva_inst/cover__rotate_left_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(19)
+                                                                               217 Covered   
+/shiftreg_top/dut/shift_sva_inst/cover__reset_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(10)
+                                                                                31 Covered   
+
+=================================================================================
+=== Instance: /shiftreg_top/dut
+=== Design Unit: work.shift_reg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         6         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /shiftreg_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File shift_reg.v
+------------------------------------IF Branch------------------------------------
+    11                                      1030     Count coming in to IF
+    11              1                         59        if (shiftreg_vif.reset)
+    14              1                        481           if (shiftreg_vif.mode) // rotate
+    20              1                        260              if (shiftreg_vif.direction) // left
+    22              1                        230              else
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    15                                       481     Count coming in to IF
+    15              1                        224              if (shiftreg_vif.direction) // left
+    17              1                        257              else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /shiftreg_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File shift_reg.v
+    8                                                module shift_reg (shiftreg_if.DUT shiftreg_vif);
+    9                                                
+    10              1                       1030     always @(posedge shiftreg_vif.clk or posedge shiftreg_vif.reset) begin
+    11                                                  if (shiftreg_vif.reset)
+    12              1                         59           shiftreg_vif.dataout <= 0;
+    13                                                  else
+    14                                                     if (shiftreg_vif.mode) // rotate
+    15                                                        if (shiftreg_vif.direction) // left
+    16              1                        224                 shiftreg_vif.dataout <= {shiftreg_vif.datain[4:0], shiftreg_vif.datain[5]};
+    17                                                        else
+    18              1                        257                 shiftreg_vif.dataout <= {shiftreg_vif.datain[0], shiftreg_vif.datain[5:1]};
+    19                                                     else // shift
+    20                                                        if (shiftreg_vif.direction) // left
+    21              1                        260                 shiftreg_vif.dataout <= {shiftreg_vif.datain[4:0], shiftreg_vif.serial_in};
+    22                                                        else
+    23              1                        230                 shiftreg_vif.dataout <= {shiftreg_vif.serial_in, shiftreg_vif.datain[5:1]};
+
+
+=================================================================================
+=== Instance: /shiftreg_top/monitor
+=== Design Unit: work.shiftreg_monitor
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       2         2         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /shiftreg_top/monitor --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File shiftreg_monitor.sv
+    1                                                module shiftreg_monitor (shiftreg_if.MONITOR shiftreg_vif);
+    2                                                
+    3               1                       1003         always @(negedge shiftreg_vif.clk) begin
+    4               1                       1003             $display("reset = %0b, serial_in = %0b, direction = %0b, mode = %0b, datain = %0b, dataout = %0b",
+
+
+=================================================================================
+=== Instance: /shiftreg_top/test
+=== Design Unit: work.shiftreg_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/shiftreg_top/test/#ublk#200423794#18/immed__19
+                     shiftreg_tb.sv(19)                 0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         8         7         1    87.50%
+
+================================Branch Details================================
+
+Branch Coverage for instance /shiftreg_top/test
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File shiftreg_tb.sv
+------------------------------------IF Branch------------------------------------
+    54                                      1000     Count coming in to IF
+    54              1                    ***0***             if (shiftreg_vif.dataout != dataout_ref) begin
+    57              1                       1000             end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                      1000     Count coming in to IF
+    65              1                         29             if (shiftreg_txn1.reset) begin
+    70              1                        481                 if (shiftreg_txn1.mode) // rotate
+    76              1                        260                     if (shiftreg_txn1.direction) // left
+    78              1                        230                     else
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    71                                       481     Count coming in to IF
+    71              1                        224                     if (shiftreg_txn1.direction) // left
+    73              1                        257                     else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       1         0         1     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /shiftreg_top/test --
+
+  File shiftreg_tb.sv
+----------------Focused Condition View-------------------
+Line       54 Item    1  (shiftreg_vif.dataout != dataout_ref)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                             Input Term   Covered  Reason for no coverage   Hint
+                            -----------  --------  -----------------------  --------------
+  (shiftreg_vif.dataout != dataout_ref)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                               Non-masking condition(s)      
+ ---------  ---------  --------------------                     -------------------------     
+  Row   1:          1  (shiftreg_vif.dataout != dataout_ref)_0  -                             
+  Row   2:    ***0***  (shiftreg_vif.dataout != dataout_ref)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      37        35         2    94.59%
+
+================================Statement Details================================
+
+Statement Coverage for instance /shiftreg_top/test --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File shiftreg_tb.sv
+    3                                                module shiftreg_tb (shiftreg_if.TEST shiftreg_vif);
+    4                                                
+    5                                                    logic [5:0] dataout_ref;
+    6                                                
+    7                                                    int error_count, correct_count;
+    8                                                
+    9               1                          1         shiftreg shiftreg_txn = new;
+    10                                               
+    11                                                   initial begin
+    12              1                          1             initialize();
+    13                                               
+    14              1                          1             #3; 
+    15                                               
+    16              1                          1             assert_reset();
+    17                                               
+    18              1                       1000             repeat(1000) begin
+    19                                                           assert(shiftreg_txn.randomize());    
+    20              1                       1000                 shiftreg_vif.reset = shiftreg_txn.reset;
+    21              1                       1000                 shiftreg_vif.serial_in = shiftreg_txn.serial_in;
+    22              1                       1000                 shiftreg_vif.direction = shiftreg_txn.direction;
+    23              1                       1000                 shiftreg_vif.mode = shiftreg_txn.mode;
+    24              1                       1000                 shiftreg_vif.datain = shiftreg_txn.datain;
+    25              1                       1000                 @(negedge shiftreg_vif.clk);
+    26              1                       1000                 check_result(shiftreg_txn);
+    27              1                       1000                 shiftreg_txn.shiftreg_cvg.sample();
+    28                                                       end
+    29                                               
+    30              1                          1             $display("error count = %0d",error_count);
+    31              1                          1             $display("correct count = %0d",correct_count);
+    32                                               
+    33              1                          1             $stop;
+    34                                                   end
+    35                                               
+    36                                                   task initialize;
+    37              1                          1             shiftreg_vif.reset = 0;
+    38              1                          1             shiftreg_vif.serial_in = 0;
+    39              1                          1             shiftreg_vif.direction = 0;
+    40              1                          1             shiftreg_vif.mode = 0;
+    41              1                          1             shiftreg_vif.datain = 0;
+    42              1                          1             error_count = 0;
+    43              1                          1             correct_count = 0;    
+    44                                                   endtask
+    45                                               
+    46                                                   task assert_reset;
+    47              1                          1             shiftreg_vif.reset = 1;
+    48              1                          2             repeat(2) @(negedge shiftreg_vif.clk);
+    48              2                          2     
+    49              1                          1             shiftreg_vif.reset = 0;    
+    50                                                   endtask
+    51                                               
+    52                                                   task check_result(shiftreg  shiftreg_txn1);
+    53              1                       1000             golden_model(shiftreg_txn1);
+    54                                                       if (shiftreg_vif.dataout != dataout_ref) begin
+    55              1                    ***0***                 $display("Error!");
+    56              1                    ***0***                 error_count++;
+    57                                                       end else begin
+    58              1                       1000                 $display("Success!");
+    59              1                       1000                 correct_count++;    
+    60                                                       end
+    61                                               
+    62                                                   endtask
+    63                                               
+    64                                                   task golden_model(shiftreg  shiftreg_txn1);
+    65                                                       if (shiftreg_txn1.reset) begin
+    66              1                         29                 dataout_ref = 0;
+    67                                                       end 
+    68                                                       
+    69                                                       else 
+    70                                                           if (shiftreg_txn1.mode) // rotate
+    71                                                               if (shiftreg_txn1.direction) // left
+    72              1                        224                         dataout_ref = {shiftreg_txn1.datain[4:0], shiftreg_txn1.datain[5]};
+    73                                                               else
+    74              1                        257                         dataout_ref = {shiftreg_txn1.datain[0], shiftreg_txn1.datain[5:1]};
+    75                                                           else // shift
+    76                                                               if (shiftreg_txn1.direction) // left
+    77              1                        260                         dataout_ref = {shiftreg_txn1.datain[4:0], shiftreg_txn1.serial_in};
+    78                                                               else
+    79              1                        230                         dataout_ref = {shiftreg_txn1.serial_in, shiftreg_txn1.datain[5:1]};    
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        140        31       109    22.14%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /shiftreg_top/test --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                correct_count[0-8]           1           1      100.00 
+                                  correct_count[9]           0           1       50.00 
+                              correct_count[10-31]           0           0        0.00 
+                                  dataout_ref[0-5]           1           1      100.00 
+                                 error_count[0-31]           0           0        0.00 
+
+Total Node Count     =         70 
+Toggled Node Count   =         15 
+Untoggled Node Count =         55 
+
+Toggle Coverage      =      22.14% (31 of 140 bins)
+
+=================================================================================
+=== Instance: /shiftreg_top
+=== Design Unit: work.shiftreg_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /shiftreg_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File shiftreg_top.sv
+    1                                                module shiftreg_top ();
+    2                                                    
+    3                                                    logic clk;
+    4                                                
+    5                                                    initial begin
+    6               1                          1             clk = 0;
+    7               1                          1             forever #5 clk = ~clk;
+    7               2                       2005     
+    7               3                       2004     
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /shiftreg_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /shiftreg_pkg
+=== Design Unit: work.shiftreg_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          4        na        na        na
+            Covergroup Bins         10        10         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /shiftreg_pkg/shiftreg/shiftreg_cvg             100.00%        100          -    Covered              
+    covered/total bins:                                    10         10          -                      
+    missing/total bins:                                     0         10          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint mode_cvg                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mode_1                                        506          1          -    Covered              
+        bin mode_2                                        494          1          -    Covered              
+    Coverpoint direction_cvg                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin dir_1                                         503          1          -    Covered              
+        bin dir_2                                         497          1          -    Covered              
+    Coverpoint datain_cvg                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin datain_1                                      715          1          -    Covered              
+        bin datain_2                                      285          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <mode_2,dir_2>                            231          1          -    Covered              
+            bin <mode_1,dir_2>                            266          1          -    Covered              
+            bin <mode_2,dir_1>                            263          1          -    Covered              
+            bin <mode_1,dir_1>                            240          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /shiftreg_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File shiftreg_pkg.sv
+    1                                                package shiftreg_pkg;
+    2                                                
+    3                                                    class shiftreg;
+    4                                                
+    5                                                        rand logic reset, serial_in, direction, mode;
+    6                                                        rand logic [5:0] datain;
+    7                                                        
+    8                                                
+    9                                                        constraint reset_cst{
+    10                                                           reset dist {0 := 97, 1 := 3};
+    11                                                       }
+    12                                               
+    13                                                       constraint mode_cst{
+    14                                                           mode dist {0 := 50, 1 := 50};
+    15                                                       }
+    16                                               
+    17                                                       constraint direction_cst{
+    18                                                           direction dist {0 := 50, 1 := 50};
+    19                                                       }
+    20                                               
+    21                                                       constraint datain_cst{
+    22                                                           datain dist {[0:15] :/ 70, [16:31] :/ 30};
+    23                                                       }
+    24                                               
+    25                                                       covergroup shiftreg_cvg;
+    26                                               
+    27                                                           mode_cvg : coverpoint mode{
+    28                                                               bins mode_1 = {0};
+    29                                                               bins mode_2 = {1};
+    30                                                           }
+    31                                                           direction_cvg : coverpoint direction{
+    32                                                               bins dir_1 = {0};
+    33                                                               bins dir_2 = {1};
+    34                                                           }
+    35                                                           datain_cvg : coverpoint datain{
+    36                                                               bins datain_1 = {[0:15]};
+    37                                                               bins datain_2 = {[16:31]};
+    38                                                           }
+    39                                               
+    40                                                           cross mode_cvg, direction_cvg;
+    41                                               
+    42                                                       endgroup
+    43                                               
+    44                                                       function new();
+    45              1                          1                 shiftreg_cvg = new();
+
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /shiftreg_pkg/shiftreg/shiftreg_cvg             100.00%        100          -    Covered              
+    covered/total bins:                                    10         10          -                      
+    missing/total bins:                                     0         10          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint mode_cvg                               100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin mode_1                                        506          1          -    Covered              
+        bin mode_2                                        494          1          -    Covered              
+    Coverpoint direction_cvg                          100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin dir_1                                         503          1          -    Covered              
+        bin dir_2                                         497          1          -    Covered              
+    Coverpoint datain_cvg                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin datain_1                                      715          1          -    Covered              
+        bin datain_2                                      285          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <mode_2,dir_2>                            231          1          -    Covered              
+            bin <mode_1,dir_2>                            266          1          -    Covered              
+            bin <mode_2,dir_1>                            263          1          -    Covered              
+            bin <mode_1,dir_1>                            240          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/shiftreg_top/dut/shift_sva_inst/cover__shift_right_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(46)
+                                                                               219 Covered   
+/shiftreg_top/dut/shift_sva_inst/cover__shift_left_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(37)
+                                                                               254 Covered   
+/shiftreg_top/dut/shift_sva_inst/cover__rotate_right_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(28)
+                                                                               253 Covered   
+/shiftreg_top/dut/shift_sva_inst/cover__rotate_left_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(19)
+                                                                               217 Covered   
+/shiftreg_top/dut/shift_sva_inst/cover__reset_check 
+                                         shiftreg_sva Verilog  SVA  shiftreg_sva.sv(10)
+                                                                                31 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 5
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/shiftreg_top/dut/shift_sva_inst/assert__shift_right_check
+                     shiftreg_sva.sv(44)                0          1
+/shiftreg_top/dut/shift_sva_inst/assert__shift_left_check
+                     shiftreg_sva.sv(35)                0          1
+/shiftreg_top/dut/shift_sva_inst/assert__rotate_right_check
+                     shiftreg_sva.sv(26)                0          1
+/shiftreg_top/dut/shift_sva_inst/assert__rotate_left_check
+                     shiftreg_sva.sv(17)                0          1
+/shiftreg_top/dut/shift_sva_inst/assert__reset_check
+                     shiftreg_sva.sv(8)                 0          1
+/shiftreg_top/test/#ublk#200423794#18/immed__19
+                     shiftreg_tb.sv(19)                 0          1
+
+Total Coverage By Instance (filtered view): 75.11%
+

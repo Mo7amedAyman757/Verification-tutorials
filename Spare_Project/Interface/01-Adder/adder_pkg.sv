@@ -54,7 +54,6 @@ package adder_pkg;
             Covergrp_B = new();
         endfunction
 
-
     endclass
 
 endpackage
