@@ -1,0 +1,1730 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /counter_top/counterif
+=== Design Unit: work.counter_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         30        30         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /counter_top/counterif --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                                ce           1           1      100.00 
+                                               clk           1           1      100.00 
+                                    count_out[3-0]           1           1      100.00 
+                                    data_load[3-0]           1           1      100.00 
+                                            load_n           1           1      100.00 
+                                         max_count           1           1      100.00 
+                                             rst_n           1           1      100.00 
+                                           up_down           1           1      100.00 
+                                              zero           1           1      100.00 
+
+Total Node Count     =         15 
+Toggled Node Count   =         15 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (30 of 30 bins)
+
+=================================================================================
+=== Instance: /counter_top/dut
+=== Design Unit: work.counter
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10        10         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /counter_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter.v
+------------------------------------IF Branch------------------------------------
+    21                                       999     Count coming in to IF
+    21              1                         56         if (!rst_n)
+    23              1                        660         else if (!load_n)
+    25              1                        182         else if (ce)
+                                             101     All False Count
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                       182     Count coming in to IF
+    26              1                         92             if (up_down)
+    28              1                         90             else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    32                                       857     Count coming in to IF
+    32              1                         58     assign max_count = (count_out == {WIDTH{1'b1}})? 1:0;
+    32              2                        799     assign max_count = (count_out == {WIDTH{1'b1}})? 1:0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    33                                       857     Count coming in to IF
+    33              1                        104     assign zero = (count_out == 0)? 1:0;
+    33              2                        753     assign zero = (count_out == 0)? 1:0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /counter_top/dut --
+
+  File counter.v
+----------------Focused Condition View-------------------
+Line       32 Item    1  (count_out == {4{{1}}})
+Condition totals: 1 of 1 input term covered = 100.00%
+
+               Input Term   Covered  Reason for no coverage   Hint
+              -----------  --------  -----------------------  --------------
+  (count_out == {4{{1}}})         Y
+
+     Rows:       Hits  FEC Target                 Non-masking condition(s)      
+ ---------  ---------  --------------------       -------------------------     
+  Row   1:          1  (count_out == {4{{1}}})_0  -                             
+  Row   2:          1  (count_out == {4{{1}}})_1  -                             
+
+----------------Focused Condition View-------------------
+Line       33 Item    1  (count_out == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (count_out == 0)         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (count_out == 0)_0    -                             
+  Row   2:          1  (count_out == 0)_1    -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       7         7         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter.v
+    8                                                module counter (clk ,rst_n, load_n, up_down, ce, data_load, count_out, max_count, zero);
+    9                                                parameter WIDTH = 4;
+    10                                               input clk;
+    11                                               input rst_n;
+    12                                               input load_n;
+    13                                               input up_down;
+    14                                               input ce;
+    15                                               input [WIDTH-1:0] data_load;
+    16                                               output reg [WIDTH-1:0] count_out;
+    17                                               output max_count;
+    18                                               output zero;
+    19                                               
+    20              1                        999     always @(posedge clk) begin
+    21                                                   if (!rst_n)
+    22              1                         56             count_out <= 0;
+    23                                                   else if (!load_n)
+    24              1                        660             count_out <= data_load;
+    25                                                   else if (ce)
+    26                                                       if (up_down)
+    27              1                         92                 count_out <= count_out + 1;
+    28                                                       else 
+    29              1                         90                 count_out <= count_out - 1;
+    30                                               end
+    31                                               
+    32              1                        858     assign max_count = (count_out == {WIDTH{1'b1}})? 1:0;
+    33              1                        858     assign zero = (count_out == 0)? 1:0;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         30        30         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /counter_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                                ce           1           1      100.00 
+                                               clk           1           1      100.00 
+                                    count_out[3-0]           1           1      100.00 
+                                    data_load[0-3]           1           1      100.00 
+                                            load_n           1           1      100.00 
+                                         max_count           1           1      100.00 
+                                             rst_n           1           1      100.00 
+                                           up_down           1           1      100.00 
+                                              zero           1           1      100.00 
+
+Total Node Count     =         15 
+Toggled Node Count   =         15 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (30 of 30 bins)
+
+=================================================================================
+=== Instance: /counter_top/counter_sva_inst
+=== Design Unit: work.counter_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       7         7         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/counter_top/counter_sva_inst/a_reset_assertion
+                     counter_sva.sv(8)                  0          1
+/counter_top/counter_sva_inst/a_load_active_assertion
+                     counter_sva.sv(17)                 0          1
+/counter_top/counter_sva_inst/a_hold_assertion
+                     counter_sva.sv(26)                 0          1
+/counter_top/counter_sva_inst/a_increment_assertion
+                     counter_sva.sv(35)                 0          1
+/counter_top/counter_sva_inst/a_decrement_assertion
+                     counter_sva.sv(44)                 0          1
+/counter_top/counter_sva_inst/a_max_count_assertion
+                     counter_sva.sv(54)                 0          1
+/counter_top/counter_sva_inst/a_zero_assertion
+                     counter_sva.sv(63)                 0          1
+
+Directive Coverage:
+    Directives                       7         7         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/counter_top/counter_sva_inst/a_reset_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(10)
+                                                                                55 Covered   
+/counter_top/counter_sva_inst/a_load_active_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(19)
+                                                                               622 Covered   
+/counter_top/counter_sva_inst/a_hold_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(28)
+                                                                                99 Covered   
+/counter_top/counter_sva_inst/a_increment_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(37)
+                                                                                86 Covered   
+/counter_top/counter_sva_inst/a_decrement_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(46)
+                                                                                85 Covered   
+/counter_top/counter_sva_inst/a_max_count_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(56)
+                                                                                58 Covered   
+/counter_top/counter_sva_inst/a_zero_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(65)
+                                                                               126 Covered   
+
+=================================================================================
+=== Instance: /counter_top
+=== Design Unit: work.counter_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_top.sv
+    6                                                module counter_top();
+    7                                                    
+    8                                                    logic clk;
+    9                                                
+    10                                                   initial begin
+    11              1                          1             clk = 0;
+    12              1                          1             forever #5 clk = ~clk;
+    12              2                       2003     
+    12              3                       2002     
+    13                                                   end
+    14                                               
+    15                                                   counter_if counterif(clk);
+    16                                               
+    17                                                   counter dut(counterif.clk,
+    18                                                               counterif.rst_n,
+    19                                                               counterif.load_n,
+    20                                                               counterif.up_down,
+    21                                                               counterif.ce,
+    22                                                               counterif.data_load,
+    23                                                               counterif.count_out,
+    24                                                               counterif.max_count,
+    25                                                               counterif.zero
+    26                                                               );
+    27                                               
+    28                                                   counter_sva counter_sva_inst(counterif);
+    29                                               
+    30                                                   initial begin
+    31              1                          1             uvm_config_db #(virtual counter_if)::set(null,"uvm_test_top","COUNTER_IF",counterif);
+    32              1                          1             run_test("counter_test");
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /counter_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /counter_seqitem_pkg
+=== Design Unit: work.counter_seqitem_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         2         8    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /counter_seqitem_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_seqitem.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***             `uvm_object_utils(counter_seqitem)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                       1001     Count coming in to IF
+    7               2                    ***0***             `uvm_object_utils(counter_seqitem)
+                                            1001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***             `uvm_object_utils(counter_seqitem)
+    7               4                    ***0***             `uvm_object_utils(counter_seqitem)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                       1001     Count coming in to IF
+    7               5                    ***0***             `uvm_object_utils(counter_seqitem)
+                                            1001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***             `uvm_object_utils(counter_seqitem)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /counter_seqitem_pkg --
+
+  File counter_seqitem.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13         3        10    23.07%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_seqitem_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_seqitem.sv
+    1                                                package counter_seqitem_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class counter_seqitem extends uvm_sequence_item;
+    7               1                    ***0***             `uvm_object_utils(counter_seqitem)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                       1001     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                       1001     
+    7              10                    ***0***     
+    8                                                        rand logic rst_n;
+    9                                                        rand logic load_n;
+    10                                                       rand logic up_down;
+    11                                                       rand logic ce;
+    12                                                       rand logic [WIDTH-1:0] data_load;
+    13                                                       bit [WIDTH-1:0] count_out;
+    14                                                       bit max_count;
+    15                                                       bit zero;
+    16                                               
+    17                                                       function new(string name = "counter_seqitem");
+    18              1                       2006                 super.new(name);
+    19                                                       endfunction
+    20                                               
+    21                                                       function string convert2string();
+    22              1                    ***0***                 return $sformatf("%s rst_n = 0b%0b, load_n = 0b%0b
+    23                                                                             up_down = 0b%0b, ce = 0b%0b
+    24                                                                             data_load = 0b%0b, count_out = 0b%0b
+    25                                                                             max_count = 0b%0b, zero = 0b%0b", super.convert2string(),
+    26                                                                             rst_n, load_n, up_down, ce, data_load, count_out, max_count, zero);            
+    27                                                       endfunction
+    28                                               
+    29                                                       function string convert2string_stimulus();
+    30              1                    ***0***                 return $sformatf("rst_n = 0b%0b, load_n = 0b%0b
+
+
+=================================================================================
+=== Instance: /counter_sequence_pkg
+=== Design Unit: work.counter_sequence_pkg
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/counter_sequence_pkg/counter_mainsequence/body/#ublk#79972471#42/immed__44
+                     counter_sequence.sv(44)            0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20         4        16    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /counter_sequence_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_sequence.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***             `uvm_object_utils(counter_resetsequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               2                    ***0***             `uvm_object_utils(counter_resetsequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***             `uvm_object_utils(counter_resetsequence)
+    7               4                    ***0***             `uvm_object_utils(counter_resetsequence)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               5                    ***0***             `uvm_object_utils(counter_resetsequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***             `uvm_object_utils(counter_resetsequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                   ***0***     Count coming in to IF
+    31              1                    ***0***             `uvm_object_utils(counter_mainsequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                         1     Count coming in to IF
+    31              2                    ***0***             `uvm_object_utils(counter_mainsequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                   ***0***     Count coming in to IF
+    31              3                    ***0***             `uvm_object_utils(counter_mainsequence)
+    31              4                    ***0***             `uvm_object_utils(counter_mainsequence)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                         1     Count coming in to IF
+    31              5                    ***0***             `uvm_object_utils(counter_mainsequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                   ***0***     Count coming in to IF
+    31              6                    ***0***             `uvm_object_utils(counter_mainsequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       4         0         4     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /counter_sequence_pkg --
+
+  File counter_sequence.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       31 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       31 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      34        18        16    52.94%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_sequence_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_sequence.sv
+    1                                                package counter_sequence_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class counter_resetsequence extends uvm_sequence#(counter_seqitem);
+    7               1                    ***0***             `uvm_object_utils(counter_resetsequence)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                          1     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                          1     
+    7              10                    ***0***     
+    8                                                
+    9                                                        counter_seqitem seq_item;
+    10                                               
+    11                                                       function new(string name = "counter_resetsequence");
+    12              1                          1                 super.new(name);
+    13                                                       endfunction
+    14                                               
+    15                                                       task body();
+    16                                               
+    17              1                          1                 seq_item = counter_seqitem::type_id::create("seq_item");
+    18              1                          1                 start_item(seq_item);
+    19              1                          1                 seq_item.rst_n = 0;
+    20              1                          1                 seq_item.load_n = 0;
+    21              1                          1                 seq_item.up_down = 0;
+    22              1                          1                 seq_item.ce = 0;
+    23              1                          1                 seq_item.data_load = 0;
+    24              1                          1                 finish_item(seq_item);
+    25                                               
+    26                                                       endtask
+    27                                               
+    28                                                   endclass
+    29                                               
+    30                                                   class counter_mainsequence extends uvm_sequence #(counter_seqitem);
+    31              1                    ***0***             `uvm_object_utils(counter_mainsequence)
+    31              2                    ***0***     
+    31              3                    ***0***     
+    31              4                    ***0***     
+    31              5                    ***0***     
+    31              6                          1     
+    31              7                    ***0***     
+    31              8                    ***0***     
+    31              9                          1     
+    31             10                    ***0***     
+    32                                               
+    33                                                       counter_seqitem seq_item;
+    34                                               
+    35                                                       function new(string name = "counter_mainsequence");
+    36              1                          1                 super.new(name);
+    37                                                       endfunction
+    38                                                       
+    39                                                       task body();
+    40                                               
+    41              1                          1                 seq_item = counter_seqitem::type_id::create("seq_item");
+    42              1                       1000                 repeat(1000) begin
+    43              1                       1000                     start_item(seq_item);
+    44                                                               assert(seq_item.randomize());
+    45              1                       1000                     finish_item(seq_item);
+
+
+=================================================================================
+=== Instance: /counter_config_pkg
+=== Design Unit: work.counter_config_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         0        10     0.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /counter_config_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_config.sv
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               1                    ***0***             `uvm_object_utils(counter_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               2                    ***0***             `uvm_object_utils(counter_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               3                    ***0***             `uvm_object_utils(counter_config)
+    6               4                    ***0***             `uvm_object_utils(counter_config)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               5                    ***0***             `uvm_object_utils(counter_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               6                    ***0***             `uvm_object_utils(counter_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /counter_config_pkg --
+
+  File counter_config.sv
+----------------Focused Condition View-------------------
+Line       6 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       6 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         1        10     9.09%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_config_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_config.sv
+    1                                                package counter_config_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                
+    5                                                    class counter_config extends uvm_object;
+    6               1                    ***0***             `uvm_object_utils(counter_config)
+    6               2                    ***0***     
+    6               3                    ***0***     
+    6               4                    ***0***     
+    6               5                    ***0***     
+    6               6                    ***0***     
+    6               7                    ***0***     
+    6               8                    ***0***     
+    6               9                    ***0***     
+    6              10                    ***0***     
+    7                                                
+    8                                                        virtual counter_if counter_vif;
+    9                                                
+    10                                                       function new(string name = "counter_config");
+    11              1                          1                 super.new(name);
+
+
+=================================================================================
+=== Instance: /counter_coverage_pkg
+=== Design Unit: work.counter_coverage_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          5        na        na        na
+            Covergroup Bins         50        50         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /counter_coverage_pkg/counter_coverage/counter_cvg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    50         50          -                      
+    missing/total bins:                                     0         50          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint load_cvg                               100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint count_up_cvg                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint overflow_cfg                           100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint count_down_cvg                         100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint underflow_cfg                          100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/counter_coverage_pkg::counter_coverage::counter_cvg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    50         50          -                      
+    missing/total bins:                                     0         50          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint load_cvg                               100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        54          1          -    Covered              
+        bin auto[1]                                        41          1          -    Covered              
+        bin auto[2]                                        48          1          -    Covered              
+        bin auto[3]                                        36          1          -    Covered              
+        bin auto[4]                                        41          1          -    Covered              
+        bin auto[5]                                        43          1          -    Covered              
+        bin auto[6]                                        43          1          -    Covered              
+        bin auto[7]                                        31          1          -    Covered              
+        bin auto[8]                                        46          1          -    Covered              
+        bin auto[9]                                        38          1          -    Covered              
+        bin auto[10]                                       45          1          -    Covered              
+        bin auto[11]                                       37          1          -    Covered              
+        bin auto[12]                                       38          1          -    Covered              
+        bin auto[13]                                       33          1          -    Covered              
+        bin auto[14]                                       35          1          -    Covered              
+        bin auto[15]                                       44          1          -    Covered              
+    Coverpoint count_up_cvg                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bin_trans[0]                                   18          1          -    Covered              
+        bin bin_trans[1]                                   17          1          -    Covered              
+        bin bin_trans[2]                                   27          1          -    Covered              
+        bin bin_trans[3]                                   17          1          -    Covered              
+        bin bin_trans[4]                                   19          1          -    Covered              
+        bin bin_trans[5]                                   16          1          -    Covered              
+        bin bin_trans[6]                                   16          1          -    Covered              
+        bin bin_trans[7]                                   12          1          -    Covered              
+        bin bin_trans[8]                                   19          1          -    Covered              
+        bin bin_trans[9]                                   20          1          -    Covered              
+        bin bin_trans[10]                                  22          1          -    Covered              
+        bin bin_trans[11]                                  17          1          -    Covered              
+        bin bin_trans[12]                                  23          1          -    Covered              
+        bin bin_trans[13]                                  28          1          -    Covered              
+        bin bin_trans[14]                                  14          1          -    Covered              
+        bin bin_trans[15]                                  22          1          -    Covered              
+    Coverpoint overflow_cfg                           100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bin_overflow                                    3          1          -    Covered              
+    Coverpoint count_down_cvg                         100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bin_trans[0]                                   25          1          -    Covered              
+        bin bin_trans[1]                                   24          1          -    Covered              
+        bin bin_trans[2]                                   24          1          -    Covered              
+        bin bin_trans[3]                                   19          1          -    Covered              
+        bin bin_trans[4]                                   25          1          -    Covered              
+        bin bin_trans[5]                                   17          1          -    Covered              
+        bin bin_trans[6]                                   21          1          -    Covered              
+        bin bin_trans[7]                                   21          1          -    Covered              
+        bin bin_trans[8]                                   17          1          -    Covered              
+        bin bin_trans[9]                                   19          1          -    Covered              
+        bin bin_trans[10]                                  21          1          -    Covered              
+        bin bin_trans[11]                                  21          1          -    Covered              
+        bin bin_trans[12]                                  17          1          -    Covered              
+        bin bin_trans[13]                                  10          1          -    Covered              
+        bin bin_trans[14]                                  17          1          -    Covered              
+        bin bin_trans[15]                                  21          1          -    Covered              
+    Coverpoint underflow_cfg                          100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bin_overflow                                    2          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        12         2    85.71%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_coverage_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_coverage.sv
+    1                                                package counter_coverage_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_seqitem_pkg::*;
+    4                                                import counter_pkg::*;
+    5                                                import counter_config_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class counter_coverage extends uvm_component;
+    9               1                    ***0***             `uvm_component_utils(counter_coverage)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       uvm_analysis_export #(counter_seqitem) cov_exp;
+    12                                                       uvm_tlm_analysis_fifo #(counter_seqitem) cov_fifo;
+    13                                                       counter_seqitem cov_seqitem;
+    14                                               
+    15                                                       // covergroup
+    16                                                       covergroup counter_cvg;
+    17                                               
+    18                                                           load_cvg : coverpoint cov_seqitem.data_load iff(!cov_seqitem.load_n && cov_seqitem.rst_n);
+    19                                               
+    20                                                           count_up_cvg : coverpoint cov_seqitem.count_out
+    21                                                               iff (cov_seqitem.rst_n && cov_seqitem.ce && cov_seqitem.up_down){
+    22                                                                   bins bin_trans[] = {[0: (2**WIDTH)-1]};
+    23                                                               }
+    24                                                           
+    25                                               
+    26                                                           overflow_cfg : coverpoint cov_seqitem.count_out
+    27                                                               iff (cov_seqitem.rst_n && cov_seqitem.ce && cov_seqitem.up_down){
+    28                                                                   bins bin_overflow = ((2**WIDTH)-1 => 0);
+    29                                                               }
+    30                                                           
+    31                                               
+    32                                                           count_down_cvg : coverpoint cov_seqitem.count_out
+    33                                                               iff (cov_seqitem.rst_n && cov_seqitem.ce && !cov_seqitem.up_down){
+    34                                                                   bins bin_trans[] = {[0: (2**WIDTH)-1]};
+    35                                                               }
+    36                                                           
+    37                                               
+    38                                                           underflow_cfg : coverpoint cov_seqitem.count_out
+    39                                                               iff (cov_seqitem.rst_n && cov_seqitem.ce && !cov_seqitem.up_down){
+    40                                                                   bins bin_overflow = (0 => (2**WIDTH)-1);
+    41                                                               }
+    42                                                           
+    43                                                       endgroup
+    44                                               
+    45                                                       function new(string name = "counter_coverage", uvm_component parent = null);
+    46              1                          1                 super.new(name, parent);
+    47              1                          1                 counter_cvg = new();
+    48                                                       endfunction
+    49                                               
+    50                                                       function void build_phase(uvm_phase phase);
+    51              1                          1                 super. build_phase(phase);
+    52              1                          1                 cov_exp = new("cove_exp",this);
+    53              1                          1                 cov_fifo = new("cov_fifo",this);
+    54                                                       endfunction
+    55                                               
+    56                                                       function void connect_phase(uvm_phase phase);
+    57              1                          1                 super. connect_phase(phase);
+    58              1                          1                 cov_exp.connect(cov_fifo.analysis_export);
+    59                                                       endfunction
+    60                                               
+    61                                                       task run_phase(uvm_phase phase);
+    62              1                          1                 super. run_phase(phase);
+    63              1                          1                 forever begin
+    64              1                       1002                     cov_fifo.get(cov_seqitem);
+    65              1                       1001                     counter_cvg.sample();
+
+
+=================================================================================
+=== Instance: /counter_scoreboard_pkg
+=== Design Unit: work.counter_scoreboard_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        16        13         3    81.25%
+
+================================Branch Details================================
+
+Branch Coverage for instance /counter_scoreboard_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_scoreboard.sv
+------------------------------------IF Branch------------------------------------
+    47                                      1001     Count coming in to IF
+    47              1                    ***0***             if(count_out_ref != sb_seq_item.count_out || zero_ref != sb_seq_item.zero || max_count_ref != sb_seq_item.max_count) begin
+    50              1                       1001             end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    57                                      1001     Count coming in to IF
+    57              1                         56             if(!sb_seq_item.rst_n) begin
+    60              1                        661             else if(!sb_seq_item.load_n) begin
+    63              1                        182             else if(sb_seq_item.ce)
+                                             102     All False Count
+Branch totals: 4 hits of 4 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    64                                       182     Count coming in to IF
+    64              1                         92                 if (sb_seq_item.up_down)
+    66              1                         90                 else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                      1001     Count coming in to IF
+    69              1                         65             max_count_ref = (count_out_ref == {WIDTH{1'b1}})? 1:0;
+    69              2                        936             max_count_ref = (count_out_ref == {WIDTH{1'b1}})? 1:0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    70                                      1001     Count coming in to IF
+    70              1                        134             zero_ref = (count_out_ref == 0)? 1:0;
+    70              2                        867             zero_ref = (count_out_ref == 0)? 1:0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    75                                         1     Count coming in to IF
+    75              1                          1             `uvm_info("report_phase",$sformatf("Total successful transaction : %0d",correct_count),UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    76                                         1     Count coming in to IF
+    76              1                          1             `uvm_info("report_phase",$sformatf("Total failed transaction : %0d",error_count),UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       5         2         3    40.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /counter_scoreboard_pkg --
+
+  File counter_scoreboard.sv
+----------------Focused Condition View-------------------
+Line       47 Item    1  ((this.count_out_ref != sb_seq_item.count_out) || (this.zero_ref != sb_seq_item.zero) || (this.max_count_ref != sb_seq_item.max_count))
+Condition totals: 0 of 3 input terms covered = 0.00%
+
+                                     Input Term   Covered  Reason for no coverage   Hint
+                                    -----------  --------  -----------------------  --------------
+  (this.count_out_ref != sb_seq_item.count_out)         N  '_1' not hit             Hit '_1'
+            (this.zero_ref != sb_seq_item.zero)         N  '_1' not hit             Hit '_1'
+  (this.max_count_ref != sb_seq_item.max_count)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                                       Non-masking condition(s)      
+ ---------  ---------  --------------------                             -------------------------     
+  Row   1:          1  (this.count_out_ref != sb_seq_item.count_out)_0  ~((this.zero_ref != sb_seq_item.zero) || (this.max_count_ref != sb_seq_item.max_count))
+  Row   2:    ***0***  (this.count_out_ref != sb_seq_item.count_out)_1  -                             
+  Row   3:          1  (this.zero_ref != sb_seq_item.zero)_0            (~(this.count_out_ref != sb_seq_item.count_out) && ~(this.max_count_ref != sb_seq_item.max_count))
+  Row   4:    ***0***  (this.zero_ref != sb_seq_item.zero)_1            ~(this.count_out_ref != sb_seq_item.count_out)
+  Row   5:          1  (this.max_count_ref != sb_seq_item.max_count)_0  (~(this.count_out_ref != sb_seq_item.count_out) && ~(this.zero_ref != sb_seq_item.zero))
+  Row   6:    ***0***  (this.max_count_ref != sb_seq_item.max_count)_1  (~(this.count_out_ref != sb_seq_item.count_out) && ~(this.zero_ref != sb_seq_item.zero))
+
+----------------Focused Condition View-------------------
+Line       69 Item    1  (this.count_out_ref == {4{1}})
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                      Input Term   Covered  Reason for no coverage   Hint
+                     -----------  --------  -----------------------  --------------
+  (this.count_out_ref == {4{1}})         Y
+
+     Rows:       Hits  FEC Target                        Non-masking condition(s)      
+ ---------  ---------  --------------------              -------------------------     
+  Row   1:          1  (this.count_out_ref == {4{1}})_0  -                             
+  Row   2:          1  (this.count_out_ref == {4{1}})_1  -                             
+
+----------------Focused Condition View-------------------
+Line       70 Item    1  (this.count_out_ref == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (this.count_out_ref == 0)         Y
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:          1  (this.count_out_ref == 0)_0  -                             
+  Row   2:          1  (this.count_out_ref == 0)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      27        23         4    85.18%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_scoreboard_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_scoreboard.sv
+    1                                                package counter_scoreboard_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_seqitem_pkg::*;
+    4                                                import counter_pkg::*;
+    5                                                import counter_config_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class counter_scoreboard extends uvm_scoreboard;
+    9               1                    ***0***             `uvm_component_utils(counter_scoreboard)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       uvm_analysis_export #(counter_seqitem) sb_exp;
+    12                                                       uvm_tlm_analysis_fifo #(counter_seqitem) sb_fifo;
+    13                                                       counter_seqitem sb_seqitem;
+    14                                               
+    15                                                       int correct_count , error_count;
+    16                                               
+    17                                                       logic [3:0] count_out_ref;
+    18                                                       logic max_count_ref;
+    19                                                       logic zero_ref;
+    20                                               
+    21                                                   
+    22                                                       function new(string name = "counter_scoreboard", uvm_component parent = null);
+    23              1                          1                 super.new(name, parent);
+    24                                                       endfunction
+    25                                               
+    26                                                       function void build_phase(uvm_phase phase);
+    27              1                          1                 super. build_phase(phase);
+    28              1                          1                 sb_exp = new("sb_exp",this);
+    29              1                          1                 sb_fifo = new("sb_fifo",this);
+    30                                                       endfunction
+    31                                               
+    32                                                       function void connect_phase(uvm_phase phase);
+    33              1                          1                 super. connect_phase(phase);
+    34              1                          1                 sb_exp.connect(sb_fifo.analysis_export);
+    35                                                       endfunction
+    36                                               
+    37                                                       task run_phase(uvm_phase phase);
+    38              1                          1                 super. run_phase(phase);
+    39              1                          1                 forever begin
+    40              1                       1002                     sb_fifo.get(sb_seqitem);
+    41              1                       1001                     check_result(sb_seqitem);
+    42                                                           end
+    43                                                       endtask
+    44                                               
+    45                                                       task check_result(counter_seqitem sb_seq_item);
+    46              1                       1001             golden_model(sb_seq_item);
+    47                                                       if(count_out_ref != sb_seq_item.count_out || zero_ref != sb_seq_item.zero || max_count_ref != sb_seq_item.max_count) begin
+    48              1                    ***0***                 error_count++;
+    49              1                    ***0***                 $display("Error");
+    50                                                       end else begin
+    51              1                       1001                 correct_count++;
+    52              1                       1001                 $display("Pass");
+    53                                                       end
+    54                                                   endtask
+    55                                               
+    56                                                   task golden_model(counter_seqitem sb_seq_item);
+    57                                                       if(!sb_seq_item.rst_n) begin
+    58              1                         56                 count_out_ref = 0;
+    59                                                       end 
+    60                                                       else if(!sb_seq_item.load_n) begin
+    61              1                        661                 count_out_ref = sb_seq_item.data_load;
+    62                                                       end
+    63                                                       else if(sb_seq_item.ce)
+    64                                                           if (sb_seq_item.up_down)
+    65              1                         92                     count_out_ref = count_out_ref + 1;
+    66                                                           else 
+    67              1                         90                     count_out_ref = count_out_ref - 1;
+    68                                               
+    69              1                       1001             max_count_ref = (count_out_ref == {WIDTH{1'b1}})? 1:0;
+    70              1                       1001             zero_ref = (count_out_ref == 0)? 1:0;
+    71                                                   endtask
+    72                                               
+    73                                                   function void report_phase(uvm_phase phase);
+    74              1                          1             super.report_phase(phase);
+    75              1                          1             `uvm_info("report_phase",$sformatf("Total successful transaction : %0d",correct_count),UVM_MEDIUM);
+    76              1                          1             `uvm_info("report_phase",$sformatf("Total failed transaction : %0d",error_count),UVM_MEDIUM);
+
+
+=================================================================================
+=== Instance: /counter_monitor_pkg
+=== Design Unit: work.counter_monitor_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      19        17         2    89.47%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_monitor_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_monitor.sv
+    1                                                package counter_monitor_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class counter_monitor extends uvm_monitor;
+    7               1                    ***0***             `uvm_component_utils (counter_monitor)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        virtual counter_if counter_vif;
+    10                                                       counter_seqitem rseq_item;
+    11                                                       uvm_analysis_port #(counter_seqitem) mon_ap;
+    12                                               
+    13                                                       function new(string name = "counter_monitor", uvm_component parent = null);
+    14              1                          1                 super.new(name, parent);
+    15                                                       endfunction
+    16                                               
+    17                                                       function void build_phase(uvm_phase phase);
+    18              1                          1                 super. build_phase(phase);
+    19              1                          1                 mon_ap = new("mon_ap",this);
+    20                                                       endfunction
+    21                                               
+    22                                                       task run_phase(uvm_phase phase);
+    23              1                          1                 super.run_phase(phase);
+    24                                               
+    25              1                          1                 forever begin
+    26              1                       1002                     rseq_item = counter_seqitem::type_id::create("rseq_item",this);  
+    27              1                       1002                     @(negedge counter_vif.clk);
+    28              1                       1001                     rseq_item.rst_n = counter_vif.rst_n;
+    29              1                       1001                     rseq_item.load_n = counter_vif.load_n;
+    30              1                       1001                     rseq_item.up_down = counter_vif.up_down;
+    31              1                       1001                     rseq_item.ce = counter_vif.ce;
+    32              1                       1001                     rseq_item.data_load = counter_vif.data_load;
+    33              1                       1001                     rseq_item.count_out = counter_vif.count_out;
+    34              1                       1001                     rseq_item.max_count = counter_vif.max_count;
+    35              1                       1001                     rseq_item.zero = counter_vif.zero;
+    36              1                       1001                     mon_ap.write(rseq_item);
+
+
+=================================================================================
+=== Instance: /counter_driver_pkg
+=== Design Unit: work.counter_driver_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15        13         2    86.66%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_driver_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_driver.sv
+    1                                                package counter_driver_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class counter_driver extends uvm_driver #(counter_seqitem);
+    7               1                    ***0***             `uvm_component_utils (counter_driver)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        virtual counter_if counter_vif;
+    10                                                       counter_seqitem dseq_item;
+    11                                               
+    12                                                       function new(string name = "counter_driver", uvm_component parent = null);
+    13              1                          1                 super.new(name, parent);
+    14                                                       endfunction
+    15                                               
+    16                                                       task run_phase(uvm_phase phase);
+    17              1                          1                 super.run_phase(phase);
+    18                                               
+    19              1                          1                 forever begin
+    20              1                       1002                     dseq_item = counter_seqitem::type_id::create("dseq_item",this);  
+    21              1                       1002                     seq_item_port.get_next_item(dseq_item);
+    22              1                       1001                     counter_vif.rst_n = dseq_item.rst_n;
+    23              1                       1001                     counter_vif.load_n = dseq_item.load_n;
+    24              1                       1001                     counter_vif.up_down = dseq_item.up_down;
+    25              1                       1001                     counter_vif.ce = dseq_item.ce;
+    26              1                       1001                     counter_vif.data_load = dseq_item.data_load;
+    27              1                       1001                     @(negedge counter_vif.clk);
+    28              1                       1001                     seq_item_port.item_done();
+
+
+=================================================================================
+=== Instance: /counter_sequencer_pkg
+=== Design Unit: work.counter_sequencer_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         2         2    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_sequencer_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_sequencer.sv
+    1                                                package counter_sequencer_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class counter_sequencer extends uvm_sequencer #(counter_seqitem);
+    7               1                    ***0***             `uvm_component_utils(counter_sequencer)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        function new(string name = "counter_sequencer", uvm_component parent = null);
+    10              1                          1                 super.new(name, parent);
+
+
+=================================================================================
+=== Instance: /counter_agent_pkg
+=== Design Unit: work.counter_agent_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         1         3    25.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /counter_agent_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_agent.sv
+------------------------------------IF Branch------------------------------------
+    27                                         1     Count coming in to IF
+    27              1                    ***0***                 if(!uvm_config_db #(counter_config)::get(this,"","CFG",counter_cfg))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    28                                   ***0***     Count coming in to IF
+    28              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the configuration object")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15        12         3    80.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_agent_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_agent.sv
+    1                                                package counter_agent_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_seqitem_pkg::*;
+    4                                                import counter_config_pkg::*;
+    5                                                import counter_sequencer_pkg::*;
+    6                                                import counter_driver_pkg::*;
+    7                                                import counter_monitor_pkg::*;
+    8                                                `include "uvm_macros.svh"
+    9                                                
+    10                                                   class counter_agent extends uvm_agent;
+    11              1                    ***0***             `uvm_component_utils(counter_agent)
+    11              2                    ***0***     
+    11              3                          2     
+    12                                               
+    13                                                       counter_config counter_cfg;
+    14                                                       counter_sequencer sqr;
+    15                                                       counter_driver drv;
+    16                                                       counter_monitor mon;
+    17                                                       uvm_analysis_port #(counter_seqitem) agt_ap;
+    18                                               
+    19                                                       function new(string name = "counter_agent", uvm_component parent = null);
+    20              1                          1                 super.new(name, parent);
+    21                                                       endfunction
+    22                                               
+    23                                                       function void build_phase(uvm_phase phase);
+    24              1                          1                 super. build_phase(phase);
+    25                                               
+    26                                                           // get configuration
+    27                                                           if(!uvm_config_db #(counter_config)::get(this,"","CFG",counter_cfg))
+    28              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the configuration object")
+    29                                                           
+    30              1                          1                 sqr = counter_sequencer::type_id::create("sqr",this);
+    31              1                          1                 drv = counter_driver::type_id::create("drv",this);
+    32              1                          1                 mon = counter_monitor::type_id::create("mon",this);
+    33              1                          1                agt_ap = new("agt_ap",this);
+    34                                                           
+    35                                                       endfunction
+    36                                               
+    37                                                       function void connect_phase(uvm_phase phase);
+    38              1                          1                 super. connect_phase(phase);
+    39              1                          1                 drv.counter_vif = counter_cfg.counter_vif;
+    40              1                          1                 mon.counter_vif = counter_cfg.counter_vif;
+    41              1                          1                 drv.seq_item_port.connect(sqr.seq_item_export);
+    42              1                          1                 mon.mon_ap.connect(agt_ap);
+
+
+=================================================================================
+=== Instance: /counter_env_pkg
+=== Design Unit: work.counter_env_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         9         2    81.81%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_env_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_env.sv
+    1                                                package counter_env_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_agent_pkg::*;
+    4                                                import counter_scoreboard_pkg::*;
+    5                                                import counter_coverage_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class counter_env extends uvm_env;
+    9               1                    ***0***             `uvm_component_utils(counter_env)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       counter_agent agt;
+    12                                                       counter_scoreboard sb;
+    13                                                       counter_coverage cov;
+    14                                               
+    15                                                       function new(string name = "counter_env", uvm_component parent = null);
+    16              1                          1                 super.new(name, parent);
+    17                                                       endfunction
+    18                                               
+    19                                                       function void build_phase(uvm_phase phase);
+    20              1                          1                 super. build_phase(phase);
+    21              1                          1                 agt = counter_agent::type_id::create("agt",this);
+    22              1                          1                 sb = counter_scoreboard::type_id::create("sb",this);
+    23              1                          1                 cov = counter_coverage::type_id::create("cov",this);
+    24                                                       endfunction
+    25                                               
+    26                                                       function void connect_phase(uvm_phase phase);
+    27              1                          1                 super. connect_phase(phase);
+    28              1                          1                 agt.agt_ap.connect(sb.sb_exp);
+    29              1                          1                 agt.agt_ap.connect(cov.cov_exp);
+
+
+=================================================================================
+=== Instance: /counter_test_pkg
+=== Design Unit: work.counter_test_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        12         5         7    41.66%
+
+================================Branch Details================================
+
+Branch Coverage for instance /counter_test_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_test.sv
+------------------------------------IF Branch------------------------------------
+    28                                         1     Count coming in to IF
+    28              1                    ***0***                 if(!uvm_config_db#(virtual counter_if)::get(this,"","COUNTER_IF",counter_cfg.counter_vif))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the virtual interface of the counter from the uvm_config_db")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                         1     Count coming in to IF
+    38              1                          1                 `uvm_info("run_phase","Reset Asserted",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                         1     Count coming in to IF
+    40              1                          1                 `uvm_info("run_phase","Reset Deasserted",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                         1     Count coming in to IF
+    42              1                          1                 `uvm_info("run_phase","Stimulus start",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                         1     Count coming in to IF
+    44              1                          1                 `uvm_info("run_phase","Stimulus end",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      20        17         3    85.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /counter_test_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File counter_test.sv
+    1                                                package counter_test_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import counter_env_pkg::*;
+    4                                                import counter_config_pkg::*;
+    5                                                import counter_sequence_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class counter_test extends uvm_test;
+    9               1                    ***0***             `uvm_component_utils(counter_test)
+    9               2                    ***0***     
+    9               3                          4     
+    10                                               
+    11                                                       counter_config counter_cfg;
+    12                                                       counter_resetsequence rst_seq;
+    13                                                       counter_mainsequence main_seq;
+    14                                                       counter_env env;
+    15                                               
+    16                                                       function new(string name = "counter_test", uvm_component parent = null);
+    17              1                          1                 super.new(name, parent);
+    18                                                       endfunction
+    19                                               
+    20                                                       function void build_phase(uvm_phase phase);
+    21              1                          1                 super. build_phase(phase);
+    22                                               
+    23              1                          1                 env = counter_env::type_id::create("env",this);
+    24              1                          1                 counter_cfg = counter_config::type_id:: create("counter_cfg");
+    25              1                          1                 rst_seq = counter_resetsequence::type_id::create("rst_seq");
+    26              1                          1                 main_seq = counter_mainsequence::type_id::create("main_seq");
+    27                                               
+    28                                                           if(!uvm_config_db#(virtual counter_if)::get(this,"","COUNTER_IF",counter_cfg.counter_vif))
+    29              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the virtual interface of the counter from the uvm_config_db")
+    30                                               
+    31              1                          1                 uvm_config_db#(counter_config)::set(this,"*","CFG",counter_cfg);
+    32                                                       endfunction
+    33                                               
+    34                                                       task run_phase(uvm_phase phase);
+    35              1                          1                 super. run_phase(phase);
+    36              1                          1                 phase.raise_objection(this);
+    37                                               
+    38              1                          1                 `uvm_info("run_phase","Reset Asserted",UVM_LOW)
+    39              1                          1                     rst_seq.start(env.agt.sqr);
+    40              1                          1                 `uvm_info("run_phase","Reset Deasserted",UVM_LOW)
+    41                                               
+    42              1                          1                 `uvm_info("run_phase","Stimulus start",UVM_LOW)
+    43              1                          1                     main_seq.start(env.agt.sqr);
+    44              1                          1                 `uvm_info("run_phase","Stimulus end",UVM_LOW)
+    45                                               
+    46              1                          1                 phase.drop_objection(this);
+
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /counter_coverage_pkg/counter_coverage/counter_cvg 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    50         50          -                      
+    missing/total bins:                                     0         50          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint load_cvg                               100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint count_up_cvg                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint overflow_cfg                           100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint count_down_cvg                         100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint underflow_cfg                          100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/counter_coverage_pkg::counter_coverage::counter_cvg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    50         50          -                      
+    missing/total bins:                                     0         50          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint load_cvg                               100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                        54          1          -    Covered              
+        bin auto[1]                                        41          1          -    Covered              
+        bin auto[2]                                        48          1          -    Covered              
+        bin auto[3]                                        36          1          -    Covered              
+        bin auto[4]                                        41          1          -    Covered              
+        bin auto[5]                                        43          1          -    Covered              
+        bin auto[6]                                        43          1          -    Covered              
+        bin auto[7]                                        31          1          -    Covered              
+        bin auto[8]                                        46          1          -    Covered              
+        bin auto[9]                                        38          1          -    Covered              
+        bin auto[10]                                       45          1          -    Covered              
+        bin auto[11]                                       37          1          -    Covered              
+        bin auto[12]                                       38          1          -    Covered              
+        bin auto[13]                                       33          1          -    Covered              
+        bin auto[14]                                       35          1          -    Covered              
+        bin auto[15]                                       44          1          -    Covered              
+    Coverpoint count_up_cvg                           100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bin_trans[0]                                   18          1          -    Covered              
+        bin bin_trans[1]                                   17          1          -    Covered              
+        bin bin_trans[2]                                   27          1          -    Covered              
+        bin bin_trans[3]                                   17          1          -    Covered              
+        bin bin_trans[4]                                   19          1          -    Covered              
+        bin bin_trans[5]                                   16          1          -    Covered              
+        bin bin_trans[6]                                   16          1          -    Covered              
+        bin bin_trans[7]                                   12          1          -    Covered              
+        bin bin_trans[8]                                   19          1          -    Covered              
+        bin bin_trans[9]                                   20          1          -    Covered              
+        bin bin_trans[10]                                  22          1          -    Covered              
+        bin bin_trans[11]                                  17          1          -    Covered              
+        bin bin_trans[12]                                  23          1          -    Covered              
+        bin bin_trans[13]                                  28          1          -    Covered              
+        bin bin_trans[14]                                  14          1          -    Covered              
+        bin bin_trans[15]                                  22          1          -    Covered              
+    Coverpoint overflow_cfg                           100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bin_overflow                                    3          1          -    Covered              
+    Coverpoint count_down_cvg                         100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bin_trans[0]                                   25          1          -    Covered              
+        bin bin_trans[1]                                   24          1          -    Covered              
+        bin bin_trans[2]                                   24          1          -    Covered              
+        bin bin_trans[3]                                   19          1          -    Covered              
+        bin bin_trans[4]                                   25          1          -    Covered              
+        bin bin_trans[5]                                   17          1          -    Covered              
+        bin bin_trans[6]                                   21          1          -    Covered              
+        bin bin_trans[7]                                   21          1          -    Covered              
+        bin bin_trans[8]                                   17          1          -    Covered              
+        bin bin_trans[9]                                   19          1          -    Covered              
+        bin bin_trans[10]                                  21          1          -    Covered              
+        bin bin_trans[11]                                  21          1          -    Covered              
+        bin bin_trans[12]                                  17          1          -    Covered              
+        bin bin_trans[13]                                  10          1          -    Covered              
+        bin bin_trans[14]                                  17          1          -    Covered              
+        bin bin_trans[15]                                  21          1          -    Covered              
+    Coverpoint underflow_cfg                          100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bin_overflow                                    2          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/counter_top/counter_sva_inst/a_reset_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(10)
+                                                                                55 Covered   
+/counter_top/counter_sva_inst/a_load_active_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(19)
+                                                                               622 Covered   
+/counter_top/counter_sva_inst/a_hold_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(28)
+                                                                                99 Covered   
+/counter_top/counter_sva_inst/a_increment_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(37)
+                                                                                86 Covered   
+/counter_top/counter_sva_inst/a_decrement_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(46)
+                                                                                85 Covered   
+/counter_top/counter_sva_inst/a_max_count_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(56)
+                                                                                58 Covered   
+/counter_top/counter_sva_inst/a_zero_coverage 
+                                         counter_sva Verilog  SVA  counter_sva.sv(65)
+                                                                               126 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 7
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/counter_top/counter_sva_inst/a_reset_assertion
+                     counter_sva.sv(8)                  0          1
+/counter_top/counter_sva_inst/a_load_active_assertion
+                     counter_sva.sv(17)                 0          1
+/counter_top/counter_sva_inst/a_hold_assertion
+                     counter_sva.sv(26)                 0          1
+/counter_top/counter_sva_inst/a_increment_assertion
+                     counter_sva.sv(35)                 0          1
+/counter_top/counter_sva_inst/a_decrement_assertion
+                     counter_sva.sv(44)                 0          1
+/counter_top/counter_sva_inst/a_max_count_assertion
+                     counter_sva.sv(54)                 0          1
+/counter_top/counter_sva_inst/a_zero_assertion
+                     counter_sva.sv(63)                 0          1
+/counter_sequence_pkg/counter_mainsequence/body/#ublk#79972471#42/immed__44
+                     counter_sequence.sv(44)            0          1
+
+Total Coverage By Instance (filtered view): 77.25%
+
