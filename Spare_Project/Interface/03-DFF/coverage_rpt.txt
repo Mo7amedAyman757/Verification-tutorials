@@ -1,0 +1,129 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /dff_top/dut/dff_sva_inst
+=== Design Unit: work.dff_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       4         3         1    75.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/dff_top/dut/dff_sva_inst/a_reset_assertion
+                     dff_sva.sv(8)                      0          1
+/dff_top/dut/dff_sva_inst/param_en_ON_assertion
+                     dff_sva.sv(17)                     0          1
+/dff_top/dut/dff_sva_inst/param_ON_en_off_assertion
+                     dff_sva.sv(26)                     0          1
+/dff_top/dut/dff_sva_inst/param_off_assertion
+                     dff_sva.sv(35)                     0          0
+
+Directive Coverage:
+    Directives                       4         3         1    75.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/dff_top/dut/dff_sva_inst/a_reset_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(10)     9 Covered   
+/dff_top/dut/dff_sva_inst/param_en_ON_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(19)    67 Covered   
+/dff_top/dut/dff_sva_inst/param_ON_en_off_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(28)    18 Covered   
+/dff_top/dut/dff_sva_inst/param_off_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(37)     0 ZERO      
+
+=================================================================================
+=== Instance: /dff_top/test
+=== Design Unit: work.dff_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/dff_top/test/#ublk#111986338#16/immed__17
+                     dff_tb.sv(17)                      0          1
+
+=================================================================================
+=== Instance: /dff_pkg
+=== Design Unit: work.dff_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          1        na        na        na
+            Covergroup Bins          2         2         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /dff_pkg/dff_transaction/dff_cfg                100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint d_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d_bins[0]                                      32          1          -    Covered              
+        bin d_bins[1]                                      39          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /dff_pkg/dff_transaction/dff_cfg                100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint d_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d_bins[0]                                      32          1          -    Covered              
+        bin d_bins[1]                                      39          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/dff_top/dut/dff_sva_inst/a_reset_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(10)     9 Covered   
+/dff_top/dut/dff_sva_inst/param_en_ON_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(19)    67 Covered   
+/dff_top/dut/dff_sva_inst/param_ON_en_off_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(28)    18 Covered   
+/dff_top/dut/dff_sva_inst/param_off_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(37)     0 ZERO      
+
+TOTAL DIRECTIVE COVERAGE: 75.00%  COVERS: 4
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/dff_top/dut/dff_sva_inst/a_reset_assertion
+                     dff_sva.sv(8)                      0          1
+/dff_top/dut/dff_sva_inst/param_en_ON_assertion
+                     dff_sva.sv(17)                     0          1
+/dff_top/dut/dff_sva_inst/param_ON_en_off_assertion
+                     dff_sva.sv(26)                     0          1
+/dff_top/dut/dff_sva_inst/param_off_assertion
+                     dff_sva.sv(35)                     0          0
+/dff_top/test/#ublk#111986338#16/immed__17
+                     dff_tb.sv(17)                      0          1
+
+Total Coverage By Instance (filtered view): 85.00%
+

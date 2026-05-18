@@ -1,0 +1,45 @@
+{D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module dff
+
+Top level modules:
+	dff
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling package dff_tb_sv_unit
+-- Importing package dff_pkg
+-- Compiling module dff_tb
+
+Top level modules:
+	dff_tb
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module dff_sva
+
+Top level modules:
+	dff_sva
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling interface dff_if
+
+Top level modules:
+	--none--
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module dff_top
+
+Top level modules:
+	dff_top
+
+} {} {}} {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv} {1 {vlog -work work -vopt -sv -stats=none {D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv}
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module dff_monitor
+
+Top level modules:
+	dff_monitor
+
+} {} {}}

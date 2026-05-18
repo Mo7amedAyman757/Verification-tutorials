@@ -1,0 +1,2082 @@
+m255
+K4
+z2
+!s8c locked
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+!s95 MTI
+cModel Technology Builtin Library
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+dC:/cygwin/pc_home/rhino/buildsites/2021.p/builds/win64/modeltech
+XMTI_CSTDLIB
+Z0 DXx4 work 3 STD 0 22 C5P`]aF5g@jYQiTVH86>n3
+Z1 !s110 1611117787
+!i10b 1
+!s100 icQCI_Oj3>0h:SB`A4JWn0
+IlY=Pl=0YP8e0Fb9V:8Y]l2
+S1
+!s86 1
+Z2 d$MODEL_TECH/..
+Z3 w1611117325
+Z4 8verilog_src/dpi_cpack/dpi_cpackages.sv
+Z5 Fverilog_src/dpi_cpack/dpi_cpackages.sv
+!i122 3
+Z6 L0 17 0
+VlY=Pl=0YP8e0Fb9V:8Y]l2
+Z7 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z8 !s108 1611117786.000000
+Z9 !s107 verilog_src/dpi_cpack/dpi_cpackages.sv|
+Z10 !s90 -debuglib|-suppress|12110|-u|-sv|-s|-work|sv_std|-dirpath|$MODEL_TECH/..|verilog_src/dpi_cpack/dpi_cpackages.sv|
+!i113 1
+Z11 o-suppress 12110 -debuglib -u -sv -s -work sv_std -dirpath {$MODEL_TECH/..} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 tCvgOpt 0
+n@m@t@i_@c@s@t@d@l@i@b
+Xmti_cstdlib
+Z13 DXx4 work 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z14 !s110 1611117786
+!i10b 1
+!s100 OW0mb1CF=jV3nlik?oMRV0
+Ia0dXb5F0hUR?fQVQG@QWZ1
+S1
+R2
+R3
+R4
+R5
+!i122 2
+R6
+Va0dXb5F0hUR?fQVQG@QWZ1
+R7
+r1
+!s85 0
+31
+R8
+R9
+Z15 !s90 -debuglib|-suppress|12110|-sv|-s|-work|sv_std|-dirpath|$MODEL_TECH/..|verilog_src/dpi_cpack/dpi_cpackages.sv|
+!i113 1
+Z16 o-suppress 12110 -debuglib -sv -s -work sv_std -dirpath {$MODEL_TECH/..} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R12
+XMTI_CSTRING
+R0
+R1
+!i10b 1
+!s100 kDlQo?nkDBVoK<AS]3QjD1
+I;FB]TGzSL?]ZEk0<;P[U22
+S1
+!s86 1
+R2
+R3
+R4
+R5
+!i122 3
+Z17 L0 28 0
+V;FB]TGzSL?]ZEk0<;P[U22
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@m@t@i_@c@s@t@r@i@n@g
+Xmti_cstring
+R13
+R14
+!i10b 1
+!s100 KaVS423PbHN8BiZUD@GGL2
+IU67k<cfHhm_z@1BAzL<oL1
+S1
+R2
+R3
+R4
+R5
+!i122 2
+R17
+VU67k<cfHhm_z@1BAzL<oL1
+R7
+r1
+!s85 0
+31
+R8
+R9
+R15
+!i113 1
+R16
+R12
+XMTI_DEBUG
+R0
+R1
+!i10b 1
+!s100 TB]^ezUTiRTalgCgbO]<l3
+IDebng4SF<I2j^53dmWlN]1
+S1
+!s86 1
+R2
+R3
+R4
+R5
+!i122 3
+Z18 L0 47 0
+VDebng4SF<I2j^53dmWlN]1
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@m@t@i_@d@e@b@u@g
+Xmti_debug
+R13
+R14
+!i10b 1
+!s100 ^b=Bi@Q2JjgYiFl;:40Sc1
+IZ14nbP:9GT9DeOXfRLg<=1
+S1
+R2
+R3
+R4
+R5
+!i122 2
+R18
+VZ14nbP:9GT9DeOXfRLg<=1
+R7
+r1
+!s85 0
+31
+R8
+R9
+R15
+!i113 1
+R16
+R12
+XMTI_FCOVER
+R0
+Z19 !s110 1611117788
+!i10b 1
+!s100 fK:8]FFZh3P`7Fl@:5aC70
+IT32`z;gYePkf>4[V8=Jkm1
+S1
+!s86 1
+R2
+R3
+Z20 8verilog_src/mti_sv/fcover.sv
+Z21 Fverilog_src/mti_sv/fcover.sv
+!i122 7
+Z22 L0 5 0
+VT32`z;gYePkf>4[V8=Jkm1
+R7
+r1
+!s85 0
+31
+Z23 !s108 1611117788.000000
+Z24 !s107 verilog_src/mti_sv/fcover.sv|
+!s90 -debuglib|-suppress|12110|-u|-sv|-s|-work|sv_std|-dirpath|$MODEL_TECH/..|verilog_src/mti_sv/fcover.sv|
+!i113 1
+R11
+R12
+n@m@t@i_@f@c@o@v@e@r
+Xmti_fcover
+R13
+R19
+!i10b 1
+!s100 efa[11Ul`>0g6:zg_Xi1E0
+I;;HZAWbg?XRd`ZQXPLGEk3
+S1
+R2
+R3
+R20
+R21
+!i122 6
+R22
+V;;HZAWbg?XRd`ZQXPLGEk3
+R7
+r1
+!s85 0
+31
+R23
+R24
+!s90 -debuglib|-suppress|12110|-sv|-s|-work|sv_std|-dirpath|$MODEL_TECH/..|verilog_src/mti_sv/fcover.sv|
+!i113 1
+R16
+R12
+XMTI_FLI
+R0
+R1
+!i10b 1
+!s100 n_2PQUlSo15MDNG48]QWl2
+ILloi]^ZFX]I<CTC2Jf@2>3
+S1
+!s86 1
+R2
+R3
+R4
+R5
+!i122 3
+Z25 L0 4 0
+VLloi]^ZFX]I<CTC2Jf@2>3
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@m@t@i_@f@l@i
+Xmti_fli
+R13
+R14
+!i10b 1
+!s100 kSbeP86I0@SfQi;i57@W00
+IIAZokbNDf2ed8X7:QV>T22
+S1
+R2
+R3
+R4
+R5
+!i122 2
+R25
+VIAZokbNDf2ed8X7:QV>T22
+R7
+r1
+!s85 0
+31
+R8
+R9
+R15
+!i113 1
+R16
+R12
+XMTI_SCDPI
+R0
+R1
+!i10b 1
+!s100 L3B:Y?;k0V0PDi<?0ec=93
+Ilnf[NP:ITOPm1o3G^GWY?0
+S1
+!s86 1
+R2
+R3
+Z26 8verilog_src/dpi_cpack/scdpi.sv
+Z27 Fverilog_src/dpi_cpack/scdpi.sv
+!i122 5
+Z28 L0 1 0
+Vlnf[NP:ITOPm1o3G^GWY?0
+R7
+r1
+!s85 0
+31
+Z29 !s108 1611117787.000000
+Z30 !s107 verilog_src/dpi_cpack/scdpi.sv|
+!s90 -debuglib|-suppress|12110|-u|-sv|-s|-work|sv_std|-dirpath|$MODEL_TECH/..|verilog_src/dpi_cpack/scdpi.sv|
+!i113 1
+R11
+R12
+n@m@t@i_@s@c@d@p@i
+Xmti_scdpi
+R13
+R1
+!i10b 1
+!s100 Y]PX:=_5`zJ63fMJVe^_M3
+IfS^c;Eb5SjOJ8ofAb@F_M2
+S1
+R2
+R3
+R26
+R27
+!i122 4
+R28
+VfS^c;Eb5SjOJ8ofAb@F_M2
+R7
+r1
+!s85 0
+31
+R29
+R30
+!s90 -debuglib|-suppress|12110|-sv|-s|-work|sv_std|-dirpath|$MODEL_TECH/..|verilog_src/dpi_cpack/scdpi.sv|
+!i113 1
+R16
+R12
+XSTD
+R14
+!i10b 1
+!s100 EKK>A5XKXXLOz9iKzP2G81
+IC5P`]aF5g@jYQiTVH86>n3
+S1
+!s86 1
+R2
+R3
+Z31 8verilog_src/std/std.sv
+Z32 Fverilog_src/std/std.sv
+!i122 1
+Z33 L0 6 0
+VC5P`]aF5g@jYQiTVH86>n3
+R7
+r1
+!s85 0
+31
+R8
+Z34 !s107 verilog_src/std/std.sv|
+!s90 -debuglib|-suppress|12110|-u|-sv|-s|-work|sv_std|-dirpath|$MODEL_TECH/..|verilog_src/std/std.sv|
+!i113 1
+R11
+R12
+n@s@t@d
+Xstd
+!s110 1611117785
+!i10b 1
+!s100 ]i[_JOYIoOMc`AEjL2EkC0
+I9oUSJO;AeEaW`l:M@^WG92
+S1
+R2
+R3
+R31
+R32
+!i122 0
+R33
+V9oUSJO;AeEaW`l:M@^WG92
+R7
+r1
+!s85 0
+31
+!s108 1611117785.000000
+R34
+!s90 -debuglib|-suppress|12110|-sv|-s|-work|sv_std|-dirpath|$MODEL_TECH/..|verilog_src/std/std.sv|
+!i113 1
+R16
+R12
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/02-counter
+T_opt
+!s110 1779108573
+VoAP8EUK85MIm27W?7Nii=3
+04 7 4 work dff_top fast 0
+=1-902e16e4070c-6a0b0add-121-8030
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vdff
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1779108572
+!i10b 1
+!s100 KhhJlbZGZY<181em3<6@:0
+IPP0bjH]0gZWTYZKhEP]562
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF
+w1779106475
+8dff.sv
+Fdff.sv
+!i122 72
+L0 1 14
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1779108572.000000
+Z8 !s107 dff_top.sv|dff_tb.sv|dff_sva.sv|dff_pkg.sv|dff_monitor.sv|dff_if.sv|dff.sv|
+Z9 !s90 -reportprogress|300|dff.sv|dff_if.sv|dff_monitor.sv|dff_pkg.sv|dff_sva.sv|dff_tb.sv|dff_top.sv|+cover|
+!i113 0
+Z10 !s102 +cover
+Z11 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Ydff_if
+R2
+R3
+!i10b 1
+!s100 zz4>P<:PPR[V<ZU=k?4M>3
+I31YjHLmMKN8i3O5V<lfdn3
+S1
+R4
+w1779103574
+8dff_if.sv
+Fdff_if.sv
+!i122 72
+Z12 L0 1 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+vdff_monitor
+R2
+R3
+!i10b 1
+!s100 ni^5E_n_>LXIOz^mi>H:V0
+I?e?@V8@kmd>E^nIBA0B0>2
+S1
+R4
+w1779105302
+8dff_monitor.sv
+Fdff_monitor.sv
+!i122 72
+L0 1 8
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+Xdff_pkg
+R2
+R3
+!i10b 1
+!s100 _PWJYl7ha`TY63kcf2YLj0
+IDjV^^3k66V4DzNWKba?Qj1
+S1
+R4
+w1779107199
+8dff_pkg.sv
+Fdff_pkg.sv
+!i122 72
+R12
+VDjV^^3k66V4DzNWKba?Qj1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+vdff_sva
+R2
+R3
+!i10b 1
+!s100 =I`BS[_QDe6TMW^4?3BT:2
+I:JSJ69a`@j87OlckHEeSi2
+S1
+R4
+w1779106244
+8dff_sva.sv
+Fdff_sva.sv
+!i122 72
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+vdff_tb
+R2
+Z13 DXx4 work 7 dff_pkg 0 22 DjV^^3k66V4DzNWKba?Qj1
+DXx4 work 14 dff_tb_sv_unit 0 22 >m2j<A<<2c[Eb<8@fGAWc2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 <zc=ci]XMN7kNzgaWY1ED2
+IflA8:zA>60:PadFoMhRH_0
+!s105 dff_tb_sv_unit
+S1
+R4
+Z14 w1779105378
+Z15 8dff_tb.sv
+Z16 Fdff_tb.sv
+!i122 72
+L0 3 67
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+Xdff_tb_sv_unit
+R2
+R13
+R3
+V>m2j<A<<2c[Eb<8@fGAWc2
+r1
+!s85 0
+!i10b 1
+!s100 9LzzLz<NQdVJB:[Zc:3bY2
+I>m2j<A<<2c[Eb<8@fGAWc2
+!i103 1
+S1
+R4
+R14
+R15
+R16
+!i122 72
+R12
+R6
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+vdff_top
+R2
+R3
+!i10b 1
+!s100 1Homj:e[niY0>>HIm@82;2
+IdoLXRa:3N?k?kHTL@7d=51
+S1
+R4
+w1779103799
+8dff_top.sv
+Fdff_top.sv
+!i122 72
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R1
+D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+!i122 11
+R9
+VIUG[JN=b=lKKmIE2<b`2[3
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!i113 0
+R8
+R1
+vdff_sva
+R2
+R3
+!i10b 1
+!s100 zo9dBzUm`5HY3HhK<hcfh2
+Io74UjC^:USoLM>FPbUS^?3
+S1
+R4
+w1779105804
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+!i122 12
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!i113 0
+R8
+R1
+vdff_tb
+R2
+Z10 DXx4 work 7 dff_pkg 0 22 IUG[JN=b=lKKmIE2<b`2[3
+DXx4 work 14 dff_tb_sv_unit 0 22 =E?llS7eM^niY0P^44;4f2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 <zc=ci]XMN7kNzgaWY1ED2
+IO75zaZK^[@7F5MIZFE>]A0
+!s105 dff_tb_sv_unit
+S1
+R4
+Z11 w1779105378
+Z12 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+Z13 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+!i122 13
+L0 3 67
+R6
+31
+R7
+Z14 !s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+!i113 0
+R8
+R1
+Xdff_tb_sv_unit
+R2
+R10
+R3
+V=E?llS7eM^niY0P^44;4f2
+r1
+!s85 0
+!i10b 1
+!s100 BT:G:O]6gP7WekS[XiebO1
+I=E?llS7eM^niY0P^44;4f2
+!i103 1
+S1
+R4
+R11
+R12
+R13
+!i122 13
+R9
+R6
+31
+R7
+R14
+R15
+!i113 0
+R8
+R1
+vdff_top
+R2
+R3
+!i10b 1
+!s100 1Homj:e[niY0>>HIm@82;2
+IOTj[[5:NY5QBS9ICShRDh0
+S1
+R4
+w1779103799
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+!i122 14
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!i113 0
+R8
+R1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/02-counter
+T_opt
+!s110 1779105941
+V<Kk<:g7UYTQ9Me7OiFPb40
+04 7 4 work dff_top fast 0
+=5-902e16e4070c-6a0b0095-171-7c18
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vdff
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1779105933
+!i10b 1
+!s100 PnS>lWBnVK2fP7nJPAB0V1
+IoOSm1^L6VAGim[CS[9V;[2
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF
+w1779103654
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+!i122 29
+L0 1 14
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1779105933.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Ydff_if
+R2
+Z9 !s110 1779105932
+!i10b 1
+!s100 zz4>P<:PPR[V<ZU=k?4M>3
+I2dC9oo2Cg4h[OX9U3VTiW2
+S1
+R4
+w1779103574
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+!i122 23
+Z10 L0 1 0
+R5
+R6
+r1
+!s85 0
+31
+Z11 !s108 1779105932.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!i113 0
+R8
+R1
+vdff_monitor
+R2
+R9
+!i10b 1
+!s100 ni^5E_n_>LXIOz^mi>H:V0
+IjY7kKDgz1BaeJ^T4ZD74O0
+S1
+R4
+w1779105302
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+!i122 24
+L0 1 8
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!i113 0
+R8
+R1
+Xdff_pkg
+R2
+R3
+!i10b 1
+!s100 U7R]9ac3;>[;a3;RIGo;d0
+IIUG[JN=b=lKKmIE2<b`2[3
+S1
+R4
+w1779105618
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+!i122 25
+R10
+VIUG[JN=b=lKKmIE2<b`2[3
+R6
+r1
+!s85 0
+31
+R11
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!i113 0
+R8
+R1
+vdff_sva
+R2
+R3
+!i10b 1
+!s100 3X2`>gThE@?7Z;73BQIkK3
+IEaEJAaQWLJJ0kWM`oT0[z0
+S1
+R4
+w1779105918
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+!i122 26
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!i113 0
+R8
+R1
+vdff_tb
+R2
+Z12 DXx4 work 7 dff_pkg 0 22 IUG[JN=b=lKKmIE2<b`2[3
+DXx4 work 14 dff_tb_sv_unit 0 22 =E?llS7eM^niY0P^44;4f2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 <zc=ci]XMN7kNzgaWY1ED2
+IO75zaZK^[@7F5MIZFE>]A0
+!s105 dff_tb_sv_unit
+S1
+R4
+Z13 w1779105378
+Z14 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+Z15 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+!i122 27
+L0 3 67
+R6
+31
+R7
+Z16 !s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+Z17 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+!i113 0
+R8
+R1
+Xdff_tb_sv_unit
+R2
+R12
+R3
+V=E?llS7eM^niY0P^44;4f2
+r1
+!s85 0
+!i10b 1
+!s100 BT:G:O]6gP7WekS[XiebO1
+I=E?llS7eM^niY0P^44;4f2
+!i103 1
+S1
+R4
+R13
+R14
+R15
+!i122 27
+R10
+R6
+31
+R7
+R16
+R17
+!i113 0
+R8
+R1
+vdff_top
+R2
+R3
+!i10b 1
+!s100 1Homj:e[niY0>>HIm@82;2
+IOTj[[5:NY5QBS9ICShRDh0
+S1
+R4
+w1779103799
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+!i122 28
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!i113 0
+R8
+R1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/02-counter
+T_opt
+!s110 1779105978
+VkfEJ<3I?>Ijm[J;mo6MhR3
+04 7 4 work dff_top fast 0
+=6-902e16e4070c-6a0b00ba-2a9-7c18
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vdff
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1779105971
+!i10b 1
+!s100 PnS>lWBnVK2fP7nJPAB0V1
+IoOSm1^L6VAGim[CS[9V;[2
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF
+w1779103654
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+!i122 36
+L0 1 14
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1779105971.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Ydff_if
+R2
+R3
+!i10b 1
+!s100 zz4>P<:PPR[V<ZU=k?4M>3
+I2dC9oo2Cg4h[OX9U3VTiW2
+S1
+R4
+w1779103574
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+!i122 30
+Z9 L0 1 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!i113 0
+R8
+R1
+vdff_monitor
+R2
+R3
+!i10b 1
+!s100 ni^5E_n_>LXIOz^mi>H:V0
+IjY7kKDgz1BaeJ^T4ZD74O0
+S1
+R4
+w1779105302
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+!i122 31
+L0 1 8
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!i113 0
+R8
+R1
+Xdff_pkg
+R2
+R3
+!i10b 1
+!s100 U7R]9ac3;>[;a3;RIGo;d0
+IIUG[JN=b=lKKmIE2<b`2[3
+S1
+R4
+w1779105618
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+!i122 32
+R9
+VIUG[JN=b=lKKmIE2<b`2[3
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!i113 0
+R8
+R1
+vdff_sva
+R2
+R3
+!i10b 1
+!s100 zo9dBzUm`5HY3HhK<hcfh2
+Io74UjC^:USoLM>FPbUS^?3
+S1
+R4
+w1779105959
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+!i122 33
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!i113 0
+R8
+R1
+vdff_tb
+R2
+Z10 DXx4 work 7 dff_pkg 0 22 IUG[JN=b=lKKmIE2<b`2[3
+DXx4 work 14 dff_tb_sv_unit 0 22 =E?llS7eM^niY0P^44;4f2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 <zc=ci]XMN7kNzgaWY1ED2
+IO75zaZK^[@7F5MIZFE>]A0
+!s105 dff_tb_sv_unit
+S1
+R4
+Z11 w1779105378
+Z12 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+Z13 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+!i122 34
+L0 3 67
+R6
+31
+R7
+Z14 !s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+!i113 0
+R8
+R1
+Xdff_tb_sv_unit
+R2
+R10
+R3
+V=E?llS7eM^niY0P^44;4f2
+r1
+!s85 0
+!i10b 1
+!s100 BT:G:O]6gP7WekS[XiebO1
+I=E?llS7eM^niY0P^44;4f2
+!i103 1
+S1
+R4
+R11
+R12
+R13
+!i122 34
+R9
+R6
+31
+R7
+R14
+R15
+!i113 0
+R8
+R1
+vdff_top
+R2
+R3
+!i10b 1
+!s100 1Homj:e[niY0>>HIm@82;2
+IOTj[[5:NY5QBS9ICShRDh0
+S1
+R4
+w1779103799
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+!i122 35
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!i113 0
+R8
+R1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/02-counter
+T_opt
+!s110 1779106039
+VACCN3=d8_RIPCP7jk]?;F3
+04 7 4 work dff_top fast 0
+=7-902e16e4070c-6a0b00f7-14c-7c18
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vdff
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1779106036
+!i10b 1
+!s100 PnS>lWBnVK2fP7nJPAB0V1
+IoOSm1^L6VAGim[CS[9V;[2
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF
+w1779103654
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+!i122 43
+L0 1 14
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1779106036.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Ydff_if
+R2
+R3
+!i10b 1
+!s100 zz4>P<:PPR[V<ZU=k?4M>3
+I2dC9oo2Cg4h[OX9U3VTiW2
+S1
+R4
+w1779103574
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+!i122 37
+Z9 L0 1 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!i113 0
+R8
+R1
+vdff_monitor
+R2
+R3
+!i10b 1
+!s100 ni^5E_n_>LXIOz^mi>H:V0
+IjY7kKDgz1BaeJ^T4ZD74O0
+S1
+R4
+w1779105302
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+!i122 38
+L0 1 8
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!i113 0
+R8
+R1
+Xdff_pkg
+R2
+R3
+!i10b 1
+!s100 U7R]9ac3;>[;a3;RIGo;d0
+IIUG[JN=b=lKKmIE2<b`2[3
+S1
+R4
+w1779105618
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+!i122 39
+R9
+VIUG[JN=b=lKKmIE2<b`2[3
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!i113 0
+R8
+R1
+vdff_sva
+R2
+R3
+!i10b 1
+!s100 <D19Nh7hcd9D1HH;8T]oo1
+IY90Wo7Q@85fhWn8EX<I1B1
+S1
+R4
+w1779106035
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+!i122 40
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!i113 0
+R8
+R1
+vdff_tb
+R2
+Z10 DXx4 work 7 dff_pkg 0 22 IUG[JN=b=lKKmIE2<b`2[3
+DXx4 work 14 dff_tb_sv_unit 0 22 =E?llS7eM^niY0P^44;4f2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 <zc=ci]XMN7kNzgaWY1ED2
+IO75zaZK^[@7F5MIZFE>]A0
+!s105 dff_tb_sv_unit
+S1
+R4
+Z11 w1779105378
+Z12 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+Z13 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+!i122 41
+L0 3 67
+R6
+31
+R7
+Z14 !s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+!i113 0
+R8
+R1
+Xdff_tb_sv_unit
+R2
+R10
+R3
+V=E?llS7eM^niY0P^44;4f2
+r1
+!s85 0
+!i10b 1
+!s100 BT:G:O]6gP7WekS[XiebO1
+I=E?llS7eM^niY0P^44;4f2
+!i103 1
+S1
+R4
+R11
+R12
+R13
+!i122 41
+R9
+R6
+31
+R7
+R14
+R15
+!i113 0
+R8
+R1
+vdff_top
+R2
+R3
+!i10b 1
+!s100 1Homj:e[niY0>>HIm@82;2
+IOTj[[5:NY5QBS9ICShRDh0
+S1
+R4
+w1779103799
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+!i122 42
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!i113 0
+R8
+R1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/02-counter
+T_opt
+!s110 1779106101
+VoeebBz24nX@E`;5TS[TX[0
+04 7 4 work dff_top fast 0
+=8-902e16e4070c-6a0b0135-2e1-7c18
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vdff
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1779106098
+!i10b 1
+!s100 PnS>lWBnVK2fP7nJPAB0V1
+IoOSm1^L6VAGim[CS[9V;[2
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF
+w1779103654
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+!i122 50
+L0 1 14
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1779106098.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Ydff_if
+R2
+R3
+!i10b 1
+!s100 zz4>P<:PPR[V<ZU=k?4M>3
+I2dC9oo2Cg4h[OX9U3VTiW2
+S1
+R4
+w1779103574
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+!i122 44
+Z9 L0 1 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!i113 0
+R8
+R1
+vdff_monitor
+R2
+R3
+!i10b 1
+!s100 ni^5E_n_>LXIOz^mi>H:V0
+IjY7kKDgz1BaeJ^T4ZD74O0
+S1
+R4
+w1779105302
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+!i122 45
+L0 1 8
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!i113 0
+R8
+R1
+Xdff_pkg
+R2
+R3
+!i10b 1
+!s100 U7R]9ac3;>[;a3;RIGo;d0
+IIUG[JN=b=lKKmIE2<b`2[3
+S1
+R4
+w1779105618
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+!i122 46
+R9
+VIUG[JN=b=lKKmIE2<b`2[3
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!i113 0
+R8
+R1
+vdff_sva
+R2
+R3
+!i10b 1
+!s100 Gk?9[<@<d3Z0noTWg@LGb3
+IoiI:UPRUdX40<HGoV9NGK3
+S1
+R4
+w1779106080
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+!i122 47
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!i113 0
+R8
+R1
+vdff_tb
+R2
+Z10 DXx4 work 7 dff_pkg 0 22 IUG[JN=b=lKKmIE2<b`2[3
+DXx4 work 14 dff_tb_sv_unit 0 22 =E?llS7eM^niY0P^44;4f2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 <zc=ci]XMN7kNzgaWY1ED2
+IO75zaZK^[@7F5MIZFE>]A0
+!s105 dff_tb_sv_unit
+S1
+R4
+Z11 w1779105378
+Z12 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+Z13 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+!i122 48
+L0 3 67
+R6
+31
+R7
+Z14 !s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+!i113 0
+R8
+R1
+Xdff_tb_sv_unit
+R2
+R10
+R3
+V=E?llS7eM^niY0P^44;4f2
+r1
+!s85 0
+!i10b 1
+!s100 BT:G:O]6gP7WekS[XiebO1
+I=E?llS7eM^niY0P^44;4f2
+!i103 1
+S1
+R4
+R11
+R12
+R13
+!i122 48
+R9
+R6
+31
+R7
+R14
+R15
+!i113 0
+R8
+R1
+vdff_top
+R2
+R3
+!i10b 1
+!s100 1Homj:e[niY0>>HIm@82;2
+IOTj[[5:NY5QBS9ICShRDh0
+S1
+R4
+w1779103799
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+!i122 49
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!i113 0
+R8
+R1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/02-counter
+T_opt
+!s110 1779106121
+Ve]mJEMmP`TfMHa?^<SaME0
+04 7 4 work dff_top fast 0
+=9-902e16e4070c-6a0b0148-355-7c18
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vdff
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1779106118
+!i10b 1
+!s100 PnS>lWBnVK2fP7nJPAB0V1
+IoOSm1^L6VAGim[CS[9V;[2
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF
+w1779103654
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+!i122 57
+L0 1 14
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1779106118.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Ydff_if
+R2
+!s110 1779106117
+!i10b 1
+!s100 zz4>P<:PPR[V<ZU=k?4M>3
+I2dC9oo2Cg4h[OX9U3VTiW2
+S1
+R4
+w1779103574
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+!i122 51
+Z9 L0 1 0
+R5
+R6
+r1
+!s85 0
+31
+Z10 !s108 1779106117.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!i113 0
+R8
+R1
+vdff_monitor
+R2
+R3
+!i10b 1
+!s100 ni^5E_n_>LXIOz^mi>H:V0
+IjY7kKDgz1BaeJ^T4ZD74O0
+S1
+R4
+w1779105302
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+!i122 52
+L0 1 8
+R5
+R6
+r1
+!s85 0
+31
+R10
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!i113 0
+R8
+R1
+Xdff_pkg
+R2
+R3
+!i10b 1
+!s100 U7R]9ac3;>[;a3;RIGo;d0
+IIUG[JN=b=lKKmIE2<b`2[3
+S1
+R4
+w1779105618
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+!i122 53
+R9
+VIUG[JN=b=lKKmIE2<b`2[3
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!i113 0
+R8
+R1
+vdff_sva
+R2
+R3
+!i10b 1
+!s100 <D19Nh7hcd9D1HH;8T]oo1
+IY90Wo7Q@85fhWn8EX<I1B1
+S1
+R4
+w1779106115
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+!i122 54
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!i113 0
+R8
+R1
+vdff_tb
+R2
+Z11 DXx4 work 7 dff_pkg 0 22 IUG[JN=b=lKKmIE2<b`2[3
+DXx4 work 14 dff_tb_sv_unit 0 22 =E?llS7eM^niY0P^44;4f2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 <zc=ci]XMN7kNzgaWY1ED2
+IO75zaZK^[@7F5MIZFE>]A0
+!s105 dff_tb_sv_unit
+S1
+R4
+Z12 w1779105378
+Z13 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+Z14 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+!i122 55
+L0 3 67
+R6
+31
+R7
+Z15 !s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+Z16 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+!i113 0
+R8
+R1
+Xdff_tb_sv_unit
+R2
+R11
+R3
+V=E?llS7eM^niY0P^44;4f2
+r1
+!s85 0
+!i10b 1
+!s100 BT:G:O]6gP7WekS[XiebO1
+I=E?llS7eM^niY0P^44;4f2
+!i103 1
+S1
+R4
+R12
+R13
+R14
+!i122 55
+R9
+R6
+31
+R7
+R15
+R16
+!i113 0
+R8
+R1
+vdff_top
+R2
+R3
+!i10b 1
+!s100 1Homj:e[niY0>>HIm@82;2
+IOTj[[5:NY5QBS9ICShRDh0
+S1
+R4
+w1779103799
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+!i122 56
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!i113 0
+R8
+R1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/02-counter
+T_opt
+!s110 1779106249
+VbhkT8dfM6kdeL4H3PWWGm2
+04 7 4 work dff_top fast 0
+=10-902e16e4070c-6a0b01c8-365-7c18
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vdff
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1779106246
+!i10b 1
+!s100 PnS>lWBnVK2fP7nJPAB0V1
+IoOSm1^L6VAGim[CS[9V;[2
+S1
+Z4 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF
+w1779103654
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv
+!i122 64
+L0 1 14
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1779106246.000000
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Ydff_if
+R2
+R3
+!i10b 1
+!s100 zz4>P<:PPR[V<ZU=k?4M>3
+I2dC9oo2Cg4h[OX9U3VTiW2
+S1
+R4
+w1779103574
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv
+!i122 58
+Z9 L0 1 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_if.sv|
+!i113 0
+R8
+R1
+vdff_monitor
+R2
+R3
+!i10b 1
+!s100 ni^5E_n_>LXIOz^mi>H:V0
+IjY7kKDgz1BaeJ^T4ZD74O0
+S1
+R4
+w1779105302
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv
+!i122 59
+L0 1 8
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_monitor.sv|
+!i113 0
+R8
+R1
+Xdff_pkg
+R2
+R3
+!i10b 1
+!s100 U7R]9ac3;>[;a3;RIGo;d0
+IIUG[JN=b=lKKmIE2<b`2[3
+S1
+R4
+w1779105618
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv
+!i122 60
+R9
+VIUG[JN=b=lKKmIE2<b`2[3
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_pkg.sv|
+!i113 0
+R8
+R1
+vdff_sva
+R2
+R3
+!i10b 1
+!s100 =I`BS[_QDe6TMW^4?3BT:2
+IoJ1:kYm?>BZClC>O`7ecK3
+S1
+R4
+w1779106244
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv
+!i122 61
+L0 1 39
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_sva.sv|
+!i113 0
+R8
+R1
+vdff_tb
+R2
+Z10 DXx4 work 7 dff_pkg 0 22 IUG[JN=b=lKKmIE2<b`2[3
+DXx4 work 14 dff_tb_sv_unit 0 22 =E?llS7eM^niY0P^44;4f2
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 <zc=ci]XMN7kNzgaWY1ED2
+IO75zaZK^[@7F5MIZFE>]A0
+!s105 dff_tb_sv_unit
+S1
+R4
+Z11 w1779105378
+Z12 8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+Z13 FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv
+!i122 62
+L0 3 67
+R6
+31
+R7
+Z14 !s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+Z15 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_tb.sv|
+!i113 0
+R8
+R1
+Xdff_tb_sv_unit
+R2
+R10
+R3
+V=E?llS7eM^niY0P^44;4f2
+r1
+!s85 0
+!i10b 1
+!s100 BT:G:O]6gP7WekS[XiebO1
+I=E?llS7eM^niY0P^44;4f2
+!i103 1
+S1
+R4
+R11
+R12
+R13
+!i122 62
+R9
+R6
+31
+R7
+R14
+R15
+!i113 0
+R8
+R1
+vdff_top
+R2
+R3
+!i10b 1
+!s100 1Homj:e[niY0>>HIm@82;2
+IOTj[[5:NY5QBS9ICShRDh0
+S1
+R4
+w1779103799
+8D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+FD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv
+!i122 63
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/03-DFF/dff_top.sv|
+!i113 0
+R8
+R1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

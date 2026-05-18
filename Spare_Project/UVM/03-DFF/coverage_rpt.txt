@@ -1,0 +1,1328 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /dff_top/dffif
+=== Design Unit: work.dff_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10        10         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /dff_top/dffif --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+                                                 d           1           1      100.00 
+                                                en           1           1      100.00 
+                                                 q           1           1      100.00 
+                                               rst           1           1      100.00 
+
+Total Node Count     =          5 
+Toggled Node Count   =          5 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (10 of 10 bins)
+
+=================================================================================
+=== Instance: /dff_top/dut
+=== Design Unit: work.dff
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         3         3         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /dff_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff.v
+------------------------------------IF Branch------------------------------------
+    7                                        809     Count coming in to IF
+    7               1                         34        if (rst)
+    10              1                        617              if (en)
+                                             158     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       3         3         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff.v
+    1                                                module dff(clk, rst, d, q, en);
+    2                                                parameter USE_EN = 1;
+    3                                                input clk, rst, d, en;
+    4                                                output reg q;
+    5                                                
+    6               1                        809     always @(posedge clk) begin 
+    7                                                   if (rst)
+    8               1                         34           q <= 0;
+    9                                                   else if(USE_EN) begin
+    10                                                        if (en)
+    11              1                        617                 q <= d;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10        10         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /dff_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+                                                 d           1           1      100.00 
+                                                en           1           1      100.00 
+                                                 q           1           1      100.00 
+                                               rst           1           1      100.00 
+
+Total Node Count     =          5 
+Toggled Node Count   =          5 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (10 of 10 bins)
+
+=================================================================================
+=== Instance: /dff_top/dff_sva_inst
+=== Design Unit: work.dff_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       4         2         2    50.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/dff_top/dff_sva_inst/a_reset_assertion
+                     dff_sva.sv(8)                      0          1
+/dff_top/dff_sva_inst/param_en_ON_assertion
+                     dff_sva.sv(17)                     0          1
+/dff_top/dff_sva_inst/param_ON_en_off_assertion
+                     dff_sva.sv(26)                     1          1
+/dff_top/dff_sva_inst/param_off_assertion
+                     dff_sva.sv(35)                     0          0
+
+Directive Coverage:
+    Directives                       4         3         1    75.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/dff_top/dff_sva_inst/a_reset_coverage   dff_sva Verilog  SVA  dff_sva.sv(10)    34 Covered   
+/dff_top/dff_sva_inst/param_en_ON_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(19)   760 Covered   
+/dff_top/dff_sva_inst/param_ON_en_off_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(28)   171 Covered   
+/dff_top/dff_sva_inst/param_off_coverage dff_sva Verilog  SVA  dff_sva.sv(37)     0 ZERO      
+
+=================================================================================
+=== Instance: /dff_top
+=== Design Unit: work.dff_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_top.sv
+    6                                                module dff_top();
+    7                                                    
+    8                                                    logic clk;
+    9                                                
+    10                                                   initial begin
+    11              1                          1             clk = 0;
+    12              1                          1             forever #5 clk = ~clk;
+    12              2                       2003     
+    12              3                       2002     
+    13                                                   end
+    14                                               
+    15                                                   dff_if dffif(clk);
+    16                                               
+    17                                                   dff dut(dffif.clk,
+    18                                                           dffif.rst,
+    19                                                           dffif.d,
+    20                                                           dffif.q,
+    21                                                           dffif.en
+    22                                                               );
+    23                                               
+    24                                                   dff_sva dff_sva_inst(dffif);
+    25                                               
+    26                                                   initial begin
+    27              1                          1             uvm_config_db #(virtual dff_if)::set(null,"uvm_test_top","DFF_IF",dffif);
+    28              1                          1             run_test("dff_test");
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /dff_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /dff_seqitem_pkg
+=== Design Unit: work.dff_seqitem_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         2         8    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /dff_seqitem_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_seqitem.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***             `uvm_object_utils(dff_seqitem)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                       1001     Count coming in to IF
+    7               2                    ***0***             `uvm_object_utils(dff_seqitem)
+                                            1001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***             `uvm_object_utils(dff_seqitem)
+    7               4                    ***0***             `uvm_object_utils(dff_seqitem)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                       1001     Count coming in to IF
+    7               5                    ***0***             `uvm_object_utils(dff_seqitem)
+                                            1001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***             `uvm_object_utils(dff_seqitem)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /dff_seqitem_pkg --
+
+  File dff_seqitem.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13         3        10    23.07%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_seqitem_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_seqitem.sv
+    1                                                package dff_seqitem_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class dff_seqitem extends uvm_sequence_item;
+    7               1                    ***0***             `uvm_object_utils(dff_seqitem)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                       1001     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                       1001     
+    7              10                    ***0***     
+    8                                                        rand logic rst, d, en;
+    9                                                        logic q;
+    10                                               
+    11                                                       function new(string name = "dff_seqitem");
+    12              1                       2006                 super.new(name);
+    13                                                       endfunction
+    14                                               
+    15                                                       function string convert2string();
+    16              1                    ***0***                 return $sformatf("%s rst = 0b%0b, d = 0b%0b, en = 0b%0b, q = 0b%0b", super.convert2string(),
+    17                                                                             rst, d, en, q);            
+    18                                                       endfunction
+    19                                               
+    20                                                       function string convert2string_stimulus();
+    21              1                    ***0***                 return $sformatf("rst = 0b%0b, d = 0b%0b, en = 0b%0b, q = 0b%0b",
+
+
+=================================================================================
+=== Instance: /dff_sequence_pkg
+=== Design Unit: work.dff_sequence_pkg
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/dff_sequence_pkg/dff_mainsequence/body/#ublk#33637015#40/immed__42
+                     dff_sequence.sv(42)                0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20         4        16    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /dff_sequence_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_sequence.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***             `uvm_object_utils(dff_resetsequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               2                    ***0***             `uvm_object_utils(dff_resetsequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***             `uvm_object_utils(dff_resetsequence)
+    7               4                    ***0***             `uvm_object_utils(dff_resetsequence)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               5                    ***0***             `uvm_object_utils(dff_resetsequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***             `uvm_object_utils(dff_resetsequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              1                    ***0***             `uvm_object_utils(dff_mainsequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                         1     Count coming in to IF
+    29              2                    ***0***             `uvm_object_utils(dff_mainsequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              3                    ***0***             `uvm_object_utils(dff_mainsequence)
+    29              4                    ***0***             `uvm_object_utils(dff_mainsequence)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                         1     Count coming in to IF
+    29              5                    ***0***             `uvm_object_utils(dff_mainsequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              6                    ***0***             `uvm_object_utils(dff_mainsequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       4         0         4     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /dff_sequence_pkg --
+
+  File dff_sequence.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       29 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       29 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      32        16        16    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_sequence_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_sequence.sv
+    1                                                package dff_sequence_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class dff_resetsequence extends uvm_sequence#(dff_seqitem);
+    7               1                    ***0***             `uvm_object_utils(dff_resetsequence)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                          1     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                          1     
+    7              10                    ***0***     
+    8                                                
+    9                                                        dff_seqitem seq_item;
+    10                                               
+    11                                                       function new(string name = "dff_resetsequence");
+    12              1                          1                 super.new(name);
+    13                                                       endfunction
+    14                                               
+    15                                                       task body();
+    16                                               
+    17              1                          1                 seq_item = dff_seqitem::type_id::create("seq_item");
+    18              1                          1                 start_item(seq_item);
+    19              1                          1                 seq_item.rst = 0;
+    20              1                          1                 seq_item.d = 0;
+    21              1                          1                 seq_item.en = 0;
+    22              1                          1                 finish_item(seq_item);
+    23                                               
+    24                                                       endtask
+    25                                               
+    26                                                   endclass
+    27                                               
+    28                                                   class dff_mainsequence extends uvm_sequence #(dff_seqitem);
+    29              1                    ***0***             `uvm_object_utils(dff_mainsequence)
+    29              2                    ***0***     
+    29              3                    ***0***     
+    29              4                    ***0***     
+    29              5                    ***0***     
+    29              6                          1     
+    29              7                    ***0***     
+    29              8                    ***0***     
+    29              9                          1     
+    29             10                    ***0***     
+    30                                               
+    31                                                       dff_seqitem seq_item;
+    32                                               
+    33                                                       function new(string name = "dff_mainsequence");
+    34              1                          1                 super.new(name);
+    35                                                       endfunction
+    36                                                       
+    37                                                       task body();
+    38                                               
+    39              1                          1                 seq_item = dff_seqitem::type_id::create("seq_item");
+    40              1                       1000                 repeat(1000) begin
+    41              1                       1000                     start_item(seq_item);
+    42                                                               assert(seq_item.randomize());
+    43              1                       1000                     finish_item(seq_item);
+
+
+=================================================================================
+=== Instance: /dff_config_pkg
+=== Design Unit: work.dff_config_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         0        10     0.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /dff_config_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_config.sv
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               1                    ***0***             `uvm_object_utils(dff_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               2                    ***0***             `uvm_object_utils(dff_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               3                    ***0***             `uvm_object_utils(dff_config)
+    6               4                    ***0***             `uvm_object_utils(dff_config)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               5                    ***0***             `uvm_object_utils(dff_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               6                    ***0***             `uvm_object_utils(dff_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /dff_config_pkg --
+
+  File dff_config.sv
+----------------Focused Condition View-------------------
+Line       6 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       6 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         1        10     9.09%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_config_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_config.sv
+    1                                                package dff_config_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                
+    5                                                    class dff_config extends uvm_object;
+    6               1                    ***0***             `uvm_object_utils(dff_config)
+    6               2                    ***0***     
+    6               3                    ***0***     
+    6               4                    ***0***     
+    6               5                    ***0***     
+    6               6                    ***0***     
+    6               7                    ***0***     
+    6               8                    ***0***     
+    6               9                    ***0***     
+    6              10                    ***0***     
+    7                                                
+    8                                                        virtual dff_if dff_vif;
+    9                                                
+    10                                                       function new(string name = "dff_config");
+    11              1                          1                 super.new(name);
+
+
+=================================================================================
+=== Instance: /dff_coverage_pkg
+=== Design Unit: work.dff_coverage_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          1        na        na        na
+            Covergroup Bins          2         2         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /dff_coverage_pkg/dff_coverage/dff_cvg          100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint d_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d_bins[0]                                     304          1          -    Covered              
+        bin d_bins[1]                                     402          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        12         2    85.71%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_coverage_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_coverage.sv
+    1                                                package dff_coverage_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_seqitem_pkg::*;
+    4                                                import dff_pkg::*;
+    5                                                import dff_config_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class dff_coverage extends uvm_component;
+    9               1                    ***0***             `uvm_component_utils(dff_coverage)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       uvm_analysis_export #(dff_seqitem) cov_exp;
+    12                                                       uvm_tlm_analysis_fifo #(dff_seqitem) cov_fifo;
+    13                                                       dff_seqitem cov_seqitem;
+    14                                               
+    15                                                        covergroup dff_cvg;
+    16                                               
+    17                                                           d_cvg : coverpoint cov_seqitem.d iff(cov_seqitem.en){
+    18                                                               bins d_bins[] = {[0:1]};
+    19                                                           }
+    20                                               
+    21                                                       endgroup
+    22                                               
+    23                                                       function new(string name = "dff_coverage", uvm_component parent = null);
+    24              1                          1                 super.new(name, parent);
+    25              1                          1                 dff_cvg = new();
+    26                                                       endfunction
+    27                                               
+    28                                                       function void build_phase(uvm_phase phase);
+    29              1                          1                 super. build_phase(phase);
+    30              1                          1                 cov_exp = new("cove_exp",this);
+    31              1                          1                 cov_fifo = new("cov_fifo",this);
+    32                                                       endfunction
+    33                                               
+    34                                                       function void connect_phase(uvm_phase phase);
+    35              1                          1                 super. connect_phase(phase);
+    36              1                          1                 cov_exp.connect(cov_fifo.analysis_export);
+    37                                                       endfunction
+    38                                               
+    39                                                       task run_phase(uvm_phase phase);
+    40              1                          1                 super. run_phase(phase);
+    41              1                          1                 forever begin
+    42              1                       1002                     cov_fifo.get(cov_seqitem);
+    43              1                       1001                     dff_cvg.sample();
+
+
+=================================================================================
+=== Instance: /dff_scoreboard_pkg
+=== Design Unit: work.dff_scoreboard_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         9         6         3    66.66%
+
+================================Branch Details================================
+
+Branch Coverage for instance /dff_scoreboard_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_scoreboard.sv
+------------------------------------IF Branch------------------------------------
+    46                                      1001     Count coming in to IF
+    46              1                    ***0***             if(q_ref != sb_seq_item.q) begin
+    49              1                       1001             end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                      1001     Count coming in to IF
+    56              1                         34              if (sb_seq_item.rst)
+    59              1                        791                     if (sb_seq_item.en)
+                                             176     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                         1     Count coming in to IF
+    68              1                          1             `uvm_info("report_phase",$sformatf("Total successful transaction : %0d",correct_count),UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                         1     Count coming in to IF
+    69              1                          1             `uvm_info("report_phase",$sformatf("Total failed transaction : %0d",error_count),UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       1         0         1     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /dff_scoreboard_pkg --
+
+  File dff_scoreboard.sv
+----------------Focused Condition View-------------------
+Line       46 Item    1  (this.q_ref != sb_seq_item.q)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+  (this.q_ref != sb_seq_item.q)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:          1  (this.q_ref != sb_seq_item.q)_0  -                             
+  Row   2:    ***0***  (this.q_ref != sb_seq_item.q)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      23        19         4    82.60%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_scoreboard_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_scoreboard.sv
+    1                                                package dff_scoreboard_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_seqitem_pkg::*;
+    4                                                import dff_pkg::*;
+    5                                                import dff_config_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class dff_scoreboard extends uvm_scoreboard;
+    9               1                    ***0***             `uvm_component_utils(dff_scoreboard)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       uvm_analysis_export #(dff_seqitem) sb_exp;
+    12                                                       uvm_tlm_analysis_fifo #(dff_seqitem) sb_fifo;
+    13                                                       dff_seqitem sb_seqitem;
+    14                                               
+    15                                                       int correct_count , error_count;
+    16                                               
+    17                                                       logic q_ref;
+    18                                               
+    19                                               
+    20                                                   
+    21                                                       function new(string name = "dff_scoreboard", uvm_component parent = null);
+    22              1                          1                 super.new(name, parent);
+    23                                                       endfunction
+    24                                               
+    25                                                       function void build_phase(uvm_phase phase);
+    26              1                          1                 super. build_phase(phase);
+    27              1                          1                 sb_exp = new("sb_exp",this);
+    28              1                          1                 sb_fifo = new("sb_fifo",this);
+    29                                                       endfunction
+    30                                               
+    31                                                       function void connect_phase(uvm_phase phase);
+    32              1                          1                 super. connect_phase(phase);
+    33              1                          1                 sb_exp.connect(sb_fifo.analysis_export);
+    34                                                       endfunction
+    35                                               
+    36                                                       task run_phase(uvm_phase phase);
+    37              1                          1                 super. run_phase(phase);
+    38              1                          1                 forever begin
+    39              1                       1002                     sb_fifo.get(sb_seqitem);
+    40              1                       1001                     check_result(sb_seqitem);
+    41                                                           end
+    42                                                       endtask
+    43                                               
+    44                                                       task check_result(dff_seqitem sb_seq_item);
+    45              1                       1001             golden_model(sb_seq_item);
+    46                                                       if(q_ref != sb_seq_item.q) begin
+    47              1                    ***0***                 error_count++;
+    48              1                    ***0***                 $display("Error");
+    49                                                       end else begin
+    50              1                       1001                 correct_count++;
+    51              1                       1001                 $display("Pass");
+    52                                                       end
+    53                                                   endtask
+    54                                               
+    55                                                   task golden_model(dff_seqitem sb_seq_item);
+    56                                                        if (sb_seq_item.rst)
+    57              1                         34                 q_ref = 0;
+    58                                                       else if(USE_EN) begin
+    59                                                               if (sb_seq_item.en)
+    60              1                        791                         q_ref = sb_seq_item.d;
+    61                                                       end else begin
+    62                                                               q_ref = sb_seq_item.d;
+    63                                                       end
+    64                                                   endtask
+    65                                               
+    66                                                   function void report_phase(uvm_phase phase);
+    67              1                          1             super.report_phase(phase);
+    68              1                          1             `uvm_info("report_phase",$sformatf("Total successful transaction : %0d",correct_count),UVM_MEDIUM);
+    69              1                          1             `uvm_info("report_phase",$sformatf("Total failed transaction : %0d",error_count),UVM_MEDIUM);
+
+
+=================================================================================
+=== Instance: /dff_monitor_pkg
+=== Design Unit: work.dff_monitor_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15        13         2    86.66%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_monitor_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_monitor.sv
+    1                                                package dff_monitor_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class dff_monitor extends uvm_monitor;
+    7               1                    ***0***             `uvm_component_utils (dff_monitor)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        virtual dff_if dff_vif;
+    10                                                       dff_seqitem rseq_item;
+    11                                                       uvm_analysis_port #(dff_seqitem) mon_ap;
+    12                                               
+    13                                                       function new(string name = "dff_monitor", uvm_component parent = null);
+    14              1                          1                 super.new(name, parent);
+    15                                                       endfunction
+    16                                               
+    17                                                       function void build_phase(uvm_phase phase);
+    18              1                          1                 super. build_phase(phase);
+    19              1                          1                 mon_ap = new("mon_ap",this);
+    20                                                       endfunction
+    21                                               
+    22                                                       task run_phase(uvm_phase phase);
+    23              1                          1                 super.run_phase(phase);
+    24                                               
+    25              1                          1                 forever begin
+    26              1                       1002                     rseq_item = dff_seqitem::type_id::create("rseq_item",this);  
+    27              1                       1002                     @(negedge dff_vif.clk);
+    28              1                       1001                     rseq_item.rst = dff_vif.rst;
+    29              1                       1001                     rseq_item.d = dff_vif.d;
+    30              1                       1001                     rseq_item.en = dff_vif.en;
+    31              1                       1001                     rseq_item.q = dff_vif.q;
+    32              1                       1001                     mon_ap.write(rseq_item);
+
+
+=================================================================================
+=== Instance: /dff_driver_pkg
+=== Design Unit: work.dff_driver_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13        11         2    84.61%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_driver_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_driver.sv
+    1                                                package dff_driver_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class dff_driver extends uvm_driver #(dff_seqitem);
+    7               1                    ***0***             `uvm_component_utils (dff_driver)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        virtual dff_if dff_vif;
+    10                                                       dff_seqitem dseq_item;
+    11                                               
+    12                                                       function new(string name = "dff_driver", uvm_component parent = null);
+    13              1                          1                 super.new(name, parent);
+    14                                                       endfunction
+    15                                               
+    16                                                       task run_phase(uvm_phase phase);
+    17              1                          1                 super.run_phase(phase);
+    18                                               
+    19              1                          1                 forever begin
+    20              1                       1002                     dseq_item = dff_seqitem::type_id::create("dseq_item",this);  
+    21              1                       1002                     seq_item_port.get_next_item(dseq_item);
+    22              1                       1001                     dff_vif.rst = dseq_item.rst;
+    23              1                       1001                     dff_vif.d = dseq_item.d;
+    24              1                       1001                     dff_vif.en = dseq_item.en;
+    25              1                       1001                     @(negedge dff_vif.clk);
+    26              1                       1001                     seq_item_port.item_done();
+
+
+=================================================================================
+=== Instance: /dff_sequencer_pkg
+=== Design Unit: work.dff_sequencer_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         2         2    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_sequencer_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_sequencer.sv
+    1                                                package dff_sequencer_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"
+    5                                                
+    6                                                    class dff_sequencer extends uvm_sequencer #(dff_seqitem);
+    7               1                    ***0***             `uvm_component_utils(dff_sequencer)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        function new(string name = "dff_sequencer", uvm_component parent = null);
+    10              1                          1                 super.new(name, parent);
+
+
+=================================================================================
+=== Instance: /dff_agent_pkg
+=== Design Unit: work.dff_agent_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         1         3    25.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /dff_agent_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_agent.sv
+------------------------------------IF Branch------------------------------------
+    27                                         1     Count coming in to IF
+    27              1                    ***0***                 if(!uvm_config_db #(dff_config)::get(this,"","CFG",dff_cfg))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    28                                   ***0***     Count coming in to IF
+    28              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the configuration object")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15        12         3    80.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_agent_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_agent.sv
+    1                                                package dff_agent_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_seqitem_pkg::*;
+    4                                                import dff_config_pkg::*;
+    5                                                import dff_sequencer_pkg::*;
+    6                                                import dff_driver_pkg::*;
+    7                                                import dff_monitor_pkg::*;
+    8                                                `include "uvm_macros.svh"
+    9                                                
+    10                                                   class dff_agent extends uvm_agent;
+    11              1                    ***0***             `uvm_component_utils(dff_agent)
+    11              2                    ***0***     
+    11              3                          2     
+    12                                               
+    13                                                       dff_config dff_cfg;
+    14                                                       dff_sequencer sqr;
+    15                                                       dff_driver drv;
+    16                                                       dff_monitor mon;
+    17                                                       uvm_analysis_port #(dff_seqitem) agt_ap;
+    18                                               
+    19                                                       function new(string name = "dff_agent", uvm_component parent = null);
+    20              1                          1                 super.new(name, parent);
+    21                                                       endfunction
+    22                                               
+    23                                                       function void build_phase(uvm_phase phase);
+    24              1                          1                 super. build_phase(phase);
+    25                                               
+    26                                                           // get configuration
+    27                                                           if(!uvm_config_db #(dff_config)::get(this,"","CFG",dff_cfg))
+    28              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the configuration object")
+    29                                                           
+    30              1                          1                 sqr = dff_sequencer::type_id::create("sqr",this);
+    31              1                          1                 drv = dff_driver::type_id::create("drv",this);
+    32              1                          1                 mon = dff_monitor::type_id::create("mon",this);
+    33              1                          1                agt_ap = new("agt_ap",this);
+    34                                                           
+    35                                                       endfunction
+    36                                               
+    37                                                       function void connect_phase(uvm_phase phase);
+    38              1                          1                 super. connect_phase(phase);
+    39              1                          1                 drv.dff_vif = dff_cfg.dff_vif;
+    40              1                          1                 mon.dff_vif = dff_cfg.dff_vif;
+    41              1                          1                 drv.seq_item_port.connect(sqr.seq_item_export);
+    42              1                          1                 mon.mon_ap.connect(agt_ap);
+
+
+=================================================================================
+=== Instance: /dff_env_pkg
+=== Design Unit: work.dff_env_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         9         2    81.81%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_env_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_env.sv
+    1                                                package dff_env_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_agent_pkg::*;
+    4                                                import dff_scoreboard_pkg::*;
+    5                                                import dff_coverage_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class dff_env extends uvm_env;
+    9               1                    ***0***             `uvm_component_utils(dff_env)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       dff_agent agt;
+    12                                                       dff_scoreboard sb;
+    13                                                       dff_coverage cov;
+    14                                               
+    15                                                       function new(string name = "dff_env", uvm_component parent = null);
+    16              1                          1                 super.new(name, parent);
+    17                                                       endfunction
+    18                                               
+    19                                                       function void build_phase(uvm_phase phase);
+    20              1                          1                 super. build_phase(phase);
+    21              1                          1                 agt = dff_agent::type_id::create("agt",this);
+    22              1                          1                 sb = dff_scoreboard::type_id::create("sb",this);
+    23              1                          1                 cov = dff_coverage::type_id::create("cov",this);
+    24                                                       endfunction
+    25                                               
+    26                                                       function void connect_phase(uvm_phase phase);
+    27              1                          1                 super. connect_phase(phase);
+    28              1                          1                 agt.agt_ap.connect(sb.sb_exp);
+    29              1                          1                 agt.agt_ap.connect(cov.cov_exp);
+
+
+=================================================================================
+=== Instance: /dff_test_pkg
+=== Design Unit: work.dff_test_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        12         5         7    41.66%
+
+================================Branch Details================================
+
+Branch Coverage for instance /dff_test_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_test.sv
+------------------------------------IF Branch------------------------------------
+    28                                         1     Count coming in to IF
+    28              1                    ***0***                 if(!uvm_config_db#(virtual dff_if)::get(this,"","DFF_IF",dff_cfg.dff_vif))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the virtual interface of the dff from the uvm_config_db")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                         1     Count coming in to IF
+    38              1                          1                 `uvm_info("run_phase","Reset Asserted",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                         1     Count coming in to IF
+    40              1                          1                 `uvm_info("run_phase","Reset Deasserted",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                         1     Count coming in to IF
+    42              1                          1                 `uvm_info("run_phase","Stimulus start",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                         1     Count coming in to IF
+    44              1                          1                 `uvm_info("run_phase","Stimulus end",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      20        17         3    85.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /dff_test_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File dff_test.sv
+    1                                                package dff_test_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import dff_env_pkg::*;
+    4                                                import dff_config_pkg::*;
+    5                                                import dff_sequence_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class dff_test extends uvm_test;
+    9               1                    ***0***             `uvm_component_utils(dff_test)
+    9               2                    ***0***     
+    9               3                          4     
+    10                                               
+    11                                                       dff_config dff_cfg;
+    12                                                       dff_resetsequence rst_seq;
+    13                                                       dff_mainsequence main_seq;
+    14                                                       dff_env env;
+    15                                               
+    16                                                       function new(string name = "dff_test", uvm_component parent = null);
+    17              1                          1                 super.new(name, parent);
+    18                                                       endfunction
+    19                                               
+    20                                                       function void build_phase(uvm_phase phase);
+    21              1                          1                 super. build_phase(phase);
+    22                                               
+    23              1                          1                 env = dff_env::type_id::create("env",this);
+    24              1                          1                 dff_cfg = dff_config::type_id:: create("dff_cfg");
+    25              1                          1                 rst_seq = dff_resetsequence::type_id::create("rst_seq");
+    26              1                          1                 main_seq = dff_mainsequence::type_id::create("main_seq");
+    27                                               
+    28                                                           if(!uvm_config_db#(virtual dff_if)::get(this,"","DFF_IF",dff_cfg.dff_vif))
+    29              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the virtual interface of the dff from the uvm_config_db")
+    30                                               
+    31              1                          1                 uvm_config_db#(dff_config)::set(this,"*","CFG",dff_cfg);
+    32                                                       endfunction
+    33                                               
+    34                                                       task run_phase(uvm_phase phase);
+    35              1                          1                 super. run_phase(phase);
+    36              1                          1                 phase.raise_objection(this);
+    37                                               
+    38              1                          1                 `uvm_info("run_phase","Reset Asserted",UVM_LOW)
+    39              1                          1                     rst_seq.start(env.agt.sqr);
+    40              1                          1                 `uvm_info("run_phase","Reset Deasserted",UVM_LOW)
+    41                                               
+    42              1                          1                 `uvm_info("run_phase","Stimulus start",UVM_LOW)
+    43              1                          1                     main_seq.start(env.agt.sqr);
+    44              1                          1                 `uvm_info("run_phase","Stimulus end",UVM_LOW)
+    45                                               
+    46              1                          1                 phase.drop_objection(this);
+
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /dff_coverage_pkg/dff_coverage/dff_cvg          100.00%        100          -    Covered              
+    covered/total bins:                                     2          2          -                      
+    missing/total bins:                                     0          2          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint d_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin d_bins[0]                                     304          1          -    Covered              
+        bin d_bins[1]                                     402          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/dff_top/dff_sva_inst/a_reset_coverage   dff_sva Verilog  SVA  dff_sva.sv(10)    34 Covered   
+/dff_top/dff_sva_inst/param_en_ON_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(19)   760 Covered   
+/dff_top/dff_sva_inst/param_ON_en_off_coverage 
+                                         dff_sva Verilog  SVA  dff_sva.sv(28)   171 Covered   
+/dff_top/dff_sva_inst/param_off_coverage dff_sva Verilog  SVA  dff_sva.sv(37)     0 ZERO      
+
+TOTAL DIRECTIVE COVERAGE: 75.00%  COVERS: 4
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/dff_top/dff_sva_inst/a_reset_assertion
+                     dff_sva.sv(8)                      0          1
+/dff_top/dff_sva_inst/param_en_ON_assertion
+                     dff_sva.sv(17)                     0          1
+/dff_top/dff_sva_inst/param_ON_en_off_assertion
+                     dff_sva.sv(26)                     1          1
+/dff_top/dff_sva_inst/param_off_assertion
+                     dff_sva.sv(35)                     0          0
+/dff_sequence_pkg/dff_mainsequence/body/#ublk#33637015#40/immed__42
+                     dff_sequence.sv(42)                0          1
+
+Total Coverage By Instance (filtered view): 62.11%
+

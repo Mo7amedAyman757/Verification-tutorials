@@ -6,12 +6,13 @@ output reg q;
 always @(posedge clk) begin 
    if (rst)
       q <= 0;
-   else
-      if(USE_EN)
+   else if(USE_EN) begin
          if (en)
             q <= d;
-      else 
-         q <= d;
+   end else begin
+      q <= d;
+   end
+         
 end 
 
 endmodule
