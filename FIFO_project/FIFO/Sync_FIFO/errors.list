@@ -1,3 +1,0 @@
-while asserting reset
-    - Data, wr_ack, overflow arenot cleared
-    

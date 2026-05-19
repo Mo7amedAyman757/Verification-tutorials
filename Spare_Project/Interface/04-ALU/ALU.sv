@@ -1,13 +1,4 @@
-module ALU_4_bit (
-    input  clk,
-    input  reset,
-    input  [1:0] Opcode,	// The opcode
-    input  signed [3:0] A,	// Input data A in 2's complement
-    input  signed [3:0] B,	// Input data B in 2's complement
-
-    output reg signed [4:0] C // ALU output in 2's complement
-
-		  );
+module ALU_4_bit (ALU_if.DUT ALU_vif);
 
    reg signed [4:0] 	    Alu_out; // ALU output in 2's complement
 
@@ -18,21 +9,21 @@ module ALU_4_bit (
 
    // Do the operation
    always @* begin
-      case (Opcode)
-      	Add:            Alu_out = A + B;
-      	Sub:            Alu_out = A - B;
-      	Not_A:          Alu_out = ~A;
-      	ReductionOR_B:  Alu_out = |B;
+      case (ALU_vif.Opcode)
+      	Add:            Alu_out = ALU_vif.A + ALU_vif.B;
+      	Sub:            Alu_out = ALU_vif.A - ALU_vif.B;
+      	Not_A:          Alu_out = ~ALU_vif.A;
+      	ReductionOR_B:  Alu_out = |ALU_vif.B;
         default:  Alu_out = 5'b0;
       endcase
    end // always @ *
 
    // Register output C
-   always @(posedge clk or posedge reset) begin
-      if (reset)
-	     C <= 5'b0;
+   always @(posedge ALU_vif.clk or posedge ALU_vif.reset) begin
+      if (ALU_vif.reset)
+	     ALU_vif.C <= 5'b0;
       else
-	     C<= Alu_out;
+	     ALU_vif.C <= Alu_out;
    end
 
 endmodule

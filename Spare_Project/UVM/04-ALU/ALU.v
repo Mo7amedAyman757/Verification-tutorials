@@ -7,7 +7,7 @@ module ALU_4_bit (
 
     output reg signed [4:0] C // ALU output in 2's complement
 
-		  );
+	);
 
    reg signed [4:0] 	    Alu_out; // ALU output in 2's complement
 

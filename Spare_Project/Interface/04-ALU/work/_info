@@ -1,10 +1,250 @@
 m255
 K4
 z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/05-Priority_enc
+Z1 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/UVM/03-DFF
+T_opt
+!s110 1779191858
+V=3F5S5UhzPANO5<Gene_b3
+04 7 4 work ALU_top fast 0
+=1-902e16e4070c-6a0c5032-d4-87a8
+Z2 !s124 OEM100
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.1;73
+T_opt1
+!s110 1779191436
+Vn18]WI;aIoNfXQ=5<<P>50
+04 6 4 work ALU_tb fast 0
+=1-902e16e4070c-6a0c4e8c-12c-84b0
+R2
+R3
+R4
+n@_opt1
+R5
+R1
+vALU_4_bit
+Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z7 !s110 1779191849
+!i10b 1
+!s100 bKAUkGNbdEoJZ7;Bi]P^h1
+ILWi]CAM2>_@[mg:CSmZIl2
+S1
+Z8 dD:/Career tracks/Digial_IC/09-Verification/Spare_Project/Interface/04-ALU
+w1779187750
+8ALU.sv
+FALU.sv
+!i122 25
+L0 1 29
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z11 !s108 1779191849.000000
+Z12 !s107 ALU_top.sv|ALU_tb.sv|ALU_sva.sv|ALU_pkg.sv|ALU_monitor.sv|ALU_if.sv|ALU.sv|
+Z13 !s90 -reportprogress|300|ALU.sv|ALU_if.sv|ALU_monitor.sv|ALU_pkg.sv|ALU_sva.sv|ALU_tb.sv|ALU_top.sv|+cover|
+!i113 0
+Z14 !s102 +cover
+Z15 o+cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+n@a@l@u_4_bit
+YALU_if
+R6
+R7
+!i10b 1
+!s100 Yi?IM`0PHzX?mZbZ`XzXk2
+ICCR5@OfSMdn_2Qc]h0l2^1
+S1
+R8
+w1779187668
+8ALU_if.sv
+FALU_if.sv
+!i122 25
+Z16 L0 1 0
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R4
+n@a@l@u_if
+vALU_monitor
+R6
+R7
+!i10b 1
+!s100 R]ANPnYz?_TVdE8Alc<AZ0
+Iz<64koTz45H=lIDje^;6F0
+S1
+R8
+w1779191537
+8ALU_monitor.sv
+FALU_monitor.sv
+!i122 25
+L0 1 8
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R4
+n@a@l@u_monitor
+XALU_pkg
+R6
+R7
+!i10b 1
+!s100 :JXIDbX4PlcR[3nF^MEzA0
+I18iCiA8^BSjUYU[]_zC>C0
+S1
+R8
+w1779191095
+8ALU_pkg.sv
+FALU_pkg.sv
+!i122 25
+R16
+V18iCiA8^BSjUYU[]_zC>C0
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R4
+n@a@l@u_pkg
+vALU_sva
+R6
+R7
+!i10b 1
+!s100 ;gZKgFhVCm[bTEEBVlGhm0
+ILUEhOi<1nIRN@@AM@jzjL0
+S1
+R8
+w1779191208
+8ALU_sva.sv
+FALU_sva.sv
+!i122 25
+L0 1 44
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R4
+n@a@l@u_sva
+vALU_tb
+R6
+Z17 DXx4 work 7 ALU_pkg 0 22 18iCiA8^BSjUYU[]_zC>C0
+DXx4 work 14 ALU_tb_sv_unit 0 22 L4MMhcROh@_hMeUhlHI2e0
+R7
+R9
+r1
+!s85 0
+!i10b 1
+!s100 I3H5XZESD84B4FU@YM<1J0
+ICSVYoOZEXLQO^_4KgHEBG2
+!s105 ALU_tb_sv_unit
+S1
+R8
+Z18 w1779191841
+Z19 8ALU_tb.sv
+Z20 FALU_tb.sv
+!i122 25
+L0 3 68
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R4
+n@a@l@u_tb
+XALU_tb_sv_unit
+R6
+R17
+R7
+VL4MMhcROh@_hMeUhlHI2e0
+r1
+!s85 0
+!i10b 1
+!s100 oR[mc:=3FI8TiY4>fR7=33
+IL4MMhcROh@_hMeUhlHI2e0
+!i103 1
+S1
+R8
+R18
+R19
+R20
+!i122 25
+R16
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R4
+n@a@l@u_tb_sv_unit
+vALU_top
+R6
+R7
+!i10b 1
+!s100 iaS0NcI>YakfGB5VXX@>`3
+IJUPVf18L]MMRI3hTbki=j1
+S1
+R8
+w1779191675
+8ALU_top.sv
+FALU_top.sv
+!i122 25
+L0 1 20
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R4
+n@a@l@u_top

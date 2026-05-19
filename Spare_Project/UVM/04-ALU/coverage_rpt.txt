@@ -1,0 +1,1513 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /ALU_top/ALUif
+=== Design Unit: work.ALU_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         34        34         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /ALU_top/ALUif --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                            A[3-0]           1           1      100.00 
+                                            B[3-0]           1           1      100.00 
+                                            C[4-0]           1           1      100.00 
+                                       Opcode[1-0]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                             reset           1           1      100.00 
+
+Total Node Count     =         17 
+Toggled Node Count   =         17 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (34 of 34 bins)
+
+=================================================================================
+=== Instance: /ALU_top/dut
+=== Design Unit: work.ALU_4_bit
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         6         1    85.71%
+
+================================Branch Details================================
+
+Branch Coverage for instance /ALU_top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU.v
+------------------------------------CASE Branch------------------------------------
+    21                                      9983     Count coming in to CASE
+    22              1                       2664           	Add:            Alu_out = A + B;
+    23              1                       3735           	Sub:            Alu_out = A - B;
+    24              1                       1783           	Not_A:          Alu_out = ~A;
+    25              1                       1801           	ReductionOR_B:  Alu_out = |B;
+    26              1                    ***0***             default:  Alu_out = 5'b0;
+Branch totals: 4 hits of 5 branches = 80.00%
+
+------------------------------------IF Branch------------------------------------
+    32                                      9740     Count coming in to IF
+    32              1                       9348           if (reset)
+    34              1                        392           else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       9         8         1    88.88%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU.v
+    1                                                module ALU_4_bit (
+    2                                                    input  clk,
+    3                                                    input  reset,
+    4                                                    input  [1:0] Opcode,	// The opcode
+    5                                                    input  signed [3:0] A,	// Input data A in 2's complement
+    6                                                    input  signed [3:0] B,	// Input data B in 2's complement
+    7                                                
+    8                                                    output reg signed [4:0] C // ALU output in 2's complement
+    9                                                
+    10                                               	);
+    11                                               
+    12                                                  reg signed [4:0] 	    Alu_out; // ALU output in 2's complement
+    13                                               
+    14                                                  localparam 		    Add	           = 2'b00; // A + B
+    15                                                  localparam 		    Sub	           = 2'b01; // A - B
+    16                                                  localparam 		    Not_A	         = 2'b10; // ~A
+    17                                                  localparam 		    ReductionOR_B  = 2'b11; // |B
+    18                                               
+    19                                                  // Do the operation
+    20              1                       9983        always @* begin
+    21                                                     case (Opcode)
+    22              1                       2664           	Add:            Alu_out = A + B;
+    23              1                       3735           	Sub:            Alu_out = A - B;
+    24              1                       1783           	Not_A:          Alu_out = ~A;
+    25              1                       1801           	ReductionOR_B:  Alu_out = |B;
+    26              1                    ***0***             default:  Alu_out = 5'b0;
+    27                                                     endcase
+    28                                                  end // always @ *
+    29                                               
+    30                                                  // Register output C
+    31              1                       9740        always @(posedge clk or posedge reset) begin
+    32                                                     if (reset)
+    33              1                       9348     	     C <= 5'b0;
+    34                                                     else
+    35              1                        392     	     C<= Alu_out;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         44        44         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /ALU_top/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                            A[0-3]           1           1      100.00 
+                                      Alu_out[4-0]           1           1      100.00 
+                                            B[0-3]           1           1      100.00 
+                                            C[4-0]           1           1      100.00 
+                                       Opcode[0-1]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                             reset           1           1      100.00 
+
+Total Node Count     =         22 
+Toggled Node Count   =         22 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (44 of 44 bins)
+
+=================================================================================
+=== Instance: /ALU_top/ALU_sva_inst
+=== Design Unit: work.ALU_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       5         5         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/ALU_top/ALU_sva_inst/reset_check_assertion
+                     ALU_sva.sv(8)                      0          1
+/ALU_top/ALU_sva_inst/ADD_check_assertion
+                     ALU_sva.sv(16)                     0          1
+/ALU_top/ALU_sva_inst/SUB_check_assertion
+                     ALU_sva.sv(24)                     0          1
+/ALU_top/ALU_sva_inst/NOT_A_check_assertion
+                     ALU_sva.sv(32)                     0          1
+/ALU_top/ALU_sva_inst/ReductionOR_B_check_assertion
+                     ALU_sva.sv(40)                     0          1
+
+Directive Coverage:
+    Directives                       5         5         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/ALU_top/ALU_sva_inst/reset_check_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(9)   9608 Covered   
+/ALU_top/ALU_sva_inst/ADD_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(17)     5 Covered   
+/ALU_top/ALU_sva_inst/SUB_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(25)     6 Covered   
+/ALU_top/ALU_sva_inst/NOT_A_check_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(33)     1 Covered   
+/ALU_top/ALU_sva_inst/ReductionOR_B_check_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(41)     5 Covered   
+
+=================================================================================
+=== Instance: /ALU_top
+=== Design Unit: work.ALU_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_top.sv
+    6                                                module ALU_top();
+    7                                                    
+    8                                                    logic clk;
+    9                                                
+    10                                                   initial begin
+    11              1                          1             clk = 0;
+    12              1                          1             forever #5 clk = ~clk;
+    12              2                      20003     
+    12              3                      20002     
+    13                                                   end
+    14                                               
+    15                                                   ALU_if ALUif(clk);
+    16                                               
+    17                                                   ALU_4_bit dut(ALUif.clk,
+    18                                                               ALUif.reset,
+    19                                                               ALUif.Opcode,
+    20                                                               ALUif.A,
+    21                                                               ALUif.B,
+    22                                                               ALUif.C
+    23                                                               );
+    24                                               
+    25                                                   ALU_sva ALU_sva_inst(ALUif);
+    26                                               
+    27                                                   initial begin
+    28              1                          1             uvm_config_db #(virtual ALU_if)::set(null,"uvm_test_top","ALU_IF",ALUif);
+    29              1                          1             run_test("ALU_test");
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /ALU_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /ALU_seqitem_pkg
+=== Design Unit: work.ALU_seqitem_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         2         8    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /ALU_seqitem_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_seqitem.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***             `uvm_object_utils(ALU_seqitem)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                      10001     Count coming in to IF
+    7               2                    ***0***             `uvm_object_utils(ALU_seqitem)
+                                           10001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***             `uvm_object_utils(ALU_seqitem)
+    7               4                    ***0***             `uvm_object_utils(ALU_seqitem)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                      10001     Count coming in to IF
+    7               5                    ***0***             `uvm_object_utils(ALU_seqitem)
+                                           10001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***             `uvm_object_utils(ALU_seqitem)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /ALU_seqitem_pkg --
+
+  File ALU_seqitem.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13         3        10    23.07%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_seqitem_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_seqitem.sv
+    1                                                package ALU_seqitem_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_pkg::*;
+    4                                                `include "uvm_macros.svh"    
+    5                                                
+    6                                                    class ALU_seqitem extends uvm_sequence_item;
+    7               1                    ***0***             `uvm_object_utils(ALU_seqitem)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                      10001     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                      10001     
+    7              10                    ***0***     
+    8                                                
+    9                                                        rand logic reset;
+    10                                                       rand opcode_e Opcode;
+    11                                                       rand logic signed [3:0] A, B;	
+    12                                                       logic signed [4:0] C; 
+    13                                                       
+    14                                                       function new(string name = "ALU_seqitem");
+    15              1                      20006                 super.new(name);
+    16                                                       endfunction //new()
+    17                                                       
+    18                                                       function string convert2string();
+    19              1                    ***0***                 return $sformatf("%s reset = 0b%0b, Opcode = 0b%0b
+    20                                                                             A = 0b%0b, B = 0b%0b
+    21                                                                             C = 0b%0b,", super.convert2string(),
+    22                                                                             reset, Opcode, A, B, C);            
+    23                                                       endfunction
+    24                                               
+    25                                                       function string convert2string_stimulus();
+    26              1                    ***0***                 return $sformatf("reset = 0b%0b, Opcode = 0b%0b
+
+
+=================================================================================
+=== Instance: /ALU_sequence_pkg
+=== Design Unit: work.ALU_sequence_pkg
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/ALU_sequence_pkg/ALU_main_sequence/body/#ublk#33787143#39/immed__41
+                     ALU_sequence.sv(41)                0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20         4        16    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /ALU_sequence_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_sequence.sv
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               1                    ***0***             `uvm_object_utils(ALU_reset_sequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                          1     Count coming in to IF
+    8               2                    ***0***             `uvm_object_utils(ALU_reset_sequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               3                    ***0***             `uvm_object_utils(ALU_reset_sequence)
+    8               4                    ***0***             `uvm_object_utils(ALU_reset_sequence)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                          1     Count coming in to IF
+    8               5                    ***0***             `uvm_object_utils(ALU_reset_sequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               6                    ***0***             `uvm_object_utils(ALU_reset_sequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              1                    ***0***             `uvm_object_utils(ALU_main_sequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                         1     Count coming in to IF
+    29              2                    ***0***             `uvm_object_utils(ALU_main_sequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              3                    ***0***             `uvm_object_utils(ALU_main_sequence)
+    29              4                    ***0***             `uvm_object_utils(ALU_main_sequence)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                         1     Count coming in to IF
+    29              5                    ***0***             `uvm_object_utils(ALU_main_sequence)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              6                    ***0***             `uvm_object_utils(ALU_main_sequence)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       4         0         4     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /ALU_sequence_pkg --
+
+  File ALU_sequence.sv
+----------------Focused Condition View-------------------
+Line       8 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       8 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       29 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       29 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      33        17        16    51.51%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_sequence_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_sequence.sv
+    1                                                package ALU_sequence_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_pkg::*;
+    4                                                import ALU_seqitem_pkg::*;
+    5                                                `include "uvm_macros.svh"    
+    6                                                
+    7                                                    class ALU_reset_sequence extends uvm_sequence #(ALU_seqitem);
+    8               1                    ***0***             `uvm_object_utils(ALU_reset_sequence)
+    8               2                    ***0***     
+    8               3                    ***0***     
+    8               4                    ***0***     
+    8               5                    ***0***     
+    8               6                          1     
+    8               7                    ***0***     
+    8               8                    ***0***     
+    8               9                          1     
+    8              10                    ***0***     
+    9                                                        
+    10                                                       ALU_seqitem seq_item;
+    11                                               
+    12                                                       function new(string name = "ALU_reset_sequence");
+    13              1                          1                 super.new(name);
+    14                                                       endfunction //new()
+    15                                               
+    16                                                       task body();
+    17              1                          1                 seq_item = ALU_seqitem::type_id::create("seq_item");
+    18              1                          1                 start_item(seq_item);
+    19              1                          1                 seq_item.reset = 1;
+    20              1                          1                 seq_item.Opcode = opcode_e'(0);
+    21              1                          1                 seq_item.A = val_t'(0);
+    22              1                          1                 seq_item.B = val_t'(0);
+    23              1                          1                 finish_item(seq_item);
+    24                                                       endtask
+    25                                                       
+    26                                                   endclass
+    27                                               
+    28                                                       class ALU_main_sequence extends uvm_sequence #(ALU_seqitem);
+    29              1                    ***0***             `uvm_object_utils(ALU_main_sequence)
+    29              2                    ***0***     
+    29              3                    ***0***     
+    29              4                    ***0***     
+    29              5                    ***0***     
+    29              6                          1     
+    29              7                    ***0***     
+    29              8                    ***0***     
+    29              9                          1     
+    29             10                    ***0***     
+    30                                                       
+    31                                                       ALU_seqitem seq_item;
+    32                                               
+    33                                                       function new(string name = "ALU_main_sequence");
+    34              1                          1                 super.new(name);
+    35                                                       endfunction //new()
+    36                                               
+    37                                                       task body();
+    38              1                          1                 seq_item = ALU_seqitem::type_id::create("seq_item");
+    39              1                      10000                 repeat(10000) begin
+    40              1                      10000                     start_item(seq_item);
+    41                                                               assert(seq_item.randomize());
+    42              1                      10000                     finish_item(seq_item);  
+
+
+=================================================================================
+=== Instance: /ALU_coverage_pkg
+=== Design Unit: work.ALU_coverage_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          4        na        na        na
+            Covergroup Bins         20        20         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /ALU_coverage_pkg/ALU_coverage/ALU_cvg          100.00%        100          -    Covered              
+    covered/total bins:                                    20         20          -                      
+    missing/total bins:                                     0         20          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint A_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint B_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ocpode_cvg                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/ALU_coverage_pkg::ALU_coverage::ALU_cvg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    20         20          -                      
+    missing/total bins:                                     0         20          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint A_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin A_data_0                                     1192          1          -    Covered              
+        bin A_data_max                                   1217          1          -    Covered              
+        bin A_data_min                                   1215          1          -    Covered              
+        default bin A_data_default                       6377                     -    Occurred             
+    Coverpoint B_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin B_data_0                                     1255          1          -    Covered              
+        bin B_data_max                                   1171          1          -    Covered              
+        bin B_data_min                                   1195          1          -    Covered              
+        default bin B_data_default                       6380                     -    Occurred             
+    Coverpoint ocpode_cvg                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bins_op[Add]                                 2669          1          -    Covered              
+        bin bins_op[Sub]                                 3743          1          -    Covered              
+        bin bins_op[Not_A]                               1786          1          -    Covered              
+        bin bins_op[ReductionOR_B]                       1803          1          -    Covered              
+        bin op_trans                                       38          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <A_data_min,B_data_min>                   126          1          -    Covered              
+            bin <A_data_max,B_data_min>                   145          1          -    Covered              
+            bin <A_data_0,B_data_min>                     141          1          -    Covered              
+            bin <A_data_min,B_data_max>                   143          1          -    Covered              
+            bin <A_data_max,B_data_max>                   137          1          -    Covered              
+            bin <A_data_0,B_data_max>                     136          1          -    Covered              
+            bin <A_data_min,B_data_0>                     159          1          -    Covered              
+            bin <A_data_max,B_data_0>                     150          1          -    Covered              
+            bin <A_data_0,B_data_0>                       146          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        12         2    85.71%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_coverage_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_coverage.sv
+    1                                                package ALU_coverage_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_pkg::*;
+    4                                                import ALU_seqitem_pkg::*;
+    5                                                `include "uvm_macros.svh"   
+    6                                                
+    7                                                    class ALU_coverage extends uvm_component;
+    8               1                    ***0***             `uvm_component_utils(ALU_coverage)
+    8               2                    ***0***     
+    8               3                          2     
+    9                                                
+    10                                                       uvm_analysis_export #(ALU_seqitem) cov_export;
+    11                                                       uvm_tlm_analysis_fifo #(ALU_seqitem) cov_fifo;
+    12                                                       ALU_seqitem cov_seqitem;
+    13                                               
+    14                                                       covergroup ALU_cvg;
+    15                                               
+    16                                                           A_cvg : coverpoint cov_seqitem.A{
+    17                                                               bins A_data_0 = {ZERO};
+    18                                                               bins A_data_max = {MAXPOS};
+    19                                                               bins A_data_min = {MAXNEG};
+    20                                                               bins A_data_default = default;
+    21                                                           }
+    22                                               
+    23                                                           B_cvg : coverpoint cov_seqitem.B{
+    24                                                               bins B_data_0 = {ZERO};
+    25                                                               bins B_data_max = {MAXPOS};
+    26                                                               bins B_data_min = {MAXNEG};
+    27                                                               bins B_data_default = default;
+    28                                                           }
+    29                                               
+    30                                                           ocpode_cvg : coverpoint cov_seqitem.Opcode{
+    31                                                               bins bins_op[] ={Add, Sub, Not_A, ReductionOR_B};
+    32                                                               bins op_trans = (Add => Sub => Not_A => ReductionOR_B);
+    33                                                           }
+    34                                                           
+    35                                                           cross A_cvg, B_cvg;
+    36                                               
+    37                                                       endgroup
+    38                                               
+    39                                                       function new(string name = "ALU_coverage", uvm_component parent = null);
+    40              1                          1                 super.new(name, parent);
+    41              1                          1                 ALU_cvg = new();
+    42                                                       endfunction //new()
+    43                                               
+    44                                                       function void build_phase(uvm_phase phase);
+    45              1                          1                 super. build_phase(phase);
+    46              1                          1                 cov_export = new("cov_export",this);
+    47              1                          1                 cov_fifo = new("cov_fifo",this);
+    48                                                       endfunction
+    49                                               
+    50                                                       function void connect_phase(uvm_phase phase);
+    51              1                          1                 super. connect_phase(phase);
+    52              1                          1                 cov_export.connect(cov_fifo.analysis_export);
+    53                                                       endfunction
+    54                                               
+    55                                                       task run_phase(uvm_phase phase);
+    56              1                          1                 super. run_phase(phase);
+    57              1                          1                 forever begin
+    58              1                      10002                     cov_fifo.get(cov_seqitem);
+    59              1                      10001                     ALU_cvg.sample();
+
+
+=================================================================================
+=== Instance: /ALU_scoreboard_pkg
+=== Design Unit: work.ALU_scoreboard_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        13         9         4    69.23%
+
+================================Branch Details================================
+
+Branch Coverage for instance /ALU_scoreboard_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_scoreboard.sv
+------------------------------------IF Branch------------------------------------
+    44                                     10001     Count coming in to IF
+    44              1                    ***0***             if(C_ref != seqitem.C) begin
+    47              1                      10001             end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    54                                     10001     Count coming in to IF
+    54              1                       9609             if(seqitem.reset) 
+    56              1                        392             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    57                                       392     Count coming in to CASE
+    58              1                        110                     Add:            C_ref = seqitem.A + seqitem.B;
+    59              1                        137                     Sub:            C_ref = seqitem.A - seqitem.B;
+    60              1                         76                     Not_A:          C_ref = ~seqitem.A;
+    61              1                         69                     ReductionOR_B:  C_ref = |seqitem.B;
+    62              1                    ***0***                     default:  C_ref = 5'b0;
+Branch totals: 4 hits of 5 branches = 80.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                         1     Count coming in to IF
+    69              1                          1             `uvm_info("report_phase",$sformatf("Total successful transaction : %0d",correct_count),UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    70                                         1     Count coming in to IF
+    70              1                          1             `uvm_info("report_phase",$sformatf("Total failed transaction : %0d",error_count),UVM_MEDIUM);
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       1         0         1     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /ALU_scoreboard_pkg --
+
+  File ALU_scoreboard.sv
+----------------Focused Condition View-------------------
+Line       44 Item    1  (this.C_ref != seqitem.C)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                 Input Term   Covered  Reason for no coverage   Hint
+                -----------  --------  -----------------------  --------------
+  (this.C_ref != seqitem.C)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                   Non-masking condition(s)      
+ ---------  ---------  --------------------         -------------------------     
+  Row   1:    ***0***  (this.C_ref != seqitem.C)_0  -                             
+  Row   2:    ***0***  (this.C_ref != seqitem.C)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      27        22         5    81.48%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_scoreboard_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_scoreboard.sv
+    1                                                package ALU_scoreboard_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_pkg::*;
+    4                                                import ALU_seqitem_pkg::*;
+    5                                                `include "uvm_macros.svh"   
+    6                                                
+    7                                                    class ALU_scoreboard extends uvm_scoreboard;
+    8               1                    ***0***             `uvm_component_utils(ALU_scoreboard)
+    8               2                    ***0***     
+    8               3                          2     
+    9                                                
+    10                                                       uvm_analysis_export #(ALU_seqitem) sb_export;
+    11                                                       uvm_tlm_analysis_fifo #(ALU_seqitem) sb_fifo;
+    12                                                       ALU_seqitem sb_seqitem;
+    13                                               
+    14                                                       int correct_count , error_count;
+    15                                               
+    16                                                       logic [4:0] C_ref;
+    17                                               
+    18                                               
+    19                                                       function new(string name = "ALU_scoreboard", uvm_component parent = null);
+    20              1                          1                 super.new(name, parent);
+    21                                                       endfunction //new()
+    22                                               
+    23                                                       function void build_phase(uvm_phase phase);
+    24              1                          1                 super. build_phase(phase);
+    25              1                          1                 sb_export = new("sb_export",this);
+    26              1                          1                 sb_fifo = new("sb_fifo",this);
+    27                                                       endfunction
+    28                                               
+    29                                                       function void connect_phase(uvm_phase phase);
+    30              1                          1                 super. connect_phase(phase);
+    31              1                          1                 sb_export.connect(sb_fifo.analysis_export);
+    32                                                       endfunction
+    33                                               
+    34                                                       task run_phase(uvm_phase phase);
+    35              1                          1                 super. run_phase(phase);
+    36              1                          1                 forever begin
+    37              1                      10002                     sb_fifo.get(sb_seqitem);
+    38              1                      10001                     check_result(sb_seqitem);
+    39                                                           end
+    40                                                       endtask
+    41                                               
+    42                                                       task check_result(ALU_seqitem seqitem);
+    43              1                      10001             golden_model(seqitem);
+    44                                                       if(C_ref != seqitem.C) begin
+    45              1                    ***0***                 error_count++;
+    46              1                    ***0***                 $display("Failed");
+    47                                                       end else begin
+    48              1                      10001                 correct_count++;
+    49              1                      10001                 $display("Passed");
+    50                                                       end
+    51                                                   endtask
+    52                                               
+    53                                                   task golden_model(ALU_seqitem seqitem);
+    54                                                       if(seqitem.reset) 
+    55              1                       9609                 C_ref = 0;
+    56                                                       else begin
+    57                                                           case(seqitem.Opcode)
+    58              1                        110                     Add:            C_ref = seqitem.A + seqitem.B;
+    59              1                        137                     Sub:            C_ref = seqitem.A - seqitem.B;
+    60              1                         76                     Not_A:          C_ref = ~seqitem.A;
+    61              1                         69                     ReductionOR_B:  C_ref = |seqitem.B;
+    62              1                    ***0***                     default:  C_ref = 5'b0;
+    63                                                           endcase
+    64                                                       end    
+    65                                                   endtask
+    66                                               
+    67                                                   function void report_phase(uvm_phase phase);
+    68              1                          1             super.report_phase(phase);
+    69              1                          1             `uvm_info("report_phase",$sformatf("Total successful transaction : %0d",correct_count),UVM_MEDIUM);
+    70              1                          1             `uvm_info("report_phase",$sformatf("Total failed transaction : %0d",error_count),UVM_MEDIUM);
+
+
+=================================================================================
+=== Instance: /ALU_sequencer_pkg
+=== Design Unit: work.ALU_sequencer_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         2         2    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_sequencer_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_sequencer.sv
+    1                                                package ALU_sequencer_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_seqitem_pkg::*;
+    4                                                `include "uvm_macros.svh"    
+    5                                                
+    6                                                    class ALU_sequencer extends uvm_sequencer #(ALU_seqitem);
+    7               1                    ***0***             `uvm_component_utils(ALU_sequencer)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        function new(string name = "ALU_sequencer",uvm_component parent = null);
+    10              1                          1                 super.new(name, parent);
+
+
+=================================================================================
+=== Instance: /ALU_config_pkg
+=== Design Unit: work.ALU_config_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         0        10     0.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /ALU_config_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_config.sv
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               1                    ***0***             `uvm_object_utils(ALU_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               2                    ***0***             `uvm_object_utils(ALU_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               3                    ***0***             `uvm_object_utils(ALU_config)
+    6               4                    ***0***             `uvm_object_utils(ALU_config)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               5                    ***0***             `uvm_object_utils(ALU_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               6                    ***0***             `uvm_object_utils(ALU_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /ALU_config_pkg --
+
+  File ALU_config.sv
+----------------Focused Condition View-------------------
+Line       6 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       6 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         1        10     9.09%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_config_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_config.sv
+    1                                                package ALU_config_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"    
+    4                                                
+    5                                                    class ALU_config extends uvm_object;
+    6               1                    ***0***             `uvm_object_utils(ALU_config)
+    6               2                    ***0***     
+    6               3                    ***0***     
+    6               4                    ***0***     
+    6               5                    ***0***     
+    6               6                    ***0***     
+    6               7                    ***0***     
+    6               8                    ***0***     
+    6               9                    ***0***     
+    6              10                    ***0***     
+    7                                                
+    8                                                        virtual ALU_if ALU_vif;
+    9                                                
+    10                                                       function new(string name = "ALU_config");
+    11              1                          1                 super.new(name);
+
+
+=================================================================================
+=== Instance: /ALU_monitor_pkg
+=== Design Unit: work.ALU_monitor_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15        13         2    86.66%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_monitor_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_monitor.sv
+    1                                                package ALU_monitor_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_pkg::*;
+    4                                                import ALU_seqitem_pkg::*;
+    5                                                `include "uvm_macros.svh"    
+    6                                                
+    7                                                    class ALU_monitor extends uvm_monitor;
+    8               1                    ***0***             `uvm_component_utils(ALU_monitor)
+    8               2                    ***0***     
+    8               3                          2     
+    9                                                        
+    10                                                       virtual ALU_if ALU_vif;
+    11                                                       ALU_seqitem rsp_seq_item;
+    12                                                       uvm_analysis_port #(ALU_seqitem) mon_ap;
+    13                                               
+    14                                                       function new(string name = "ALU_monitor", uvm_component parent = null);
+    15              1                          1                 super.new(name, parent);
+    16                                                       endfunction //new()
+    17                                               
+    18                                                       function void build_phase(uvm_phase phase);
+    19              1                          1                 super.build_phase(phase);
+    20              1                          1                 mon_ap = new("mon_ap",this);
+    21                                                       endfunction
+    22                                                       
+    23                                                       task run_phase(uvm_phase phase);
+    24              1                          1                 super.run_phase(phase);
+    25                                                           
+    26              1                          1                 forever begin
+    27              1                      10002                     rsp_seq_item = ALU_seqitem::type_id::create("rsp_seq_item",this);
+    28              1                      10002                     @(negedge ALU_vif.clk);
+    29              1                      10001                     rsp_seq_item.reset = ALU_vif.reset;
+    30              1                      10001                     rsp_seq_item.Opcode =  opcode_e'(ALU_vif.Opcode);
+    31              1                      10001                     rsp_seq_item.A = ALU_vif.A;
+    32              1                      10001                     rsp_seq_item.B = ALU_vif.B;
+    33              1                      10001                     mon_ap.write(rsp_seq_item);  
+
+
+=================================================================================
+=== Instance: /ALU_driver_pkg
+=== Design Unit: work.ALU_driver_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        12         2    85.71%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_driver_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_driver.sv
+    1                                                package ALU_driver_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_pkg::*;
+    4                                                import ALU_seqitem_pkg::*;
+    5                                                `include "uvm_macros.svh"    
+    6                                                
+    7                                                    class ALU_driver extends uvm_driver #(ALU_seqitem);
+    8               1                    ***0***             `uvm_component_utils(ALU_driver)
+    8               2                    ***0***     
+    8               3                          2     
+    9                                                        
+    10                                                       virtual ALU_if ALU_vif;
+    11                                                       ALU_seqitem seq_item;
+    12                                               
+    13                                                       function new(string name = "ALU_driver", uvm_component parent = null);
+    14              1                          1                 super.new(name, parent);
+    15                                                       endfunction //new()
+    16                                               
+    17                                                       task run_phase(uvm_phase phase);
+    18              1                          1                 super.run_phase(phase);
+    19                                                           
+    20              1                          1                 forever begin
+    21              1                      10002                     seq_item = ALU_seqitem::type_id::create("seq_item",this);
+    22              1                      10002                     seq_item_port.get_next_item(seq_item);
+    23              1                      10001                     ALU_vif.reset = seq_item.reset;
+    24              1                      10001                     ALU_vif.Opcode = seq_item.Opcode;
+    25              1                      10001                     ALU_vif.A = seq_item.A;
+    26              1                      10001                     ALU_vif.B = seq_item.B;
+    27              1                      10001                     @(negedge ALU_vif.clk);
+    28              1                      10001                     seq_item_port.item_done();    
+
+
+=================================================================================
+=== Instance: /ALU_agent_pkg
+=== Design Unit: work.ALU_agent_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         1         3    25.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /ALU_agent_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_agent.sv
+------------------------------------IF Branch------------------------------------
+    28                                         1     Count coming in to IF
+    28              1                    ***0***                 if(!uvm_config_db#(ALU_config)::get(this,"","CFG",ALU_cfg))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              1                    ***0***                     `uvm_fatal("build_phase","Agent-unable to get configuration of ALU from the uvm_config_db")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15        12         3    80.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_agent_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_agent.sv
+    1                                                package ALU_agent_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_driver_pkg::*;
+    4                                                import ALU_monitor_pkg::*;
+    5                                                import ALU_config_pkg::*;
+    6                                                import ALU_sequencer_pkg::*;
+    7                                                import ALU_seqitem_pkg::*;
+    8                                                `include "uvm_macros.svh"   
+    9                                                
+    10                                                   class ALU_agent extends uvm_agent;
+    11              1                    ***0***             `uvm_component_utils(ALU_agent)
+    11              2                    ***0***     
+    11              3                          2     
+    12                                                       
+    13                                                       ALU_config ALU_cfg;
+    14                                                       ALU_driver drv;
+    15                                                       ALU_monitor mon;
+    16                                                       ALU_sequencer sqr;
+    17                                                       uvm_analysis_port #(ALU_seqitem) agt_ap;
+    18                                               
+    19                                               
+    20                                                       function new(string name = "ALU_agent", uvm_component parent = null);
+    21              1                          1                 super.new(name, parent);
+    22                                                       endfunction //new()
+    23                                               
+    24                                                       function void build_phase(uvm_phase phase);
+    25              1                          1                 super.build_phase(phase);
+    26                                               
+    27                                                           // check configuration 
+    28                                                           if(!uvm_config_db#(ALU_config)::get(this,"","CFG",ALU_cfg))
+    29              1                    ***0***                     `uvm_fatal("build_phase","Agent-unable to get configuration of ALU from the uvm_config_db")
+    30                                               
+    31              1                          1                 drv = ALU_driver::type_id::create("drv",this);
+    32              1                          1                 mon = ALU_monitor::type_id::create("mon",this);
+    33              1                          1                 sqr = ALU_sequencer::type_id::create("sqr",this);
+    34              1                          1                 agt_ap = new("agt_ap",this);
+    35                                               
+    36                                                       endfunction
+    37                                               
+    38                                                       function void connect_phase(uvm_phase phase);
+    39              1                          1                 super.connect_phase(phase);
+    40              1                          1                 drv.ALU_vif = ALU_cfg.ALU_vif;
+    41              1                          1                 mon.ALU_vif = ALU_cfg.ALU_vif;
+    42              1                          1                 drv.seq_item_port.connect(sqr.seq_item_export);
+    43              1                          1                 mon.mon_ap.connect(agt_ap);
+
+
+=================================================================================
+=== Instance: /ALU_env_pkg
+=== Design Unit: work.ALU_env_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         9         2    81.81%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_env_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_env.sv
+    1                                                package ALU_env_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_agent_pkg::*;
+    4                                                import ALU_scoreboard_pkg::*;
+    5                                                import ALU_coverage_pkg::*;
+    6                                                `include "uvm_macros.svh"   
+    7                                                
+    8                                                    class ALU_env extends uvm_env;
+    9               1                    ***0***             `uvm_component_utils(ALU_env)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       ALU_agent agt;
+    12                                                       ALU_scoreboard sb;
+    13                                                       ALU_coverage cov;
+    14                                               
+    15                                                       function new(string name = "ALU_env", uvm_component parent = null);
+    16              1                          1                 super.new(name,parent);
+    17                                                       endfunction
+    18                                               
+    19                                                       function void build_phase(uvm_phase phase);
+    20              1                          1                 super.build_phase(phase);
+    21              1                          1                 agt = ALU_agent::type_id::create("agt",this);
+    22              1                          1                 sb = ALU_scoreboard::type_id::create("sb",this);
+    23              1                          1                 cov = ALU_coverage::type_id::create("cov",this);
+    24                                                       endfunction
+    25                                               
+    26                                                       function void connect_phase(uvm_phase phase);
+    27              1                          1                 super.connect_phase(phase);
+    28              1                          1                 agt.agt_ap.connect(sb.sb_export);
+    29              1                          1                 agt.agt_ap.connect(cov.cov_export);
+
+
+=================================================================================
+=== Instance: /ALU_test_pkg
+=== Design Unit: work.ALU_test_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        12         5         7    41.66%
+
+================================Branch Details================================
+
+Branch Coverage for instance /ALU_test_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_test.sv
+------------------------------------IF Branch------------------------------------
+    28                                         1     Count coming in to IF
+    28              1                    ***0***                 if(!uvm_config_db#(virtual ALU_if)::get(this,"","ALU_IF",ALU_cfg.ALU_vif))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the virtual interface of the ALU from the uvm_config_db")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                         1     Count coming in to IF
+    38              1                          1                 `uvm_info("run_phase","Reset Asserted",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                         1     Count coming in to IF
+    40              1                          1                 `uvm_info("run_phase","Reset Deasserted",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                         1     Count coming in to IF
+    42              1                          1                 `uvm_info("run_phase","Stimulus start",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                         1     Count coming in to IF
+    44              1                          1                 `uvm_info("run_phase","Stimulus end",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      20        17         3    85.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /ALU_test_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU_test.sv
+    1                                                package ALU_test_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                import ALU_env_pkg::*;
+    4                                                import ALU_config_pkg::*;
+    5                                                import ALU_sequence_pkg::*;
+    6                                                `include "uvm_macros.svh"
+    7                                                
+    8                                                    class ALU_test extends uvm_test;
+    9               1                    ***0***             `uvm_component_utils(ALU_test)
+    9               2                    ***0***     
+    9               3                          4     
+    10                                               
+    11                                                       ALU_config ALU_cfg;
+    12                                                       ALU_reset_sequence rst_seq;
+    13                                                       ALU_main_sequence main_seq;
+    14                                                       ALU_env env;
+    15                                               
+    16                                                       function new(string name = "ALU_test", uvm_component parent = null);
+    17              1                          1                 super.new(name, parent);
+    18                                                       endfunction
+    19                                               
+    20                                                       function void build_phase(uvm_phase phase);
+    21              1                          1                 super. build_phase(phase);
+    22                                               
+    23              1                          1                 env = ALU_env::type_id::create("env",this);
+    24              1                          1                 ALU_cfg = ALU_config::type_id:: create("ALU_cfg");
+    25              1                          1                 rst_seq = ALU_reset_sequence::type_id::create("rst_seq");
+    26              1                          1                 main_seq = ALU_main_sequence::type_id::create("main_seq");
+    27                                               
+    28                                                           if(!uvm_config_db#(virtual ALU_if)::get(this,"","ALU_IF",ALU_cfg.ALU_vif))
+    29              1                    ***0***                     `uvm_fatal("build_phase","Test-unable to get the virtual interface of the ALU from the uvm_config_db")
+    30                                               
+    31              1                          1                 uvm_config_db#(ALU_config)::set(this,"*","CFG",ALU_cfg);
+    32                                                       endfunction
+    33                                               
+    34                                                       task run_phase(uvm_phase phase);
+    35              1                          1                 super. run_phase(phase);
+    36              1                          1                 phase.raise_objection(this);
+    37                                               
+    38              1                          1                 `uvm_info("run_phase","Reset Asserted",UVM_LOW)
+    39              1                          1                     rst_seq.start(env.agt.sqr);
+    40              1                          1                 `uvm_info("run_phase","Reset Deasserted",UVM_LOW)
+    41                                               
+    42              1                          1                 `uvm_info("run_phase","Stimulus start",UVM_LOW)
+    43              1                          1                     main_seq.start(env.agt.sqr);
+    44              1                          1                 `uvm_info("run_phase","Stimulus end",UVM_LOW)
+    45                                               
+    46              1                          1                 phase.drop_objection(this);
+
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /ALU_coverage_pkg/ALU_coverage/ALU_cvg          100.00%        100          -    Covered              
+    covered/total bins:                                    20         20          -                      
+    missing/total bins:                                     0         20          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint A_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint B_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ocpode_cvg                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/ALU_coverage_pkg::ALU_coverage::ALU_cvg  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    20         20          -                      
+    missing/total bins:                                     0         20          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint A_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin A_data_0                                     1192          1          -    Covered              
+        bin A_data_max                                   1217          1          -    Covered              
+        bin A_data_min                                   1215          1          -    Covered              
+        default bin A_data_default                       6377                     -    Occurred             
+    Coverpoint B_cvg                                  100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin B_data_0                                     1255          1          -    Covered              
+        bin B_data_max                                   1171          1          -    Covered              
+        bin B_data_min                                   1195          1          -    Covered              
+        default bin B_data_default                       6380                     -    Occurred             
+    Coverpoint ocpode_cvg                             100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin bins_op[Add]                                 2669          1          -    Covered              
+        bin bins_op[Sub]                                 3743          1          -    Covered              
+        bin bins_op[Not_A]                               1786          1          -    Covered              
+        bin bins_op[ReductionOR_B]                       1803          1          -    Covered              
+        bin op_trans                                       38          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                 9          9          -                      
+        missing/total bins:                                 0          9          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <A_data_min,B_data_min>                   126          1          -    Covered              
+            bin <A_data_max,B_data_min>                   145          1          -    Covered              
+            bin <A_data_0,B_data_min>                     141          1          -    Covered              
+            bin <A_data_min,B_data_max>                   143          1          -    Covered              
+            bin <A_data_max,B_data_max>                   137          1          -    Covered              
+            bin <A_data_0,B_data_max>                     136          1          -    Covered              
+            bin <A_data_min,B_data_0>                     159          1          -    Covered              
+            bin <A_data_max,B_data_0>                     150          1          -    Covered              
+            bin <A_data_0,B_data_0>                       146          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/ALU_top/ALU_sva_inst/reset_check_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(9)   9608 Covered   
+/ALU_top/ALU_sva_inst/ADD_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(17)     5 Covered   
+/ALU_top/ALU_sva_inst/SUB_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(25)     6 Covered   
+/ALU_top/ALU_sva_inst/NOT_A_check_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(33)     1 Covered   
+/ALU_top/ALU_sva_inst/ReductionOR_B_check_coverage 
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(41)     5 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 5
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/ALU_top/ALU_sva_inst/reset_check_assertion
+                     ALU_sva.sv(8)                      0          1
+/ALU_top/ALU_sva_inst/ADD_check_assertion
+                     ALU_sva.sv(16)                     0          1
+/ALU_top/ALU_sva_inst/SUB_check_assertion
+                     ALU_sva.sv(24)                     0          1
+/ALU_top/ALU_sva_inst/NOT_A_check_assertion
+                     ALU_sva.sv(32)                     0          1
+/ALU_top/ALU_sva_inst/ReductionOR_B_check_assertion
+                     ALU_sva.sv(40)                     0          1
+/ALU_sequence_pkg/ALU_main_sequence/body/#ublk#33787143#39/immed__41
+                     ALU_sequence.sv(41)                0          1
+
+Total Coverage By Instance (filtered view): 72.18%
+
