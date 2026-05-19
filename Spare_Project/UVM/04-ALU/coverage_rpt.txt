@@ -54,9 +54,9 @@ Branch Coverage for instance /ALU_top/dut
 Branch totals: 4 hits of 5 branches = 80.00%
 
 ------------------------------------IF Branch------------------------------------
-    32                                      9740     Count coming in to IF
-    32              1                       9348           if (reset)
-    34              1                        392           else
+    32                                     10293     Count coming in to IF
+    32              1                        767           if (reset)
+    34              1                       9526           else
 Branch totals: 2 hits of 2 branches = 100.00%
 
 
@@ -102,11 +102,11 @@ Statement Coverage for instance /ALU_top/dut --
     28                                                  end // always @ *
     29                                               
     30                                                  // Register output C
-    31              1                       9740        always @(posedge clk or posedge reset) begin
+    31              1                      10293        always @(posedge clk or posedge reset) begin
     32                                                     if (reset)
-    33              1                       9348     	     C <= 5'b0;
+    33              1                        767     	     C <= 5'b0;
     34                                                     else
-    35              1                        392     	     C<= Alu_out;
+    35              1                       9526     	     C<= Alu_out;
 
 Toggle Coverage:
     Enabled Coverage              Bins      Hits    Misses  Coverage
@@ -164,13 +164,13 @@ Name                                     Design Design   Lang File(Line)      Hi
                                          Unit   UnitType                                     
 --------------------------------------------------------------------------------------------
 /ALU_top/ALU_sva_inst/reset_check_coverage 
-                                         ALU_sva Verilog  SVA  ALU_sva.sv(9)   9608 Covered   
-/ALU_top/ALU_sva_inst/ADD_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(17)     5 Covered   
-/ALU_top/ALU_sva_inst/SUB_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(25)     6 Covered   
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(9)    393 Covered   
+/ALU_top/ALU_sva_inst/ADD_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(17)  2468 Covered   
+/ALU_top/ALU_sva_inst/SUB_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(25)  3451 Covered   
 /ALU_top/ALU_sva_inst/NOT_A_check_coverage 
-                                         ALU_sva Verilog  SVA  ALU_sva.sv(33)     1 Covered   
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(33)  1642 Covered   
 /ALU_top/ALU_sva_inst/ReductionOR_B_check_coverage 
-                                         ALU_sva Verilog  SVA  ALU_sva.sv(41)     5 Covered   
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(41)  1671 Covered   
 
 =================================================================================
 === Instance: /ALU_top
@@ -766,16 +766,16 @@ Branch totals: 1 hit of 2 branches = 50.00%
 
 ------------------------------------IF Branch------------------------------------
     54                                     10001     Count coming in to IF
-    54              1                       9609             if(seqitem.reset) 
-    56              1                        392             else begin
+    54              1                        393             if(seqitem.reset) 
+    56              1                       9608             else begin
 Branch totals: 2 hits of 2 branches = 100.00%
 
 ------------------------------------CASE Branch------------------------------------
-    57                                       392     Count coming in to CASE
-    58              1                        110                     Add:            C_ref = seqitem.A + seqitem.B;
-    59              1                        137                     Sub:            C_ref = seqitem.A - seqitem.B;
-    60              1                         76                     Not_A:          C_ref = ~seqitem.A;
-    61              1                         69                     ReductionOR_B:  C_ref = |seqitem.B;
+    57                                      9608     Count coming in to CASE
+    58              1                       2558                     Add:            C_ref = seqitem.A + seqitem.B;
+    59              1                       3606                     Sub:            C_ref = seqitem.A - seqitem.B;
+    60              1                       1710                     Not_A:          C_ref = ~seqitem.A;
+    61              1                       1734                     ReductionOR_B:  C_ref = |seqitem.B;
     62              1                    ***0***                     default:  C_ref = 5'b0;
 Branch totals: 4 hits of 5 branches = 80.00%
 
@@ -884,13 +884,13 @@ Statement Coverage for instance /ALU_scoreboard_pkg --
     52                                               
     53                                                   task golden_model(ALU_seqitem seqitem);
     54                                                       if(seqitem.reset) 
-    55              1                       9609                 C_ref = 0;
+    55              1                        393                 C_ref = 0;
     56                                                       else begin
     57                                                           case(seqitem.Opcode)
-    58              1                        110                     Add:            C_ref = seqitem.A + seqitem.B;
-    59              1                        137                     Sub:            C_ref = seqitem.A - seqitem.B;
-    60              1                         76                     Not_A:          C_ref = ~seqitem.A;
-    61              1                         69                     ReductionOR_B:  C_ref = |seqitem.B;
+    58              1                       2558                     Add:            C_ref = seqitem.A + seqitem.B;
+    59              1                       3606                     Sub:            C_ref = seqitem.A - seqitem.B;
+    60              1                       1710                     Not_A:          C_ref = ~seqitem.A;
+    61              1                       1734                     ReductionOR_B:  C_ref = |seqitem.B;
     62              1                    ***0***                     default:  C_ref = 5'b0;
     63                                                           endcase
     64                                                       end    
@@ -1481,13 +1481,13 @@ Name                                     Design Design   Lang File(Line)      Hi
                                          Unit   UnitType                                     
 --------------------------------------------------------------------------------------------
 /ALU_top/ALU_sva_inst/reset_check_coverage 
-                                         ALU_sva Verilog  SVA  ALU_sva.sv(9)   9608 Covered   
-/ALU_top/ALU_sva_inst/ADD_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(17)     5 Covered   
-/ALU_top/ALU_sva_inst/SUB_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(25)     6 Covered   
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(9)    393 Covered   
+/ALU_top/ALU_sva_inst/ADD_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(17)  2468 Covered   
+/ALU_top/ALU_sva_inst/SUB_check_coverage ALU_sva Verilog  SVA  ALU_sva.sv(25)  3451 Covered   
 /ALU_top/ALU_sva_inst/NOT_A_check_coverage 
-                                         ALU_sva Verilog  SVA  ALU_sva.sv(33)     1 Covered   
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(33)  1642 Covered   
 /ALU_top/ALU_sva_inst/ReductionOR_B_check_coverage 
-                                         ALU_sva Verilog  SVA  ALU_sva.sv(41)     5 Covered   
+                                         ALU_sva Verilog  SVA  ALU_sva.sv(41)  1671 Covered   
 
 TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 5
 
